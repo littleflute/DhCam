@@ -1,0 +1,14 @@
+; HVUtil.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HVUtil"
+DESCRIPTION  'HVUtil Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+	;*************OpenCV*********************
+	HVSaveJPEG
+	HVLoadJPEG
+
+
+	

@@ -1,0 +1,845 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "atlres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ERRORBOX DIALOGEX 0, 0, 226, 116
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "错误"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭(&C)",IDOK,86,79,50,14
+    LTEXT           "",IDC_STATICMESSAGE,23,16,180,53,SS_SUNKEN
+END
+
+IDD_ZOOM DIALOG DISCARDABLE  0, 0, 186, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "缩放比例"
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT1,97,7,38,13,ES_AUTOHSCROLL | ES_NOHIDESEL
+    DEFPUSHBUTTON   "确定",IDOK,26,31,50,14
+    PUSHBUTTON      "取消",IDCANCEL,95,31,50,14
+    LTEXT           "缩放比例",IDC_STATIC,31,7,44,13,SS_CENTERIMAGE
+    LTEXT           "%",IDC_STATIC,137,7,18,12,SS_CENTERIMAGE
+END
+
+IDD_PROPERTYVIEW DIALOG DISCARDABLE  0, 0, 134, 63
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 9, "宋体"
+BEGIN
+    LISTBOX         IDC_PROPERTYLIST,0,0,134,49,LBS_OWNERDRAWVARIABLE | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 314, 184
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,122,157,50,14
+    CTEXT           "HVPerf_cn Application",IDC_STATIC,70,22,128,13
+    ICON            IDR_MAINFRAME,IDC_STATIC,13,16,20,20
+    GROUPBOX        "",IDC_STATIC,7,7,271,126
+    LTEXT           "China Daheng Group, Inc. Beijing Image Vision Technology Branch",
+                    IDC_STATIC,18,76,257,16
+    CTEXT           "Ver 2.6.7.1",IDC_STATIC,97,42,81,11
+    LTEXT           "Copyright (c) 2009",IDC_STATIC,104,59,83,11
+END
+
+IDD_BUSVIEW DIALOG DISCARDABLE  0, 0, 134, 95
+STYLE WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "Tree1",IDC_BUSTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,0,0,134,81
+END
+
+IDD_CAMERAINFO DIALOG DISCARDABLE  0, 0, 113, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "摄像机硬件参数"
+FONT 9, "宋体"
+BEGIN
+    RTEXT           "单位",IDC_STATIC,13,19,25,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_SHUTTERUNIT,44,17,53,12,ES_AUTOHSCROLL | ES_READONLY
+    RTEXT           "速度",IDC_STATIC,13,38,25,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_SHUTTERSPEED,44,36,53,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    RTEXT           "系数",IDC_STATIC,13,56,25,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_SHUTTERRATIO,44,54,53,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "快门",IDC_STATIC,8,5,98,70
+END
+
+IDD_PLUGINMANAGER DIALOGEX 0, 0, 279, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "插件管理器"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "确定",IDOK,112,174,50,14
+    PUSHBUTTON      "取消",IDCANCEL,167,174,50,14
+    CONTROL         "List1",IDC_PLUGINLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,7,27,236,64
+    EDITTEXT        IDC_PLUGINDESC,7,97,236,58,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "上移",IDC_ITEMUP,247,27,25,14,BS_FLAT
+    PUSHBUTTON      "下移",IDC_ITEMDOWN,248,49,24,14,BS_FLAT
+    PUSHBUTTON      "应用",IDC_APPLY,222,174,50,14
+    LTEXT           "请选择您需要的插件，没有选择的插件将被禁用",IDC_STATIC,
+                    7,9,190,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,7,163,265,1,
+                    WS_EX_STATICEDGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ERRORBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_PROPERTYVIEW, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 49
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_BUSVIEW, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 81
+    END
+
+    IDD_CAMERAINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 106
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_PLUGINMANAGER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_TRACKNS             CURSOR  DISCARDABLE     "res\\ArrowNS.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    SEPARATOR
+    BUTTON      ID_CAMERAINFO
+    SEPARATOR
+    BUTTON      ID_DEFT_VAL
+    SEPARATOR
+    BUTTON      ID_GRAB_CONTINUOUS
+    BUTTON      ID_GRAB_SINGLE
+    BUTTON      ID_GRAB_CANCEL
+    BUTTON      ID_SOFTTRIGGER
+    BUTTON      ID_DO_PASSIVE_TRANS
+    SEPARATOR
+    BUTTON      ID_TOTAL_CONTINUOUS
+    BUTTON      ID_TOTAL_CANCEL
+    SEPARATOR
+    BUTTON      ID_VIEW_ZOOM_BEST
+    BUTTON      ID_CAMERA_MAXIMIZE
+    BUTTON      ID_PLUGINMANAGER
+    SEPARATOR
+    BUTTON      ID_WINDOW_CASCADE
+    BUTTON      ID_WINDOW_TILE_HORZ
+    BUTTON      ID_WINDOW_TILE_VERT
+    BUTTON      ID_APP_HELP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "退出时清除历史记录(&C)\tCtrl+R", ID_FILE_CLEAR_REG
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&x)",                    ID_APP_EXIT
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "工具条(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态条(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "摄像机列表(&B)\tCtrl+B",      ID_VIEW_BUSVIEW
+        MENUITEM "摄像机属性列表(&P)\tCtrl+P",  ID_VIEW_PROPERTYVIEW
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)\tF1",            ID_APP_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "关于 HVPerf(&A)...",          ID_APP_ABOUT
+    END
+END
+
+IDR_MDICHILD MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开图像(&O)...\tCtrl+O",     ID_FILE_OPEN
+        MENUITEM "保存图像(&S)...\tCtrl+S",     ID_FILE_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "保存摄像机设置(&D)...",       ID_FILE_SAVE_CONFIGURATION
+        MENUITEM "恢复摄像机设置(&R)...",       ID_FILE_RESTORE_CONFIGURATION
+
+        MENUITEM SEPARATOR
+        MENUITEM "退出时清除历史记录(&C)\tCtrl+R", ID_FILE_CLEAR_REG
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&x)",                    ID_APP_EXIT
+    END
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "拷贝(&C)\tCtrl+C",            ID_EDIT_COPY
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "工具条(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态条(&S)",                  ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "摄像机列表(&B)\tCtrl+B",      ID_VIEW_BUSVIEW
+        MENUITEM "摄像机属性列表(&P)\tCtrl+P",  ID_VIEW_PROPERTYVIEW
+        MENUITEM SEPARATOR
+        POPUP "缩放(&Z)"
+        BEGIN
+            MENUITEM "&25%",                        ID_VIEW_ZOOM_25
+            MENUITEM "&50%",                        ID_VIEW_ZOOM_50
+            MENUITEM "&100%",                       ID_VIEW_ZOOM_100
+            , CHECKED
+            MENUITEM "2&00%",                       ID_VIEW_ZOOM_200
+            MENUITEM "&400%",                       ID_VIEW_ZOOM_400
+            MENUITEM "自定义(&U)...",               ID_VIEW_ZOOM_USER
+            MENUITEM "最佳匹配(&B)",                ID_VIEW_ZOOM_BEST
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "中心定位 (&C)",               ID_CENTERCURSOR
+        MENUITEM SEPARATOR
+        POPUP "显示模式(&M)"
+        BEGIN
+            MENUITEM "&8位",                        ID_VIEW_NO_CONVERSION
+            MENUITEM "24位",                        ID_VIEW_CONVERSION
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "摄像机硬件参数(&D)...",       ID_CAMERAINFO
+    END
+    POPUP "摄像机(&D)"
+    BEGIN
+        MENUITEM "采单帧(&S)",                  ID_GRAB_SINGLE
+        MENUITEM "连续采集(&C)",                ID_GRAB_CONTINUOUS
+        MENUITEM "停止采集(&A)",                ID_GRAB_CANCEL
+        MENUITEM SEPARATOR
+        MENUITEM "AOI最大化(&M) ",              ID_CAMERA_MAXIMIZE
+        MENUITEM SEPARATOR
+        MENUITEM "恢复出厂值(&F)",              ID_DEFT_VAL
+    END
+    POPUP "插件(&P)"
+    BEGIN
+        MENUITEM "插件管理器(&M)...",           ID_PLUGINMANAGER
+        MENUITEM SEPARATOR
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "层叠(&C)",                    ID_WINDOW_CASCADE
+        MENUITEM "水平排列(&H)",                ID_WINDOW_TILE_HORZ
+        MENUITEM "垂直排列(&V)",                ID_WINDOW_TILE_VERT
+        MENUITEM "排列图标(&I)",                ID_WINDOW_ARRANGE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "帮助主题(&H)\tF1",            ID_APP_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "关于HVPerf(&A)...",           ID_APP_ABOUT
+    END
+END
+
+IDR_BUSVIEW_CONTEXT_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Context Menu"
+    BEGIN
+        MENUITEM "采单帧(&S)",                  ID_GRAB_SINGLE
+        MENUITEM "连续采集(&C)",                ID_GRAB_CONTINUOUS
+        MENUITEM "停止采集(&a)",                ID_GRAB_CANCEL
+        MENUITEM SEPARATOR
+        MENUITEM "AOI最大化(&M)",               ID_CAMERA_MAXIMIZE
+        MENUITEM "设置默认值(&d)",              ID_DEFT_VAL
+    END
+END
+
+IDR_IMAGEVIEW_CONTEXT_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Image View Context menu"
+    BEGIN
+        MENUITEM "&25%",                        ID_VIEW_ZOOM_25
+        MENUITEM "&50%",                        ID_VIEW_ZOOM_50
+        MENUITEM "&100%",                       ID_VIEW_ZOOM_100, CHECKED
+        MENUITEM "2&00%",                       ID_VIEW_ZOOM_200
+        MENUITEM "&400%",                       ID_VIEW_ZOOM_400
+        MENUITEM "自定义(&U)...",               ID_VIEW_ZOOM_USER
+        MENUITEM "最佳匹配(&B)",                ID_VIEW_ZOOM_BEST
+        MENUITEM SEPARATOR
+        POPUP "显示模式 (&C)"
+        BEGIN
+            MENUITEM "&8位",                        ID_VIEW_NO_CONVERSION
+            MENUITEM "24位",                        ID_VIEW_CONVERSION
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Daheng Imavision HV Camera Performance"
+    IDR_MDICHILD            "ImageView"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "从文件中载入图像\n载入"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "保存图像至文件\n保存"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "层叠窗口\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "窗口水平排列\n窗口水平排列"
+    ID_WINDOW_TILE_VERT     "窗口垂直排列\n窗口垂直排列"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "拷贝至剪贴板\n拷贝"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_SCSIZE          "Change the window size"
+    ATL_IDS_SCMOVE          "Change the window position"
+    ATL_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    ATL_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    ATL_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    ATL_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    ATL_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+    IDS_STROBE_SWITCH       "闪光灯开关"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_SCRESTORE       "Restore the window to normal size"
+    ATL_IDS_SCTASKLIST      "Activate Task List"
+    ATL_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ATL_IDS_MRU_FILE        "Open this document"
+    ID_FPS_ACQUIRED_PANE    "FPS - acquired : 000 "
+    ID_FPS_DISPLAYED_PANE   "FPS - displayed : 000 "
+    ID_POS_PANE             "( 1024, 1024 )"
+    ID_VALUE_PANE           "R: 255 G: 255 B: 255"
+    ID_AOI_PANE             " AOI: (1024, 1024) : 1024 x 1024"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_BUSVIEW         "Show or the bus viewer window\nToggle bus viewer"
+    ID_GRAB_SINGLE          "抓取单帧图像\n采单帧"
+    ID_VIEW_PROPERTIES      "打开摄像机属性对话框\n摄像机属性"
+    ID_GRAB_CONTINUOUS      "连续采集图像\n连续采集"
+    ID_GRAB_CANCEL          "停止采集图像\n停止采集"
+    ID_VIEW_NO_CONVERSION   "Show raw Bayer pixel data\nShow raw Bayer pixel data"
+    ID_CAMERA_MAXIMIZE      "AOI 最大化\nAOI 最大化"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_ZOOM_BEST       "最佳匹配\n最佳匹配"
+    ID_FILE_SAVE_CONFIGURATION 
+                            "Save current device settings to a file\nSave settings"
+    ID_FILE_RESTORE_CONFIGURATION 
+                            "Restore device settings from a file\nRestore settings"
+    ID_APP_HELP             "帮助\n帮助"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_HV           "HV"
+    IDS_STRING_VENDOR       "Daheng Imavision"
+    IDS_INFOPROPERTY        "摄像机信息"
+    IDS_MODEL               "型号"
+    IDS_VENDOR              "厂商"
+    IDS_NODEID              "序列号"
+    IDS_HARD_WARE_VERSION   "固件版本"
+    IDS_DEVICENAME          "摄像机名"
+    IDS_VIDEOFORMAT         "视频格式"
+    IDS_VIDEOMODE           "视频模式"
+    IDS_SNAPSPEED           "采集速度"
+    IDS_SNAPMODE            "采集方式"
+    IDS_STRING_SV           "SV"
+    IDS_TRIGGERPOLARITY     "外触发信号极性"
+    IDS_STROBEPOLARITY      "闪光灯信号极性"
+    IDS_ADCONTROL           "AD控制"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_PROPERTYVIEW    "Show or the property viewer window\nToggle property viewer"
+    ID_PLUGINMANAGER        "打开插件管理对话框\n插件管理器"
+    ID_CAMERAINFO           "打开摄像机硬件参数对话框\n摄像机硬件参数"
+    ID_CENTERCURSOR         "定位摄像机中心板面\n中心定位"
+    ID_SOFTTRIGGER          "软触发采集\n软触发采集"
+    ID_DEFT_VAL             "设置相机参数为出厂值状态\n恢复出厂值"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ADCLEVEL            "转换级别"
+    IDS_BLACKLEVELENABLE    "黑电平允许"
+    IDS_BLACKLEVEL          "黑电平调节"
+    IDS_SHUTTER             "快门控制"
+    IDS_SHUTTERSPEED        "快门速度"
+    IDS_GAIN                "增益控制"
+    IDS_GAINLEVEL           "增益调节"
+    IDS_BLANK               "消隐控制"
+    IDS_BLANKHOR            "水平方向"
+    IDS_BLANKVERT           "垂直方向"
+    IDS_SHUTTERRAW          "快门系数"
+    IDS_SOFT_WARE_VER       "驱动版本"
+    IDS_PACKETSIZE          "包长调节"
+    IDS_BRIGHTNESS          "亮度调节"
+    IDS_TIME_UNIT           "时间单位"
+    IDS_BUS_VIEW            "摄像机"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROPERTY_VIEW       "属性"
+    IDS_BRIGHTNESS_VAL      "亮度调节"
+    IDS_WHITEBALANCE        "白平衡调节"
+    IDS_WHITEBALANCE_U      "蓝通道"
+    IDS_WHITEBALANCE_V      "红通道"
+    IDS_FRAME_ROZEN         "帧冻结"
+    IDS_LUTPATH             "LUT文件"
+    IDS_LUTTYPE             "查找表"
+    IDS_TEST_IMAGE          "测试图像输出"
+    IDS_TEST_IMAGE_ITEM     "测试图像输出选项"
+    IDS_STRING_HV1300FC     "HV1300FC"
+    IDS_STRING_HV1300FM     "HV1300FM"
+    IDS_TRIGGER_DELAY_FUN   "延迟曝光功能"
+    IDS_TRIGGER_DELAY_SWITCH "延迟曝光开关"
+    IDS_TRIGGER_DELAY_VALUE "延迟时间值"
+    IDS_RAW_TYPE            "Raw数据格式"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RAW_TYPE_ITEM       "数据格式"
+    IDS_OUTPUTIOSET         "输出IO功能设置"
+    IDS_OUTPUTIOSET_0       "Output0"
+    IDS_OUTPUTIOSET_1       "Output1"
+    IDS_OUTPUTIOSET_2       "Output2"
+    IDS_OUTPUTIOCONTROL     "用户自定义IO输出"
+    IDS_INPUTIOSET          "输入IO功能设置"
+    IDS_OUTPUTIOCONTROL_0   "OutPut0"
+    IDS_OUTPUTIOCONTROL_1   "OutPut1"
+    IDS_OUTPUTIOCONTROL_2   "OutPut2"
+    IDC_TRIGGER_SOURCE      "Trigger_Source"
+    IDS_TRANSFERSDELAY      "延迟传输功能"
+    IDS_TRANSDELAY_VALUE    "延迟时间值(ms)"
+    IDS_STRING_HV2000FC     "HV2000FC"
+    IDS_STRING_HV3100FC     "HV3100FC"
+    IDS_STRING_SV1300FC     "SV1300FC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_SV1410GM     "SV1410GM"
+    IDS_STRING_PD1420EC     "PD1420EC"
+    IDS_STRING_PD1420EM     "PD1420EM"
+    IDS_FILTER_TIME         "滤波时间值(us)"
+    IDS_FILTER_TIME_FUN     "滤波时间功能"
+    IDS_LE_BE_MODE          "LE/BE"
+    IDS_FPGA_VERSION        "FPGA 版本"
+    IDS_HVAPI_VERSION       "HVAPI 版本"
+    IDS_HVDAILT_VERSION     "HVDAILT 版本"
+    IDS_IP_ADDRESS          "IP 地址"
+    IDS_MAC_ADDRESS         "MAC地址"
+    IDS_SNAP_TRIGGER_NUM    "一次触发采集帧数"
+    IDS_TRIGGER_TIME        "触发帧间隔(ms)"
+    IDS_NETWORK_CARD_IP     "网卡IP地址"
+    IDS_NETWORK_CARD_MAC    "网卡MAC地址"
+    IDS_RGB_FORMAT          "颜色格式"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_SV1300FM     "SV1300FM"
+    IDS_STRING_SV1310FC     "SV1310FC"
+    IDS_STRING_SV1310FM     "SV1310FM"
+    IDS_STRING_SV1400FC     "SV1400FC"
+    IDS_STRING_SV1400FM     "SV1400FM"
+    IDS_STRING_SV1410FC     "SV1410FC"
+    IDS_STRING_SV1410FM     "SV1410FM"
+    IDS_STRING_SV1420FC     "SV1420FC"
+    IDS_STRING_SV1420FM     "SV1420FM"
+    IDS_STRING_SV2000FC     "SV2000FC"
+    IDS_STRING_SV2000FM     "SV2000FM"
+    IDS_STRING_SV400FC      "SV400FC"
+    IDS_STRING_SV400FM      "SV400FM"
+    IDS_STRING_SV1311FC     "SV1311FC"
+    IDS_STRING_SV1311FM     "SV1311FM"
+    IDS_STRING_SV1410GC     "SV1410GC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_CLEAR_REG       "清除历史记录\n清除历史记录"
+    ID_TOTAL_CONTINUOUS     "全部开始连续采集\n全部开始连续采集"
+    ID_TOTAL_CANCEL         "全部停止采集\n全部停止采集"
+    ID_DO_PASSIVE_TRANS     "图像传输\n图像传输"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DIGITAL_GAIN        "数字增益"
+    IDS_DATA_FORMAT_LIST    "数据格式选项"
+    IDS_SAVE_PARAM_GROUP    "参数保存"
+    IDS_BEGIN_PARAM         "启动参数组"
+    IDS_SAVE_PARAM          "保存参数"
+    IDS_LOAD_PARAM          "加载参数"
+    IDS_BANDWIDTH_ORG       "带宽管理"
+    IDS_PACKET_DELAY        "包间延迟"
+    IDS_DATA_RATE           "预期数据率"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CONNECT_SPEED       "链接速度"
+    IDS_PACKET_DELAY_RESULT "包间延迟结果"
+    IDS_SELECT_MODE         "模式选择"
+    IDS_SHUTTER_AUTO        "自动模式"
+    IDS_GAIN_AUTO           "自动模式 "
+    IDS_WHITEBALANCE_G      "绿通道"
+    IDS_STRING_SV2000GC     "SV2000GC"
+    IDS_STRING_PD2000EC     "PD2000EC"
+    IDS_STRING_ITS1410FC    "ITS1410FC"
+    IDS_STRING_SV1420GC     "SV1420GC"
+    IDS_STRING_SV1420GM     "SV1420GM"
+    IDS_STRING_ITS1410GC    "ITS1410GC"
+    IDS_STRING_ITS1420GC    "ITS1420GC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_ITS2000GC    "ITS2000GC"
+    IDS_STRING_GIGE         "GIGE"
+    IDS_PASSIVE_TRANSMIT    "被动传输"
+    IDS_PASSIVE_TRANSMIT_ENABLE "被动传输开关"
+    IDS_STRING_ENET         "PD-E"
+    IDS_STRING_ITS1420FC    "ITS1420FC"
+    IDS_STRING_ITS2000FC    "ITS2000FC"
+    IDS_STROBE_AUTO         "自动闪光灯"
+    IDS_ANTI_FLICKER        "抗闪烁功能"
+    IDS_ANTI_FLICKER_ONOFF  "抗闪烁"
+    IDS_ANTI_TRIGGERSOURCE  "同步源"
+    IDS_AC_PHASE_ADJUST     "交流相位调整(us)"
+    IDS_OEM_STRING          "\n"
+    IDS_WHITE_BALANCE       "白平衡控制"
+    IDS_WB_ON_OFF           "白平衡开关"
+    IDS_WB_AUTO             "白平衡模式"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TRIGGERDELAY_UNIT   "延迟时间单位"
+    IDS_WB_ONEPUSH_BUTTON   "One Push"
+    IDS_R_VALUE             "R_Value"
+    IDS_B_VALUE             "B_Value"
+    IDS_STRING_ITS1394      "DH-1394"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_TRACK4WAY           CURSOR  DISCARDABLE     "res\\Arrow4Way.cur"
+IDC_TRACKWE             CURSOR  DISCARDABLE     "res\\ArrowEW.cur"
+IDC_TRACKNESW           CURSOR  DISCARDABLE     "res\\ArrowNE.cur"
+IDC_TRACKNWSE           CURSOR  DISCARDABLE     "res\\ArrowNW.cur"
+IDC_MOVE4WAY            CURSOR  DISCARDABLE     "res\\move4way.cur"
+IDC_CROSSHAIR           CURSOR  DISCARDABLE     "res\\cross.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP4             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_BITMAP2             BITMAP  DISCARDABLE     "res\\bitmap2.bmp"
+IDB_BITMAP3             BITMAP  DISCARDABLE     "res\\bitmap3.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ""res\\\\HVPerf.exe.manifest""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\shoot03.ico"
+IDR_MDICHILD            ICON    DISCARDABLE     "res\\child.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "B",            ID_VIEW_BUSVIEW,        VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_VIEW_PROPERTYVIEW,   VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_FILE_CLEAR_REG,      VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F1,          ID_APP_HELP,            VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,6,7,1
+ PRODUCTVERSION 2,6,7,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Daheng Imavision\0"
+            VALUE "FileDescription", "HVPerf Module\0"
+            VALUE "FileVersion", "2, 6, 7, 1\0"
+            VALUE "InternalName", "HVPerf \0"
+            VALUE "LegalCopyright", "Copyright  2009.11\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HVPerf.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "HVPerf Module\0"
+            VALUE "ProductVersion", "2, 6, 7, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res\\HVPerf.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

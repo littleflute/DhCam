@@ -1,0 +1,5 @@
+[Batch Build]
+HVPerf_cn - Win32 Debug=0
+HVPerf_cn - Win32 Release=1
+HVPerf_en - Win32 Debug=0
+HVPerf_en - Win32 Release=1

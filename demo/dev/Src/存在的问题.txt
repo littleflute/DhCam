@@ -1,0 +1,49 @@
+--2008.4.21 Mon--HYL--
+1. 待确认:
+	
+	case PD1420ECTYPE: //36
+	case PD1420EMTYPE: //37
+	case SV1410GCTYPE: //38
+
+--2008.4.22 Tue--HYL--
+1. 待确认:
+
+HVDAILT 新接口结构:
+case CMD_HVAPI_CONTROL:
+
+		typedef status tagHVAPI_CONTROL_PARAMETER{
+			DWORD code,
+			void* pInBuff,	
+			DWORD dwInBuffSize,
+			void* pOutBuff,	
+			DWORD dwOutBuffSize,
+			DWORD *pBytesReturned
+		}HVAPI_CONTROL_PARAMETER;
+
+		(HVAPI_CONTROL_PARAMETER*) pControlParam = (HVAPI_CONTROL_PARAMETER*)pContext;
+		status = HVControl(pObj->hDevice,pControlParam->code,);
+
+--2008.4.24 Thu--HYL--
+1. 待确认:
+	a. PD1420EX,SV1410GX的设备名称是否从SDK读出???
+    b. 保存参数	UserSet1
+	   加载参数	Manufacturer
+	   ***这两项在属性页里容易引起误解！！！
+       (打算按 Coriander 方式,放在prp中实现)
+
+	c. pd1420em 
+		一次触发采集多帧开关   (???)
+		一次触发采集帧数
+		一次触发采集多帧时的触发帧间隔
+
+    d. pd1420em 
+		增益控制	增益控制
+		测试图像	测试图像
+    
+	e. sv1410gc 
+		(1)0 - 4294967295  属性页目前无法表达这样的可调节范围
+		(2)将用户水平分为两级，第一级为普通用户，第二级为专家用户，由用户自选，默认用户为普通用户。
+		   该项需求未定.
+
+--2008.5.6 Tue--HYL--
+1. class CAllCtrl 还没有进行单元测试

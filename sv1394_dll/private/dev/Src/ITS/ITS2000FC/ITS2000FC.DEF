@@ -1,0 +1,13 @@
+; ITS2000FC.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ITS2000FC"
+DESCRIPTION  'ITS2000FC Windows Dynamic Link Library'
+
+EXPORTS
+	; Explicit exports can go here
+	
+	HVEnumerate
+	HVGuid
+	HVOpen
+	HVClose
+	HVControl

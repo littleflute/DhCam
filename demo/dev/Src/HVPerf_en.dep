@@ -1,0 +1,700 @@
+# Microsoft Developer Studio Generated Dependency File, included by HVPerf_en.mak
+
+.\Camera\HV1300FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1300fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1300FM.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1300fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1300UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1300uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1300UM.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1300um.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1301UC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1301uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1302UC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1302uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1302UM.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1302um.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1303UC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1303uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV1303UM.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv1303um.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV2000FC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv2000fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV2000UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv2000uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV2001UC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\hv2001uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV2002UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv2002uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV2003UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv2003uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV3000UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv3000uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV3100FC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv3100fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV3102UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv3102uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\HV3103UC.cpp : \
+	"..\inc\hvdef.h"\
+	".\camera\hv3103uc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1300FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1300fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1300FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1300fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1310FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1310fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1310FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1310fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1311FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1311fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1311FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1311fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1410FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1410fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1410FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1410fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1420FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1420fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV1420FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv1420fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV2000FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv2000fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV2000FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv2000fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV400FC.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv400fc.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\Camera\SV400FM.CPP : \
+	"..\inc\hvdef.h"\
+	".\camera\sv400fm.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\aboutdlg.cpp : \
+	"..\inc\hvdef.h"\
+	".\aboutdlg.h"\
+	".\stdafx.h"\
+	
+
+.\AutoTest.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\inc\hvdef.h"\
+	".\AutoTest.h"\
+	".\BusView.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\hvperf.h"\
+	".\Image.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\PropertyView.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\BusView.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\PropertyView.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\ChildFrm.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\pluginmanagerdlg.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\ChkRecursion.cpp : \
+	".\ChkRecursion.h"\
+	
+
+.\Device.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\DeviceManager.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\camera\hv1300fc.h"\
+	".\camera\hv1300fm.h"\
+	".\camera\hv1300uc.h"\
+	".\camera\hv1300um.h"\
+	".\camera\hv1301uc.h"\
+	".\camera\hv1302uc.h"\
+	".\camera\hv1302um.h"\
+	".\camera\hv1303uc.h"\
+	".\camera\hv1303um.h"\
+	".\camera\hv2000fc.h"\
+	".\camera\hv2000uc.h"\
+	".\camera\hv2001uc.h"\
+	".\camera\hv2002uc.h"\
+	".\camera\hv2003uc.h"\
+	".\camera\hv3000uc.h"\
+	".\camera\hv3100fc.h"\
+	".\camera\hv3102uc.h"\
+	".\camera\hv3103uc.h"\
+	".\camera\sv1300fc.h"\
+	".\camera\sv1300fm.h"\
+	".\camera\sv1310fc.h"\
+	".\camera\sv1310fm.h"\
+	".\camera\sv1311fc.h"\
+	".\camera\sv1311fm.h"\
+	".\camera\sv1410fc.h"\
+	".\camera\sv1410fm.h"\
+	".\camera\sv1420fc.h"\
+	".\camera\sv1420fm.h"\
+	".\camera\sv2000fc.h"\
+	".\camera\sv2000fm.h"\
+	".\camera\sv400fc.h"\
+	".\camera\sv400fm.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\DIBSECTN.CPP : \
+	"..\inc\hvdef.h"\
+	".\DIBSECTN.H"\
+	".\stdafx.h"\
+	
+
+.\ErrorBox.cpp : \
+	"..\inc\hvdef.h"\
+	".\ErrorBox.h"\
+	".\stdafx.h"\
+	
+
+.\HVBase.cpp : \
+	"..\inc\hvdef.h"\
+	".\Device.h"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\HVPerf.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\aboutdlg.h"\
+	".\BusView.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\HVPerf_en.rc : \
+	".\res\Arrow4Way.cur"\
+	".\res\ArrowEW.cur"\
+	".\res\ArrowNE.cur"\
+	".\res\ArrowNS.cur"\
+	".\res\ArrowNW.cur"\
+	".\res\bitmap1.bmp"\
+	".\res\bitmap2.bmp"\
+	".\res\bitmap3.bmp"\
+	".\res\bmp00001.bmp"\
+	".\res\child.ico"\
+	".\res\cross.cur"\
+	".\res\HVPerf.exe.manifest"\
+	".\res\move4way.cur"\
+	".\res\shoot03.ico"\
+	".\res\toolbar.bmp"\
+	{$(INCLUDE)}"atlres.h"\
+	
+
+.\Image.cpp : \
+	"..\inc\hvdef.h"\
+	".\DIBSECTN.H"\
+	".\Image.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\ImageView.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\mainfrm.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\htmlhelp.h"\
+	"..\inc\hvdef.h"\
+	".\aboutdlg.h"\
+	".\AutoTest.h"\
+	".\BusView.h"\
+	".\cameradlg.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	".\zoomdlg.h"\
+	
+
+.\Plugin.cpp : \
+	"..\inc\hvdef.h"\
+	".\hvperf.h"\
+	".\Plugin.h"\
+	".\PluginSpec.h"\
+	".\stdafx.h"\
+	
+
+.\PluginManager.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlscrl.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\ChildFrm.h"\
+	".\controls\atlzoom.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\hvperf.h"\
+	".\Image.h"\
+	".\ImageView.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\Plugin.h"\
+	".\PluginManager.h"\
+	".\PluginSpec.h"\
+	".\PropertyView.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\PropertyBag.cpp : \
+	"..\inc\hvdef.h"\
+	".\stdafx.h"\
+	
+
+.\PropertyView.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlcrack.h"\
+	"..\inc\hvdef.h"\
+	".\BusView.h"\
+	".\controls\propertyitem.h"\
+	".\controls\propertyitemeditors.h"\
+	".\controls\propertyitemimpl.h"\
+	".\controls\propertylist.h"\
+	".\Device.h"\
+	".\DeviceManager.h"\
+	".\DialogView.h"\
+	".\ErrorBox.h"\
+	".\Image.h"\
+	".\mainfrm.h"\
+	".\MDIMenuControl.h"\
+	".\PropertyView.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	
+
+.\RectTracker.cpp : \
+	"..\inc\hvdef.h"\
+	".\RectTracker.h"\
+	".\stdafx.h"\
+	
+
+.\stdafx.cpp : \
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlapp.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlctrls.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlctrlw.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlctrlx.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlddx.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atldlgs.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlframe.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlgdi.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlmisc.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atluser.h"\
+	"..\..\..\..\..\..\devf\wtl\wtl_sdk\wtl75_5002\include\atlwinx.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\guiddef.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\propidl.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\reason.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\shldisp.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\shobjidl.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\shtypes.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\stralign.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\tvout.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\winefs.h"\
+	"..\inc\hvdailt.h"\
+	"..\inc\hvdef.h"\
+	"..\inc\hvunknown.h"\
+	"..\inc\hvutil.h"\
+	".\controls\atldock.h"\
+	".\controls\atldock2.h"\
+	".\Exception.h"\
+	".\HVBase.h"\
+	".\propertybag.h"\
+	".\stdafx.h"\
+	{$(INCLUDE)}"atlres.h"\
+	
+
+.\utility.cpp : \
+	"..\inc\hvdef.h"\
+	".\stdafx.h"\
+	".\utility.h"\
+	

@@ -1,0 +1,18 @@
+# Microsoft Developer Studio Generated Dependency File, included by HVAPI.mak
+
+.\HVAPI.cpp : \
+	"..\..\common\inc\hvapi.h"\
+	".\local.h"\
+	".\StdAfx.h"\
+	
+
+.\main.cpp : \
+	"..\..\common\inc\hvapi.h"\
+	".\local.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\common\inc\hvapi.h"\
+	".\StdAfx.h"\
+	

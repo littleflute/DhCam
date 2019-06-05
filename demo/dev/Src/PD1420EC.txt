@@ -1,0 +1,74 @@
+49
+
+0	0000	摄像机信息		[] 
+1	0000	型号			[PD1420EC]
+1	0000	厂商			[DH-IMG]
+1	0000	序列号			[1234]
+1	0000	FPGA版本		[1.0.0.1]
+1	0000	固件版本		[2.0.0.1]
+1	0000	HVAPI版本		[1.0.1.1]
+1	0000	HVDAILT版本		[4.0.0.1]
+1	0000	颜色格式		[RG]
+1	0000	IP地址			[127.0.0.1]
+1	0000	MAC地址			[192.168.0.5]
+
+0	0000	快门控制		[] 
+3	3001	速度单位		[2,1,us,ms] 
+2	2001	速度速度		[0,3000,60,1]
+
+
+0	0000	采集方式		[] 
+3	3002	采集方式		[2,0,Continuation,Trigger] 
+3	3003	模式选择		[2,0,mode0(1392*1040),mode1(696*520)]
+3	3004	外触发信号极性		[2,1,Low,Hight] 
+3	3005	闪光灯信号极性		[2,1,Low,Hight] 
+3	3005	闪光灯开关		[2,1,off,on]
+2	2002	一次触发采集帧数	[1,80,1,1]
+2	2003	一次触发采集帧数	[70,2000,70,1]
+
+
+
+0	0000	增益控制		[] 
+2	2004	增益调节		[0,1023,296,1]
+2	2005	红通道			[0,31,14,1]
+2	2006	蓝通道			[0,31,28,1]
+
+
+0	0000	AD控制			[] 
+1	2001	LUT文件			[尚未实现]
+2	2007	亮度调节		[0,255,16,1]
+ 
+0	0000	测试图像输出		[] 
+3	3006	测试图像输出选项	[4,0,Disabled,Testimage1,Testimage2,Testimage3] 
+
+0	0000	延迟曝光功能		[] 
+3	3007	延迟曝光开关		[2,0,off,on] 
+2	2008	延迟时间值(us)		[0,4095,0,1]
+
+
+0	0000	输出I/O功能设置		[] 
+3	3008	Output0			[4,3,Integration_signal,Trigger_ready,User_set,Strobe] 
+3	3009	Output1			[4,1,Integration_signal,Trigger_ready,User_set,Strobe]
+3	3010	Output2			[4,0,Integration_signal,Trigger_ready,User_set,Strobe]
+
+
+0	0000	用户自定义I/O输出	[] 
+3	3011	Output0			[2,0,Low,Hight] 
+3	3012	Output1			[2,0,Low,Hight]
+3	3013	Output2			[2,0,Low,Hight]
+
+
+
+0	0000	输入I/O功能设置		[] 
+3	3014	Trigger_Source		[3,0,Input0,Input1,Input2] 
+
+
+
+
+0	0000	参数保存		[] 
+3	3015	启动参数组		[4,0,Manufacturer,UserSet1,UserSet2,UserSet3] 
+3	3016	保存参数		[3,0,UserSet1,UserSet2,UserSet3] 
+3	3017	加载参数		[4,0,Manufacturer,UserSet1,UserSet2,UserSet3] 
+
+
+

@@ -1,0 +1,122 @@
+# Microsoft Developer Studio Generated Dependency File, included by SV1410FC.mak
+
+..\common\camera.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+..\common\CamObj.CPP : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+..\common\feature.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+..\common\format7.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+..\common\isochapi.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+.\local.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	".\local.h"\
+	
+
+..\common\rtl.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	
+
+..\common\trigger.cpp : \
+	"..\..\inc\hvdef.h"\
+	"..\..\inc\HVInter.h"\
+	"..\common\camera.h"\
+	"..\common\CamObj.h"\
+	"..\common\Dev.h"\
+	"..\common\DHSTATUS.H"\
+	"..\common\feature.h"\
+	"..\common\format7.h"\
+	"..\common\MIGRATE.H"\
+	"..\common\offset.h"\
+	"..\common\rtl.h"\
+	"..\common\trigger.h"\
+	

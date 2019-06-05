@@ -1,0 +1,154 @@
+// HVAPI_Test.h : header file   
+//
+
+#if !defined(_HVAPI_TEST_H__)
+#define _HVAPI_TEST_H__
+//#include "hvdef.h"
+
+typedef HANDLE HHV;
+
+typedef enum tagHVTYPE { 	
+	HV1300UCTYPE = 0,
+	HV2000UCTYPE = 1,
+	HV1301UCTYPE = 2,
+	HV2001UCTYPE = 3,
+	HV3000UCTYPE = 4,
+	HV1300UMTYPE = 5,
+	HV1302UCTYPE = 6,
+	HV2002UCTYPE = 7,
+	HV3102UCTYPE = 8,
+	HV1302UMTYPE = 9,
+	HV1300FCTYPE = 10,
+	HV2000FCTYPE = 11,
+	HV3100FCTYPE = 12,
+	HV1300FMTYPE = 13,
+	HV1303UCTYPE = 14,
+	HV2003UCTYPE = 15,
+	HV3103UCTYPE = 16,
+	HV1303UMTYPE = 17,
+	SV1300FMTYPE = 18,
+	SV1300FCTYPE = 19,
+	SV1310FCTYPE = 20,
+	SV1310FMTYPE = 21,
+	SV1311FCTYPE = 22,
+    SV1311FMTYPE = 23,
+	SV400FCTYPE  = 24,
+	SV400FMTYPE  = 25,
+	DH1394FXTYPE = 26,
+	SV1410FCTYPE = 27,
+	SV1410FMTYPE = 28,
+	SV1420FCTYPE = 29,
+	SV1420FMTYPE = 30,
+	SV2000FCTYPE = 31,
+	SV2000FMTYPE = 32,
+	SV1400FCTYPE = 33,
+	SV1400FMTYPE = 34,
+} HVTYPE;
+
+typedef enum tagHVSTATUS { 
+	STATUS_OK							= 0, 
+	STATUS_NO_DEVICE_FOUND				= -1,
+	STATUS_DEVICE_HANDLE_INVALID		= -2,
+	STATUS_HW_DEVICE_TYPE_ERROR			= -3,
+	STATUS_HW_INIT_ERROR				= -4,
+	STATUS_HW_RESET_ERROR				= -5,
+	STATUS_NOT_ENOUGH_SYSTEM_MEMORY		= -6,
+	STATUS_HW_IO_ERROR					= -7,
+	STATUS_HW_IO_TIMEOUT				= -8,
+	STATUS_HW_ACCESS_ERROR				= -9,
+	////////////////////////////////////////////
+	STATUS_OPEN_DRIVER_FAILED			= -10,
+	STATUS_NOT_SUPPORT_INTERFACE		= -11,
+	STATUS_PARAMETER_INVALID			= -12,
+	STATUS_PARAMETER_OUT_OF_BOUND		= -13,
+	STATUS_IN_WORK						= -14,
+	STATUS_NOT_OPEN_SNAP				= -15,
+	STATUS_NOT_START_SNAP				= -16,
+	STATUS_FILE_CREATE_ERROR			= -17,
+	STATUS_FILE_INVALID					= -18,
+	STATUS_NOT_START_SNAP_INT			= -19,
+	STATUS_INTERNAL_ERROR				= -20
+} HVSTATUS;
+
+//Argument for Device info
+typedef enum tagHV_DEVICE_INFO_ID { 
+		DESC_DEVICE_TYPE			 = 0,
+		DESC_RESOLUTION				 = 1,
+		DESC_DEVICE_MARK			 = 2, 
+		DESC_DEVICE_SERIESNUM	     = 3,
+		DESC_DEVICE_BLANKSIZE        = 4,
+		DESC_DEVICE_CHIPID           = 5,
+		DESC_DEVICE_HARDWARE_VERSION = 6,
+		DESC_DEVICE_NAME             = 7,
+		DESC_DEVICE_SOFTWARE_VERSION = 8,
+		DESC_DEVICE_FPGA_VERSION     = 9,
+		DESC_DEVICE_VENDOR_NAME      = 10,
+		DESC_DEVICE_BAYER_LAYOUT     = 11,
+
+
+} HV_DEVICE_INFO_ID;
+
+
+typedef enum tagHV_COMMAND_CODE_EXT { 
+
+	CMD_RESERVED0				= 0x00,
+
+	CMD_RESERVED1				= 0x01,
+
+
+	CMD_GET_BYTE_PER_PACKET		= 0x10,
+
+	CMD_SET_BYTE_PER_PACKET		= 0x11,
+
+	CMD_FRAME_SHOT				= 0x12,
+
+	CMD_FRAME_SHOT_FINISH		= 0x13,
+
+	CMD_GET_LUT_DWENTRIES		= 0x14,
+
+	CMD_SET_LUT_DWENTRIES		= 0x15,
+ 
+	CMD_SET_STROBE_ON           = 0x16,   //xin
+	CMD_SET_STROBE_OFF          = 0x17,
+	CMD_SET_DELAYTIME_ON        = 0x18,
+    CMD_SET_DELAYTIME_OFF       = 0x19,  //xin
+	CMD_SET_DELAYTIME_VALUE     = 0x20,
+
+	
+	CMD_1394_READ_BLOCK			=0x21,
+	CMD_1394_WRITE_BLOCK		=0x22,
+	CMD_1394_READ_QUADLET		=0x23,
+	CMD_1394_WRITE_QUADLET		=0x24,
+	
+	CMD_SET_8or12BitMode        = 0x31,   //xin
+	CMD_SET_OUTPUTIO_0          = 0x32 ,   //2007 1.4
+	CMD_SET_OUTPUTIO_1          = 0x33 ,   //2007 1.4
+	CMD_SET_OUTPUTIO_2          = 0x34 ,   //2007 1.4
+	CMD_SET_OUTPUTIO_0CONTROL   = 0x35 ,   //2007 1.4
+	CMD_SET_OUTPUTIO_1CONTROL   = 0x36 ,   //2007 1.4
+	CMD_SET_OUTPUTIO_2CONTROL   = 0x37 ,   //2007 1.4
+	CMD_SET_INPUTIO_SET         = 0x38,    //1.8
+
+	CMD_GET_DEVICE_PRP			= 0x70,
+	CMD_SET_DEVICE_PRP			= 0x71,
+
+	CMD_SPEC_FUN_INTERFACE1		= 0x80,
+
+
+} HV_COMMAND_CODE_EXT;
+
+
+//--------------------------------------------------------------------------------
+
+
+typedef HVSTATUS (__stdcall *BeginHVDeviceFunc)(int nDevice, HHV *pHandle);
+typedef HVSTATUS (__stdcall *HVGetDeviceInfo_Func)(HHV hhv, HV_DEVICE_INFO_ID param,
+												   void *pContext, int *pSize);
+
+typedef HVSTATUS (__stdcall *EndHVDeviceFunc)(HHV hhv);
+typedef HVSTATUS (__stdcall *HVCommandFunc)(HHV hhv, HV_COMMAND_CODE_EXT CommandCode,
+											void *pContext, int *pLength);
+
+
+//--------------------------------------------------------------------------------
+#endif // !defined(_HVAPI_TEST_H__)

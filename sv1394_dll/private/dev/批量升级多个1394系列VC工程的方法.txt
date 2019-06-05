@@ -1,0 +1,14 @@
+批量升级多个1394系列VC工程的方法
+
+1394系列驱动的VC工程总共有20多个，为了统一升级的方便，设计此自动化升级方法。
+
+1. 设计小程序 ATools.exe. 
+   见：http://192.168.10.30/svn/sw_module_interface/sv1394serial/trunk/private/ref/ATools
+
+2. 设计 UpdateAll.bat.
+   见：http://192.168.10.30/svn/sw_module_interface/sv1394serial/trunk/private/dev
+
+3. 使用方法：
+ 	(1)修改配置文件：v11.txt, v22.txt, Version1.txt, Version2.txt
+        	见：http://192.168.10.30/svn/sw_module_interface/sv1394serial/trunk/private/dev
+	(2)运行 UpdateAll.bat

@@ -1,0 +1,13 @@
+; SV400FC.def : Declares the module parameters for the DLL.
+
+LIBRARY      "SV400FC"
+DESCRIPTION  'SV400FC Windows Dynamic Link Library'
+
+EXPORTS
+	; Explicit exports can go here
+	
+	HVEnumerate
+	HVGuid
+	HVOpen
+	HVClose
+	HVControl

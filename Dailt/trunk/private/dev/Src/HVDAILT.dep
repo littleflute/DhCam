@@ -1,0 +1,12 @@
+# Microsoft Developer Studio Generated Dependency File, included by HVDAILT.mak
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\basetsd.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\guiddef.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\reason.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\stralign.h"\
+	"..\..\..\..\..\..\xd\exe\microsoft visual studio\vc98\include\tvout.h"\
+	"..\..\common\inc\hvapi.h"\
+	".\local.h"\
+	".\StdAfx.h"\
+	

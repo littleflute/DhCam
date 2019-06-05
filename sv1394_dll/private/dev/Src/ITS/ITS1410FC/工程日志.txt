@@ -1,0 +1,201 @@
+当前版本:
+    2.0.0.12
+
+定版日期:
+    2009.07.15
+
+所做修改:
+    1 添加抗闪烁功能；
+	2 纠正触发采集逻辑；
+	3 纠正代码错误：获取视频格式实际取的是视频模式
+    
+
+功能介绍:
+    1 抗闪烁功能
+    
+---------------------------------------------------------------
+---2008.11.24---JiaPeng----
+建立本工程日志文档
+M:
+#define CCD_OUTPUTIO_0                          0xF3F00000L     //输出IO_0地址
+#define CCD_OUTPUTIO_1                          0xF3F00014L     //输出IO_1地址
+#define CCD_OUTPUTIO_2                          0xF3F00028L     //输出IO_2地址
+#define CCD_OUTPUTIO_CONTROL                    0xF3F00010L     //用户自定义输出IO控制地址
+#define CCD_OUTPUTI1_CONTROL                    0xF3F00024L     
+#define CCD_OUTPUTI2_CONTROL                    0xF3F00038L 
+SignalPolarity = p; 
+
+---2008.11.25---JiaPeng----  
+1.添加关于自动控制功能(由于这部分DHCAM协议与千兆网摄像机相同,移植SV1410GM代码)
+A:
+	ORD_SET_AUTO_FUNC:
+	ORD_QUERY_AUTO_FUNC_PRESENCE
+	ORD_GET_AUTO_FUNC
+	ORD_QUERY_AUTO_FUNC_DESCRIPTOR
+	
+	f_SET_AUTO_FUNC(pInBuffer);
+	f_GET_AUTO_FUNC(pInBuffer, nInBufferSize,pOutBuffer, nOutBufferSize,pBytesReturned);
+	f_QUERY_AUTO_FUNC_PRESENCE(pOutBuffer,nOutBufferSize,pBytesReturned);
+	f_QUERY_AUTO_FUNC_DESCRIPTOR(pInBuffer, nInBufferSize,pOutBuffer, nOutBufferSize,pBytesReturned);
+
+2.
+  A:FEATURE_ID_AUTO_EXPOSURE
+    FEATURE_ITEM_ID_SCALAR_AUTO_MANUAL_MODE
+
+---2008.11.26---JiaPeng---- 
+M:DEFINE_GUID(GUID_1394_XDCMU1, 
+			0x14117067, 0x789b, 0x40aa, 0x8c, 0x80, 0xe8, 0x5e, 0x21, 0x2f, 0x13, 0xca);
+V:1.2.6.1
+
+---2008.11.27---JiaPeng----
+1.A:
+    ORD_QUERY_FEATURE_DESCRIPTOR
+	f_QUERY_FEATURE_DESCRIPTOR(pInBuffer, nInBufferSize,pOutBuffer, nOutBufferSize,pBytesReturned);
+
+  M: f_GET_ADV_FEATURE
+
+2.V:strcpy(szDeviceDriverVer,"1.2.6.2");//本层模块版本
+
+
+---2008.11.28---JiaPeng----
+SV1411FC正式定名为ITS1410FC
+1.M:  //ITS 0x49 0x54 0x53
+      DEFINE_GUID(GUID_ITS1410FC, 0x14107067, 0x789b, 0x40aa, 0x49, 0x54, 0x53, 0x5e, 0x21, 0x2f, 0x13, 0xca);
+2.M:OpenCamera
+   _GetMyType()
+    else if(0 == strcmp(cell.ModelName,"dh-its1410fc"))
+	{
+		MyType = ITS1410FCTYPE;
+	}
+3.V:strcpy(szDeviceDriverVer,"1.2.6.3");//本层模块版本
+
+
+---2008.12.2---JiaPeng----
+1.M:TransfersDelayValue(dwV);->TransfersDelayValue(dwV>>16);
+2.M:CFormat7::SetBytesPerPacket
+     A:Sleep(1000);
+3.V:strcpy(szDeviceDriverVer,"1.2.6.4");//本层模块版本
+
+
+---2008.12.4---JiaPeng----
+
+1.A:ADV_FEATURE_ID_PIXEL_SEPARATE_GAIN
+      CCamera::SetGainGreen_R
+      CCamera::SetGainGreen_B
+2.M:CCamera::f_GET_FEATURE
+      FEATURE_ID_TRIGGER
+	  FEATURE_ID_TRIGGER_DELAY
+
+---2008.12.5---JiaPeng----
+1.A:
+     ORD_GET_STROBE
+	 ORD_QUERY_BASIC_FUNC_PRESENCE
+	 ORD_QUERY_BASIC_FUNC_DESCRIPTOR
+	 ORD_GET_PIO_OUTPUT_PORT
+
+	 f_GET_BASIC_FUNC
+	 f_QUERY_BASIC_FUNC_PRESENCE
+	 f_QUERY_BASIC_FUNC_DESCRIPTOR
+	 f_QUERY_ADV_FEATURE_DESCRIPTOR
+
+2.M:CCamera::f_GET_ADV_FEATURE
+          ADV_FEATURE_ID_TEST_IMAGE
+		  ADV_FEATURE_ID_PIXEL_SEPARATE_GAIN
+		  ADV_FEATURE_ID_PIXEL_SEPARATE_GAIN
+		  ADV_FEATURE_ID_STARTUP_MEM_CH
+		  ADV_FEATURE_ID_DELAY_TRANSMIT
+	f_GET_FMT7_MODE    
+	      FMT7_MODE_FUNC_ID_BAND_WIDTH
+
+3.M:CCamera::f_QUERY_FEATURE_DESCRIPTOR
+	        FEATURE_ID_TRIGGER_DELAY  
+			FEATURE_ID_TRIGGER
+
+4.M:CCamera::f_QUERY_FMT7_MODE_DESCRIPTOR
+	        FMT7_MODE_FUNC_ID_BAND_WIDTH
+
+5.V:strcpy(szDeviceDriverVer,"1.2.6.5");//本层模块版本
+
+
+---2008.12.10---JiaPeng----
+1.M:CCamera::f_GET_ADV_FEATURE
+       ADV_FEATURE_ID_SHUTTER_UNIT
+2.V:strcpy(szDeviceDriverVer,"1.2.6.6");//本层模块版本
+
+
+---2009.3.4---JiaPeng----
+1.A:ADV_BASIC_FUNC_ID_ASYNRESET_CAPTURE://异步复位采集(宋伟明需求)
+2.V:strcpy(szDeviceDriverVer,"1.2.6.7");//本层模块版本
+
+---2009.3.23---JiaPeng----
+由于软件部枚举设备接口统一改动，升级该工程
+1.M:#define EXPORT_(b)		HV ## b
+    extern "C" BOOL __stdcall Device_Enumerate(HV_DEVICE_INTERFACE *pDeviceInterface, 
+										   DWORD cb,
+										   DWORD *cbNeeded)
+
+2.V:strcpy(szDeviceDriverVer,"2.0.0.0");//本层模块版本
+
+---2009.4.9---LV Xiaofeng----
+1 添加下列功能，支持“先查后用”；
+   CCamera::f_QUERY_ADV_OPT_FUNC_PRESENCE()
+   CCamera::f_GET_VIDEO_FORMAT_MODE_FRAME_RATE()
+   CCamera::f_QUERY_FRAME_RATE_PRESENCE()
+   CCamera::f_QUERY_STRING_PRESENCE()
+   CCamera::f_QUERY_FEATURE_PRESENCE()
+   CCamera::f_QUERY_ADV_FEATURE_PRESENCE()
+
+2 添加帧信息功能
+   CCamera::f_QUERY_IMAGE_INFO_PRESENCE()
+   CCamera::f_QUERY_IMAGE_INFO_DESCRIPTOR()
+   CCamera::f_GET_IMAGE_INFO()
+   CCamera::HasImageInfo()
+   CCamera::AllocImageInfoBuf()
+   CCamera::DeleteImageInfoBuf()
+
+3 在采集回调函数中，添加帧信息功能
+
+4 V:strcpy(szDeviceDriverVer,"2.0.0.1");//本层模块版本
+
+---2009.4.15---LV Xiaofeng----
+1 添加 FEATURE_ID_AUTO_EXPOSURE 功能查询，支持“先查后用”；
+   CCamera::f_QUERY_FEATURE_DESCRIPTOR()
+
+2 V:strcpy(szDeviceDriverVer,"2.0.0.2");//本层模块版本
+
+---2009.4.15---LV Xiaofeng----
+1 修正测速功能和触发多帧功能，写寄存器时地址不对，（编码地址输入错误）
+
+2 V:strcpy(szDeviceDriverVer,"2.0.0.3");//本层模块版本    
+
+---2009.4.23---LV Xiaofeng----
+1 DLL版本，改成从资源文件中获取
+
+---2009.4.24---LV Xiaofeng----
+1 CCamera::_GetMyType()中添加 ITS1420FC 和 ITS2000FC类型
+
+
+---2009.5.12---LV Xiaofeng----
+1 修改停止采集逻辑，CCamera::GrabCancel()。
+  早期版本在停止采集时，会切换采集模式(连续、触发)，其目的是：    
+	 采集attach Buffer I/O正常结束, 采集线程能正常退出，早期版本通过改变采集模式来填充图像缓冲队列，，使I/O正常结束。  
+  新的要求：自动闪光灯功能，在停止采集时不能故意切换采集模式。
+  更改：去掉切换采集模式，在退出时，如果是触发模式，给每个Pending住的I/O"喂"一个触发信号，使其正常结束。
+
+---2009.5.12---LV Xiaofeng----
+v2.0.0.8
+1 修改停止采集逻辑，CCamera::GrabCancel()。
+  按照SV2000FM的逻辑使用Reset DMA Channel 强制停止采集。
+  
+---2009.5.13---LV Xiaofeng----
+v2.0.0.9
+修正问题：
+1 advance feature presence Hi_inq 与 Low_inq 颠倒
+2 feature presence Hi_inq 与 Low_inq 颠倒
+
+---2009.5.13---LV Xiaofeng----
+v2.0.0.10
+修正问题：
+2 feature presence Hi_inq 与 Low_inq 颠倒
+恢复到v2.0.0.8
+

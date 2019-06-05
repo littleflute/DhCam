@@ -1,0 +1,12 @@
+批量编译多个1394系列VC工程的方法
+
+1394系列驱动的VC工程总共有20多个，为了统一编译的方便，设计此自动化编译方法。
+
+1. 设计MakeAll.bat 
+   见：http://192.168.10.30/svn/sw_module_interface/sv1394serial/trunk/private/dev
+
+2. 为每一个工程生成 .mak文件 ，并设计 make.bat.
+   见：http://192.168.10.30/svn/sw_module_interface/sv1394serial/trunk/private/dev/Src/SV400FM
+
+3. 使用方法：
+ 	运行 MakeAll.bat

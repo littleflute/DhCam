@@ -1,0 +1,323 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\DhTest.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\DhTest.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 262, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 HVAPITest"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,12,7,20,20
+    LTEXT           "",IDC_STATIC_VERSION,46,35,66,13,SS_NOPREFIX
+    DEFPUSHBUTTON   "确定",IDOK,114,91,33,14,WS_GROUP
+    LTEXT           "HVAPITest 程序",IDC_STATIC,46,12,66,13,SS_NOPREFIX
+    LTEXT           "打开参数设置框：\n [Ctrl+P] \n自动测试AOI调节：\n [Ctrl + A] 启动或停止测试\n自动测试停采开采：\n [Ctrl + S] 启动或停止测试\n自动测试软触发：\n [Ctrl + T] 启动或停止测试",
+                    IDC_STATIC,140,7,109,70,0,WS_EX_CLIENTEDGE
+    LTEXT           "版权所有 (C) 2008",IDC_STATIC,46,58,74,13
+END
+
+IDD_DHTEST_DIALOG DIALOGEX 0, 0, 270, 191
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "HVAPITest"
+MENU IDR_MENU_MAIN
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_STATIC_MAIN_UI,"Static",SS_BLACKRECT,2,18,266,140,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "",IDC_BUTTONGROUP,2,156,267,34
+END
+
+IDD_DIALOG_PARAMETERS DIALOGEX 0, 0, 155, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数设置"
+FONT 10, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,58,144,31,14
+    CONTROL         "Slider1",IDC_SLIDER_SLEEP_TIME,"msctls_trackbar32",
+                    TBS_TOP | TBS_NOTICKS | WS_TABSTOP,29,16,67,8
+    CTEXT           "",IDC_STATIC_SLEEP_TIME_VALUE,102,13,24,11,0,
+                    WS_EX_CLIENTEDGE
+    GROUPBOX        "间隔时间设置",IDC_STATIC,21,4,113,26
+    COMBOBOX        IDC_COMBO_AOI_TEST_MODE,79,44,44,52,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "测试模式:",IDC_STATIC,34,46,37,10
+    GROUPBOX        "AOI 测试",IDC_STATIC,21,32,113,109
+    LTEXT           "始坐标:",IDC_STATIC,34,103,29,10
+    LTEXT           "末坐标:",IDC_STATIC,34,122,29,10
+    LTEXT           "测试精度:",IDC_STATIC,34,65,37,10
+    EDITTEXT        IDC_COORDINATE_START,79,101,43,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_COORDINATE_END,79,120,43,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PRECISION,79,63,43,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_AOI_TEST_LANGE,79,82,44,52,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "自设范围:",IDC_STATIC,34,84,37,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,5
+ PRODUCTVERSION 1,1,0,5
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "HVAPITest MFC Application\0"
+            VALUE "FileVersion", "1, 1, 0, 5\0"
+            VALUE "InternalName", "DhTest\0"
+            VALUE "LegalCopyright", "Copyright (C) 2008\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HVAPITest.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "HVAPITest Application\0"
+            VALUE "ProductVersion", "1, 1, 0, 5\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_DHTEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        TOPMARGIN, 18
+        BOTTOMMARGIN, 189
+    END
+
+    IDD_DIALOG_PARAMETERS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 154
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "测试"
+    BEGIN
+        MENUITEM "UserTest_1",                  ID_TEST_ITEM_1
+        MENUITEM "HVGetDeviceInfo",             ID_TEST_HVGETDEVINFO
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 DhTest ...",             ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  20, 20
+BEGIN
+    BUTTON      ID_BUTTON_1
+    BUTTON      ID_BUTTON_2
+    BUTTON      ID_BUTTON_3
+    BUTTON      ID_BUTTON_4
+    BUTTON      ID_HELP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_BITMAP_TRIGGER      BITMAP  DISCARDABLE     "res\\bitmap_t.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_PARAMETERS DLGINIT
+BEGIN
+    IDC_COMBO_AOI_TEST_MODE, 0x403, 6, 0
+0x4f4d, 0x4544, 0x0031, 
+    IDC_COMBO_AOI_TEST_MODE, 0x403, 6, 0
+0x4f4d, 0x4544, 0x0032, 
+    IDC_COMBO_AOI_TEST_LANGE, 0x403, 7, 0
+0x6e45, 0x6261, 0x656c, "\000" 
+    IDC_COMBO_AOI_TEST_LANGE, 0x403, 7, 0
+0x6e55, 0x6261, 0x656c, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 DhTest(&H)..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_EXIT            "退出程序\n退出程序"
+    ID_TEST_ITEM_1          "UserTest1[&T]...\nUserTest1"
+    ID_HELP_ABOUT           "关于 DhTest 程序[&H]...\n关于 DhTest 程序"
+    ID_BUTTON_1             "参数设置[&P]...\n参数设置"
+    ID_BUTTON_2             "AOI大小改变测试(&A)...\n AOI test"
+    ID_BUTTON_3             "开采停采测试(&S)...\n 开采停采"
+    ID_BUTTON_4             "软触发自动测试(&T)...\n 软触发自动测试"
+    ID_TEST_HVGETDEVINFO    "Test HVGetDeviceInfo[&I]...\nDeviceInfo"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\DhTest.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

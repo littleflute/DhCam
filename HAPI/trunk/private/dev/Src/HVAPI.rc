@@ -1,0 +1,120 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,7
+ PRODUCTVERSION 2,0,0,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Daheng Imavision\0"
+            VALUE "FileDescription", "HVAPI\0"
+            VALUE "FileVersion", "2, 0, 0, 7\0"
+            VALUE "InternalName", "HVAPI\0"
+            VALUE "LegalCopyright", "Copyright (C) 2009 Daheng Imavision\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HVAPI.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Daheng Imavision HVAPI\0"
+            VALUE "ProductVersion", "2, 0, 0, 7\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_DEVICE_TYPE  "HV1300UC\nHV2000UC\nHV1301UC\nHV2001UC\nHV3000UC\nHV1300UM\nHV1302UC\nHV2002UC\nHV3102UC\nHV1302UM\nHV1300FC\nHV2000FC\nHV3100FC\nHV1300FM\nHV1303UC\nHV2003UC\nHV3103UC\nHV1303UM\nSV1300FM\nSV1300FC\nSV1310FC\nSV1310FM\nSV1311FC\nSV1311FM\nSV400FC\nSV400FM\nDH1394FX\nSV1410FC\nSV1410FM\nSV1420FC\nSV1420FM\nSV2000FC\nSV2000FM\nSV1400FC\nSV1400FM\nHV1350UC\nHV2050UC\nHV3150UC\nHV1350UM\nHV1360UC\nHV2060UC\nHV3160UC\nHV1360UM\nSV1410GC\nPD1420EC\nPD1420EM\nALD_SV1410FC\nSV2000GC\nPD2000EM\nPD2000EC\nSV1410GM\nSV2000GM\nITS1410FC\nSV1420GC\nSV1420GM\nITS1410GM\nITS1410GC\nITS1420GM\nITS1420GC\nITS2000GM\nITS2000GC\ndhGigEBase\nDHEnetBase\nITS1420FC\nITS2000FC\nDH1394Base\n"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

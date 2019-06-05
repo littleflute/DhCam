@@ -1,0 +1,13 @@
+; ITS1410FC.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ITS1410FC"
+DESCRIPTION  'ITS1410FC Windows Dynamic Link Library'
+
+EXPORTS
+	; Explicit exports can go here
+	
+	HVEnumerate
+	HVGuid
+	HVOpen
+	HVClose
+	HVControl

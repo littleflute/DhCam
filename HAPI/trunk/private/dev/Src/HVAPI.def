@@ -1,0 +1,15 @@
+; HVAPI.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HVAPI"
+DESCRIPTION  'HVAPI Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+	HVEnumerate
+	HVOpen
+	HVClose
+	HVControl
+	HVGetGUID
+
+	
