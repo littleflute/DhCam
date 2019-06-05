@@ -1,0 +1,105 @@
+; HVDAILT.def : Declares the module parameters for the DLL.
+
+LIBRARY      "HVDAILT"
+DESCRIPTION  'HVDAILT Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+
+	;Standard
+
+	HVGetErrorString
+
+	HVGetDeviceTotal
+	HVGetTypeFromIndex
+	HVGetDevInterfaceFromIndex
+	HVGetDeviceGUID
+	BeginHVDevice
+	BeginHVDeviceEx
+	EndHVDevice
+	HVGetDeviceInfo
+
+	HVSetSnapMode
+
+	
+	HVADCControl
+	HVAGCControl
+	HVAECControl
+	HVCommand
+
+	HVSetResolution
+	HVSetOutputWindow
+
+	HVSetTriggerPolarity
+	HVSetStrobePolarity
+
+	
+	HVSnapShot
+	HVOpenSnap
+	HVCloseSnap
+	HVStartSnap
+	HVStopSnap
+	HVTriggerShot
+
+	HVSetBlanking
+	
+	HVSetSnapSpeed
+	HVEnableVideoMirror
+	
+
+
+
+	HVReset
+	HVWaitSync
+
+	
+	HVCheckDevice
+	HVDeviceMemRead
+	HVDeviceMemWrite
+
+
+	;Utility
+;	HVResetPipe
+	
+	HVStartSnapInternal
+	HVStopSnapInternal
+	HVTransfer
+
+	HVVerifyPassword
+	HVGetI2CParam
+	HVSetI2CParam
+	HVBulkRead
+	HVBulkWrite
+
+	
+	HV8051Run
+	HV8051Hold
+	HVAnchorDownload
+	HVLoadEEPROM
+
+
+	;Extend
+	HVPeriDeviceControl
+	HVGetArriveStatus
+
+
+	;
+	HVDeviceControl
+	
+      
+	HVSetShutterUnit
+    HV1394SetCameraBrightness
+    HV1394SetGain
+	HV1394FreezeFrame
+	HV1394SetBytesPerPacket
+	HV1394SetWhiteBalance
+	HV1394LoadLUT
+	HV1394ReadBlock
+	HV1394WriteBlock
+	HV1394ReadQuadlet
+	HV1394WriteQuadlet
+	HVSetColorCode
+	HV1394SetUserData
+	HV1394GetUserData
+	HV1394CheckUserPassWD
+
