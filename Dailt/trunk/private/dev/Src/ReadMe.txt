@@ -1,5 +1,6 @@
 
- output: ..\..\..\..\..\demo\bin\HVDAILT.dll
+ output:	..\..\..\..\..\demo\bin\HVDAILT.dll
+			..\..\..\..\..\demo\bin\hvperf_cnD.exe
 
 [HVDAILT.dll]
 ----2009.3.25 Wed --HYL----
