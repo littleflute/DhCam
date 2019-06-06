@@ -1,3 +1,6 @@
+
+ output: ..\..\..\..\..\demo\bin\HVDAILT.dll
+
 [HVDAILT.dll]
 ----2009.3.25 Wed --HYL----
 1. »ùÓÚ HVDef.h (2.0.3.0)
