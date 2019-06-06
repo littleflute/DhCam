@@ -1,4 +1,5 @@
 output: ..\..\..\..\..\demo\bin\HVAPI.dll
+		..\..\..\..\..\demo\bin\hvperf_cnD.exe
 
  [HVAPI.dll]
 -----2009.3.27 Fri --HYL--
