@@ -1,3 +1,6 @@
+../../../../../demo/bin/SV400FC.dll
+..\..\..\..\..\demo\bin\hvperf_cnD.exe
+
 [ReadMe.txt]
 --2009.3.23 Mon --hyl--
 1. SV2000FM,SV2000FC¡¡
