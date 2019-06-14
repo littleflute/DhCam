@@ -1,0 +1,48 @@
+HVAPI桩模块设计说明书
+
+1. VC工程: VDevice.dll
+
+2. 动态库输出接口:
+ 
+BOOL __stdcall HVEnumerate(HV_DEVICE_INTERFACE *pDeviceInterface, DWORD cb, DWORD *cbNeeded);
+HVSTATUS __stdcall HVOpen(char *pDevicePath, GUID *pGUID, HANDLE *phDevice);
+HVSTATUS __stdcall HVClose(HANDLE hDevice);
+HVSTATUS __stdcall HVControl(HANDLE hDevice, HV_CONTROL_CODE code, 
+        void *pInBuffer, DWORD nInBufferSize, void *pOutBuffer, 
+		DWORD nOutBufferSize, DWORD *pBytesReturned);
+HVSTATUS __stdcall HVGetGUID(GUID *pGUID, DWORD cb, DWORD *cbNeeded);
+
+    桩模块需要实现以上五个输出接口。
+
+3. 桩模块内部结构： VDevice.dll + VDevice.txt
+   VDevice.txt 为配置文件,描述设备需求规格。
+   基本格式: 设备名称_系列号_枚举设备所花时间 (如：HV1300FC_1111_200)
+
+4. 使用方法：
+   (1) VDevice.dll + VDevice.txt 需要改变名称才能做为HVAPI.dll的桩。
+   (2) 场景举例：
+       HV1300FC.dll + HV1300FC.txt 
+			HV1300FC.txt内容:
+			   HV1300FC_1111_200
+
+
+       SV1420FC.dll + SV1420FC.txt 
+			SV1420FC.txt内容:
+			   SV1420FC_1111_100
+			   SV1420FC_2222_150
+
+
+       SV1420FM.dll + SV1420FM.txt 
+			SV1420FM.txt内容:
+			   SV1420FM_1111_200
+
+        该场景代表系统中有:
+			一个 HV1300FC 设备
+			二个 SV1420FC 设备 
+　			一个 SV1420FM 设备
+
+　　　　按这种方式可任意模拟各种系统场景。
+
+5. VC工程，见:
+http://192.168.10.30/svn/sw_module_interface/hvapi/trunk/private/Test/stake/VDevice
+

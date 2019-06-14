@@ -1,0 +1,16 @@
+[UTest.exe]
+
+
+--------2009.3.13 Fri------JiaPeng----
+1. M:v_Xd_Enumerate
+       f_DeleteList(phead);
+	   phead = NULL;
+V:  1.1.0.1
+
+--------2009.3.12 THu------HYL----
+1. Ref : HVMViewer
+2  M:
+    1.初始启动时不枚举设备。
+    2.另加枚举设备的命令，随时都可以运行该命令。
+
+V:  1.1.0.0

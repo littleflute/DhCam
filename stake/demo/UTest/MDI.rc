@@ -1,0 +1,412 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_PRP DIALOG DISCARDABLE  0, 0, 239, 133
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 12, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,188,109,29,13
+END
+
+IDD_DLG_WB DIALOG DISCARDABLE  0, 0, 183, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "White Balance"
+FONT 8, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_RED_RATIO,73,21,89,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_GREEN_RATIO,73,40,89,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_BLUE_RATIO,73,59,89,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ok",IDOK,8,85,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,50,85,38,14
+    PUSHBUTTON      "Ratio",ID_WB_RATIO,92,85,38,14
+    RTEXT           "Red ratio",IDC_STATIC,21,21,46,13,SS_CENTERIMAGE
+    RTEXT           "Green ratio",IDC_STATIC,21,40,46,13,SS_CENTERIMAGE
+    RTEXT           "Blue ratio",IDC_STATIC,21,59,46,13,SS_CENTERIMAGE
+    GROUPBOX        "Ratio",IDC_STATIC,13,10,157,69
+    PUSHBUTTON      "Set",ID_WB_SET,134,85,38,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_PRP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 126
+    END
+
+    IDD_DLG_WB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  20, 18
+BEGIN
+    BUTTON      ID_AOI_MACHING_BEST
+    BUTTON      ID_GRAB_CONTINUOUS
+    BUTTON      ID_GRAB_CANCEL
+    BUTTON      ID_GRAB_SINGLE
+    SEPARATOR
+    BUTTON      ID_BUTTON_ENUMERATE_DEVICES
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "toolbar1.bmp"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "mdi\0"
+            VALUE "FileVersion", "1, 1, 0, 1\0"
+            VALUE "InternalName", "mdi\0"
+            VALUE "LegalCopyright", "Copyright ? 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "mdi.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "  mdi\0"
+            VALUE "ProductVersion", "1, 1, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_AOI_MACHING_BEST     "MAXAOI\nMAXAOI"
+    ID_GRAB_CONTINUOUS      "Snap Continuously\nSnap Continuously"
+    ID_GRAB_CANCEL          "Stop Snaping\nStop Snaping"
+    ID_GRAB_SINGLE          "抓取单帧图像\n采单帧"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BUTTON_ENUMERATE_DEVICES "ID_BUTTON_ENUMERATE_DEVICES"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 180, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About "
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            AFX_IDI_STD_MDIFRAME,IDC_STATIC,8,10,20,20
+    DEFPUSHBUTTON   "OK",IDOK,115,68,32,14,WS_GROUP
+    LTEXT           "Version 1.0.2.8",IDC_STATIC,39,67,61,8
+    LTEXT           "Copyright (c) 2008 Daheng Imavision",IDC_STATIC,20,41,
+                    160,12
+    LTEXT           "HVMViewer",IDC_STATIC,56,20,78,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""           // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_HELLO               ICON    DISCARDABLE     "HELLO.ICO"
+AFX_IDI_STD_MDIFRAME    ICON    DISCARDABLE     "MDI.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS MOVEABLE PURE 
+BEGIN
+    VK_F1,          ID_APP_ABOUT,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_BOUNCE MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Tool bar(&T)",                ID_VIEW_TOOLBAR
+        MENUITEM "Status bar(&S)",              ID_VIEW_STATUS_BAR
+        MENUITEM "Bus Viewer(&L)",              ID_VIEW_TYPE_BAR
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "&Camera Features...",         IDM_CUSTOM
+        POPUP "Window Zoom"
+        BEGIN
+            MENUITEM "50%",                         ID_OUTPUTWIN_SCALE50
+            MENUITEM "100%",                        ID_OUTPUTWIN_SCALE100
+            MENUITEM "150%",                        ID_OUTPUTWIN_SCALE150
+            MENUITEM "200%",                        ID_OUTPUTWIN_SCALE200
+            MENUITEM "User Define",                 ID_OUTPUTWIN_SCALE_USER
+        END
+        MENUITEM "Color",                       ID_IMAGEMODE
+        MENUITEM "&White Balance...",           ID_WHITE_BALANCE
+    END
+    POPUP "&Device"
+    BEGIN
+        MENUITEM "Single Grab",                 ID_GRAB_SINGLE
+        MENUITEM "Continuous Grab",             ID_GRAB_CONTINUOUS
+        MENUITEM "Cancel Grab",                 ID_GRAB_CANCEL
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ID_APP_ABOUT
+    END
+END
+
+IDR_HELLO MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "New &Bounce",                 IDM_BOUNCE
+        MENUITEM "New &Hello",                  IDM_HELLO
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Color"
+    BEGIN
+        MENUITEM "&Black",                      IDM_BLACK
+        MENUITEM "&Red",                        IDM_RED
+        MENUITEM "&Green",                      IDM_GREEN
+        MENUITEM "B&lue",                       IDM_BLUE
+        MENUITEM "&White",                      IDM_WHITE
+        MENUITEM "&Custom...",                  IDM_CUSTOM
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_VERT
+        MENUITEM "&Arrange &Icons",             ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About MDI...",               ID_APP_ABOUT
+    END
+END
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "Tool bar",                    ID_VIEW_TOOLBAR
+        MENUITEM "Status bar",                  ID_VIEW_STATUS_BAR
+        MENUITEM "Bus Viewer",                  ID_VIEW_TYPE_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Daheng Imavision HVMViewer"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Daheng Imavision HVMViewer"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_DESKACCESSORY   "Opens the selected item"
+    ID_MOUSE_POS            "Position the mouse paramet"
+    ID_OUTPUTWIN_PARAM      "Output parameters of window"
+    ID_AOI_INFO             "AOI parameters of the status bar shows"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_OUTPUTWIN_SCALE50    "window scaling 50%"
+    ID_OUTPUTWIN_SCALE100   "window scaling 100%"
+    ID_OUTPUTWIN_SCALE150   "window scaling 150%"
+    ID_OUTPUTWIN_SCALE200   "the most output window scaling 200%"
+    ID_OUTPUTWIN_SCALE_USER "Custom scaling value"
+    ID_GRAB_CONTINUOUS      "Image Acquisition in a row \\ n in a row Acquisition"
+    ID_GRAB_CANCEL          "Stop collecting images \\ n stop collecting"
+    ID_GRAB_SINGLE          "Crawl single frame image \\ n single frame mining"
+    ID_VIEW_TYPE_BAR        " Show or hide the camera list page \\ n significant hidden camera list page "
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM57680        "Show or hide the camera list page \\ n significant hidden camera list page"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar \\ n significant implicit Toolbar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar \\ n significant hidden status bar"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"           // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

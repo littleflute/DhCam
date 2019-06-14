@@ -1,0 +1,13 @@
+; VDevice.def : Declares the module parameters for the DLL.
+
+LIBRARY      "VDevice"
+DESCRIPTION  'VDevice Windows Dynamic Link Library'
+
+EXPORTS
+	; Explicit exports can go here
+	
+	HVEnumerate
+	HVGuid
+	HVOpen
+	HVClose
+	HVControl
