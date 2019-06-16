@@ -1273,8 +1273,10 @@ void CDevice::ShowFrame()
 		} //end for
 		m_fBitmapValid = true;
 		
-		::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1040); //xdTest2:
-		
+	//	::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1040); //xdTest2:
+	 	xdMakeDat2Show(*m_pCurrentBuffer,*m_pBitmap,1392,1040); 
+	// 	xdMakeLocalDate(*m_pCurrentBuffer,*m_pBitmap,1392,1040); 
+
 		// if a single grab is active, free resources and signal the grab as finished
 		if ( m_fSingleGrabActive ){
 			m_fSingleGrabActive = false;  
@@ -2063,5 +2065,6 @@ void CDevice::RestoreConfiguration(const CPropertyBagPtr ptrBag)
 		ConfigurationChanged();
 	}
 }
+
 
 

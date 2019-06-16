@@ -1,5 +1,6 @@
 
 --2019.6.15 sat--hyl--usa--
+6. void CDevice::xdMakeDat2Show(BYTE *p1, BYTE *p2, int w, int h)// : p1 => p2
 5. m_pCurrentDevice->GrabFromFile( FileName);
 4. ::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1024); //xdTest2:
 

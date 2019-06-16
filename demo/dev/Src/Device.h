@@ -1409,7 +1409,38 @@ public:
 	protected:
 		CSize Get_Sensor_Size(HV_VIDEO_MODE mode);	
 		
-	private:
+	private: 
+
+ 		void CDevice::xdMakeDat2Show(BYTE *p1, BYTE *p2, int w, int h)// : p1 => p2
+		{
+			BYTE *p1H = p1;
+			BYTE *p2H = p2;
+			for(int i=0; i<h; i++){  
+				for(int j = 0, j2=0;j<w;j++){ 
+					p2H[i*w*3+j2]	= p1H[i*w+j];
+					p2H[i*w*3+j2+1]	= p1H[i*w+j];
+					p2H[i*w*3+j2+2]	= p1H[i*w+j];
+					j2+=3;
+				}
+			}
+		}
+		void CDevice::xdMakeLocalDate(BYTE *p1, BYTE *p2, int w, int h)// : p1 => p2
+		{
+			static char d = 0;
+			d+=25;
+			if(d>255) d=0;
+			BYTE *p1H = p1;
+			BYTE *p2H = p2;
+			for(int i=0; i<h; i++){ 
+				for(int j = 0;j<w*3;j++){
+					p2H[i*w*3+j]	= d;
+					p2H[i*w*3+j+1]	= 0xB0;
+					p2H[i*w*3+j+2]	= 0xFF; 
+					p1H++;
+				}
+			}
+		}
+
 		// hide copy constructor and assignment operator
 		CDevice( const CDevice& );
 		CDevice& operator=( const CDevice& );
