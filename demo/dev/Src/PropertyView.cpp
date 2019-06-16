@@ -722,12 +722,7 @@ void CPropertyView::ListAddShutter_NetCam(CDevice* pDevice)
 
 void CPropertyView::ListAddShutter(CDevice* pDevice)
 {
-	if(pDevice->m_pInfo->DeviceType() == DRVIF1394TYPE)
-	{
-		ListAddShutter_NetCam(pDevice);
-		return;
-	}
-
+ 
 	CString str;
 
 	str.LoadString(IDS_SHUTTER);

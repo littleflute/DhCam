@@ -122,42 +122,8 @@ void CPropertyView::UpdateGainLevel(CDevice *pDevice, int flag)
 	m_ListView.SetItemEnabled(hName, flag);
 
 }
+ 
 
-void CPropertyView::UpdateShutterHV(CDevice* pDevice)
-{
-	CString str, str1, strAuto;
-	HPROPERTY hName, hName1;
-	
-	str.LoadString(IDS_SHUTTERSPEED);
-	hName = m_ListView.FindProperty(str);		//快门速度
-	
-	str1.LoadString(IDS_TIME_UNIT);
-	hName1 = m_ListView.FindProperty(str1);	//速度单位
-
-	pDevice->m_ShutterUnit	= Spec_Fun_ADV_Get(pDevice, ITEM_SHUTTERUNIT);
-	pDevice->m_ShutterSpeed	= Spec_Fun_Get(pDevice, SCALAR_SHUTTERSPEED);
-
-	pDevice->m_ShutterRange.maxV = Spec_Fun_Get_Descript(pDevice, SCALAR_SHUTTERSPEED, 1);
-	pDevice->m_ShutterRange.minV = Spec_Fun_Get_Descript(pDevice, SCALAR_SHUTTERSPEED, 0);		
-	m_ListView.SetItemRangeValue(hName, pDevice->m_ShutterRange.minV, pDevice->m_ShutterRange.maxV);	
-	pDevice->m_pShutter->m_Unit.Set((TUnit)pDevice->m_ShutterUnit);		
-	
-	str.Format("%d", pDevice->m_ShutterSpeed);
-	CComVariant v(str);
-	m_ListView.SetItemValue(hName, &v);
-	
-	switch(pDevice->m_ShutterUnit) {
-	case 0:
-		str1.Format("%s", "us");
-		break;
-	case 1:
-		str1.Format("%s", "ms");
-		break;
-	}
-	CComVariant v1(str1);
-	m_ListView.SetItemValue(hName1, &v1);
-
-}
 
 
 void CPropertyView::UpdateShutter(CDevice* pDevice)

@@ -6,11 +6,177 @@
 --------------------Configuration: VDevice - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP229.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "VDevice_EXPORTS" /D "_WINDLL" /FR"Debug/" /Fp"Debug/VDevice.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\xd\Dhcam\stake\VDevice\Camera.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP229.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP22A.tmp" with contents
+[
+/nologo /dll /incremental:yes /pdb:"Debug/VDevice.pdb" /debug /machine:I386 /def:".\VDevice.DEF" /out:"..\..\demo\bin\VDevice.dll" /implib:"Debug/VDevice.lib" /pdbtype:sept /FORCE:MULTIPLE 
+.\Debug\CamaObj.obj
+.\Debug\Camera.obj
+.\Debug\VDevice.res
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP22A.tmp"
+<h3>Output Window</h3>
+Compiling...
+Camera.cpp
+Linking...
+LINK : warning LNK4075: ignoring /INCREMENTAL due to /FORCE specification
+Camera.obj : warning LNK4006: _IID_ITaskbarList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_TaskbarList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IActiveDesktop already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ActiveDesktop already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _SID_STopLevelBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CURLSearchHook already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CUrlHistory already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IUniformResourceLocatorW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IUniformResourceLocatorA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_InternetShortcut already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDiscardableBrowserProperty already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDeskBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu3 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_OverlayIdentifier_SlowFile already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CFSIconOverlayManager already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPersistFolder2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlayIdentifier already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlayManager already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlay already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindowFrame already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindowSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindow already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IInputObjectSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IInputObject already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDelegateFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IURLSearchHook already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellView2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IBriefcaseStg already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IQueryInfo already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IRemoteComputerW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IRemoteComputerA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellCopyHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExecuteHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IExtractIconW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellLinkW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_INewShortcutHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPropSheetPage already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExecuteHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IEnumIDList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_ICommDlgBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellCopyHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellLinkA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDelayedRelease already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellDetails already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IExtractIconA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPersistFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellPropSheetExt already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExtInit already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIcon already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellView already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_INewShortcutHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ExplorerBarDoc already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ShellServiceObject already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ShellDocView already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_Explorer already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _FMTID_InternetSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _FMTID_Intshcut already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_CommBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_InfoBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_DeskBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_BrowseInPlace already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_BrowsableShellExt already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ShellLink already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ShellDesktop already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_ITaskbarList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_TaskbarList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IActiveDesktop already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ActiveDesktop already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _SID_STopLevelBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CURLSearchHook already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CUrlHistory already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IUniformResourceLocatorW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IUniformResourceLocatorA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_InternetShortcut already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDiscardableBrowserProperty already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDeskBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu3 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_OverlayIdentifier_SlowFile already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_CFSIconOverlayManager already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPersistFolder2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlayIdentifier already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlayManager already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIconOverlay already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindowFrame already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindowSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDockingWindow already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IInputObjectSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IInputObject already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDelegateFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IURLSearchHook already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellView2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IBriefcaseStg already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IQueryInfo already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IRemoteComputerW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IRemoteComputerA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellCopyHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExecuteHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IExtractIconW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellLinkW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_INewShortcutHookW already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPropSheetPage already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExecuteHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu2 already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IEnumIDList already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_ICommDlgBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IFileViewerA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellCopyHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellLinkA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IDelayedRelease already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellDetails already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IExtractIconA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IPersistFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellPropSheetExt already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellExtInit already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellFolder already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellIcon already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IContextMenu already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellView already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_IShellBrowser already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _IID_INewShortcutHookA already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ExplorerBarDoc already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ShellServiceObject already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_ShellDocView already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CGID_Explorer already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _FMTID_InternetSite already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _FMTID_Intshcut already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_CommBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_InfoBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_DeskBand already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_BrowseInPlace already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CATID_BrowsableShellExt already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ShellLink already defined in CamaObj.obj; second definition ignored
+Camera.obj : warning LNK4006: _CLSID_ShellDesktop already defined in CamaObj.obj; second definition ignored
+   Creating library Debug/VDevice.lib and object Debug/VDevice.exp
+..\..\demo\bin\VDevice.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
+Creating command line "bscmake.exe /nologo /o"Debug/VDevice.bsc"  .\Debug\CamaObj.sbr .\Debug\Camera.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
 
 
 
 <h3>Results</h3>
-VDevice.dll - 0 error(s), 0 warning(s)
+VDevice.dll - 0 error(s), 144 warning(s)
 </pre>
 </body>
 </html>

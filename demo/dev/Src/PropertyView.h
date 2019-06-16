@@ -149,8 +149,7 @@ public:
 		void Set_AutoFunc(CDevice *pDevice, int FunID, int nValue);
 
 		void UpdateMultiTriggerTime(CDevice* pDevice);
-		void UpdateShutter(CDevice* pDevice);
-		void UpdateShutterHV(CDevice* pDevice);
+		void UpdateShutter(CDevice* pDevice); 
 		void UpdateGain(CDevice * pDevice);
 		void UpdateTriggerDelay(CDevice *pDevice);
 		void UpdateWB(CDevice* pDevice);

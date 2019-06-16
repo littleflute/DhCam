@@ -96,14 +96,6 @@ LINK32=link.exe
 # PROP Default_Filter "cpp"
 # Begin Source File
 
-SOURCE=.\Camera\ENET.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\GIGE.CPP
-# End Source File
-# Begin Source File
-
 SOURCE=.\Camera\SV2000FC.CPP
 # End Source File
 # End Group
@@ -494,19 +486,19 @@ SOURCE=.\ReadMe.txt
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
 # 	2:22:IDD_FORMATPROPERTYPAGE:IDD_FORMATPROPERTYPAGE
 # End Section
-# Section HVPerf_cn : {1EC11FFD-ED8E-4D8C-B13D-C5F23DA7673A}
-# 	1:23:IDD_TRIGGERPROPERTYPAGE:107
+# Section HVPerf_cn : {77E90497-92FE-4661-A8EB-42969975A22D}
+# 	1:24:IDD_ADVANCEDPROPERTYPAGE:105
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
 # 	2:16:Resource Include:resource.h
 # 	2:24:CLASS: CInfoPropertyPage:CInfoPropertyPage
-# 	2:15:PropertyDlg.cpp:PropertyDlg3.cpp
+# 	2:15:PropertyDlg.cpp:PropertyDlg1.cpp
 # 	2:10:ENUM: enum:enum
-# 	2:23:IDD_TRIGGERPROPERTYPAGE:IDD_TRIGGERPROPERTYPAGE
 # 	2:28:CLASS: CAdvancedPropertyPage:CAdvancedPropertyPage
-# 	2:13:PropertyDlg.h:PropertyDlg3.h
+# 	2:13:PropertyDlg.h:PropertyDlg1.h
 # 	2:19:CLASS: CPropertyDlg:CPropertyDlg
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
+# 	2:24:IDD_ADVANCEDPROPERTYPAGE:IDD_ADVANCEDPROPERTYPAGE
 # End Section
 # Section HVPerf_cn : {AE8FE4A7-2C74-425B-AF2E-F1F8501A0B1F}
 # 	1:20:IDD_INFOPROPERTYPAGE:104
@@ -522,19 +514,19 @@ SOURCE=.\ReadMe.txt
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
 # End Section
-# Section HVPerf_cn : {77E90497-92FE-4661-A8EB-42969975A22D}
-# 	1:24:IDD_ADVANCEDPROPERTYPAGE:105
+# Section HVPerf_cn : {1EC11FFD-ED8E-4D8C-B13D-C5F23DA7673A}
+# 	1:23:IDD_TRIGGERPROPERTYPAGE:107
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
 # 	2:16:Resource Include:resource.h
 # 	2:24:CLASS: CInfoPropertyPage:CInfoPropertyPage
-# 	2:15:PropertyDlg.cpp:PropertyDlg1.cpp
+# 	2:15:PropertyDlg.cpp:PropertyDlg3.cpp
 # 	2:10:ENUM: enum:enum
+# 	2:23:IDD_TRIGGERPROPERTYPAGE:IDD_TRIGGERPROPERTYPAGE
 # 	2:28:CLASS: CAdvancedPropertyPage:CAdvancedPropertyPage
-# 	2:13:PropertyDlg.h:PropertyDlg1.h
+# 	2:13:PropertyDlg.h:PropertyDlg3.h
 # 	2:19:CLASS: CPropertyDlg:CPropertyDlg
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
-# 	2:24:IDD_ADVANCEDPROPERTYPAGE:IDD_ADVANCEDPROPERTYPAGE
 # End Section
 # Section HVPerf_cn : {146BC63A-2D37-4875-B511-0223144CEB77}
 # 	1:12:IDD_ERRORBOX:101

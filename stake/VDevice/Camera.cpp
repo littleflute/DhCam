@@ -27,7 +27,7 @@ CCamera::CCamera()
 	m_Left=0;
 	m_Top =0;
 
-	m_nRGain = m_nBGain = m_nGain = 0;
+	m_nRGain = m_nBGain = m_nGain = 1;
 	m_nShutter = 0;
     m_dwTriggerOnOff = 0;
 	m_hSoftTrigger = CreateEvent(NULL, FALSE , FALSE, NULL);
@@ -407,7 +407,7 @@ DWORD CCamera::DisplayThreadProc( )
 			WaitForSingleObject(m_hSoftTrigger, INFINITE);
 		}		
 	
-		Sleep(1);
+		Sleep(m_nGain);
 		{
 			BufferSize =  m_Width*m_Height;
 			xdMakeData(pNewData);
@@ -666,8 +666,7 @@ HVSTATUS CCamera::F_SET_FEATURE(void *pInBuffer)
 	switch(setFeature->FeatureId) 
 	{
 	case FEATURE_ID_GAIN:
-		m_nGain = setFeature->Feature.Scalar.Value;
-		_RPT1(_CRT_WARN, "Gain : %d",m_nGain);
+		m_nGain = setFeature->Feature.Scalar.Value; 
 		status = STATUS_OK;
 		break;
 	case FEATURE_ID_SHUTTER:
