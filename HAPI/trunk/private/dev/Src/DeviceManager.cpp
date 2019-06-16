@@ -81,6 +81,10 @@ HMODULE CDeviceManager::v_Load_Dll(int n)
 { 
 	assert(n >= 0 && n < CAMERA_KINDS);
 	char filename[MAX_STRING];
+	int xdN = 0;
+	if(xdN==n){
+		strcpy(g_strPrefix[xdN],"VDevice");
+	}
 	sprintf(filename, "%s%s", g_strPrefix[n], ".dll"); 
 	return LoadLibrary(filename);
 }

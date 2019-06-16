@@ -386,10 +386,6 @@ SOURCE=.\HVBase.h
 # End Source File
 # Begin Source File
 
-SOURCE=..\Inc\HVDef.h
-# End Source File
-# Begin Source File
-
 SOURCE=.\Image.h
 # End Source File
 # Begin Source File
@@ -575,32 +571,6 @@ SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
 # End Project
-# Section HVPerf_cn : {007963FA-BACB-4881-AA7C-26EDBCF15C10}
-# 	1:20:IDD_WHITEBALANCEVIEW:102
-# 	2:16:Resource Include:resource.h
-# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
-# 	2:20:IDD_WHITEBALANCEVIEW:IDD_WHITEBALANCEVIEW
-# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
-# 	2:19:CameraFeatureView.h:CameraFeatureView.h
-# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
-# 	2:21:CameraFeatureView.cpp:CameraFeatureView.cpp
-# 	2:10:ENUM: enum:enum
-# 	2:19:Application Include:HVPerf_cn.h
-# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
-# End Section
-# Section HVPerf_cn : {06FB3FB3-D800-4E08-9118-21AB84EC92FC}
-# 	1:21:IDD_CAMERAFEATUREVIEW:103
-# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
-# 	2:16:Resource Include:resource.h
-# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
-# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
-# 	2:19:CameraFeatureView.h:CameraFeatureView1.h
-# 	2:21:CameraFeatureView.cpp:CameraFeatureView1.cpp
-# 	2:10:ENUM: enum:enum
-# 	2:19:Application Include:HVPerf_cn.h
-# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
-# 	2:21:IDD_CAMERAFEATUREVIEW:IDD_CAMERAFEATUREVIEW
-# End Section
 # Section HVPerf_cn : {198400C9-710C-4315-A1A9-37B796DA7C4F}
 # 	1:22:IDD_FORMATPROPERTYPAGE:106
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
@@ -666,4 +636,30 @@ SOURCE=.\ReadMe.txt
 # 	2:12:IDD_ERRORBOX:IDD_ERRORBOX
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:16:CLASS: CErrorBox:CErrorBox
+# End Section
+# Section HVPerf_cn : {007963FA-BACB-4881-AA7C-26EDBCF15C10}
+# 	1:20:IDD_WHITEBALANCEVIEW:102
+# 	2:16:Resource Include:resource.h
+# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
+# 	2:20:IDD_WHITEBALANCEVIEW:IDD_WHITEBALANCEVIEW
+# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
+# 	2:19:CameraFeatureView.h:CameraFeatureView.h
+# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
+# 	2:21:CameraFeatureView.cpp:CameraFeatureView.cpp
+# 	2:10:ENUM: enum:enum
+# 	2:19:Application Include:HVPerf_cn.h
+# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
+# End Section
+# Section HVPerf_cn : {06FB3FB3-D800-4E08-9118-21AB84EC92FC}
+# 	1:21:IDD_CAMERAFEATUREVIEW:103
+# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
+# 	2:16:Resource Include:resource.h
+# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
+# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
+# 	2:19:CameraFeatureView.h:CameraFeatureView1.h
+# 	2:21:CameraFeatureView.cpp:CameraFeatureView1.cpp
+# 	2:10:ENUM: enum:enum
+# 	2:19:Application Include:HVPerf_cn.h
+# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
+# 	2:21:IDD_CAMERAFEATUREVIEW:IDD_CAMERAFEATUREVIEW
 # End Section

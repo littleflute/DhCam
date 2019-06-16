@@ -3,7 +3,7 @@
 #define __LOCAL_H__
 //========================================================================
 
-#define EXPORT_(b)		HV ## b
+
 
 typedef struct tag_CAMOBJ
 { 

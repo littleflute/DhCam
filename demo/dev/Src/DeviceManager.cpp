@@ -338,6 +338,7 @@ BOOL CDeviceManager::AddDevice(int nNumber, HWND hWndNotify)
 	int nIndex = 0;
 	::HVGetTypeFromIndex(nNumber, &type, &nIndex);
 	ATLTRACE("HVPerf: AddDevice type  %d", type );
+	if(UNKNOWN_TYPE==type){ type = SV2000FCTYPE;} //xdTest1:
 	switch(type){
 
 	case HV1300FCTYPE: //11

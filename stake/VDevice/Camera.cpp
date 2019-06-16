@@ -21,7 +21,7 @@ CCamera::CCamera()
 
 	m_T1=m_T2=0;
 	
-	m_Width=1392;//1628;
+	m_Width=1392;//1628;  // SV2000FC(1392*1040)
 	m_Height=1040;//1236;
 
 	m_Left=0;
@@ -177,10 +177,11 @@ HVSTATUS CCamera::Control(HV_CONTROL_CODE code,
 	case ORD_SET_FMT7_MODE:
 		{
 			HV_ARG_SET_FMT7_MODE *pArgSetAOI =(HV_ARG_SET_FMT7_MODE *)pInBuffer;
-		    m_Width = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Width;
-			m_Height = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Height;
-			m_Left = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Left;
-			m_Top = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Top;
+		  //m_Width = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Width;
+		  //m_Height = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Height;
+		  //m_Left = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Left;
+		  //m_Top = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Top;
+		 
 		
 			status = STATUS_OK;
 		}
@@ -397,8 +398,7 @@ DWORD CCamera::DisplayThreadProc( )
 	if (m_nPicCount>0)
 	{
 		FillMemory(m_pImageBuffer, nMaxWidth * nMaxHeight  * 3, 0xff);
-		HVLoadJPEG(m_hvFile[idex].szfile, m_pImageBuffer, (int *)&(m_pBmpInfo->bmiHeader.biWidth), 
-			(int *)&(m_pBmpInfo->bmiHeader.biHeight), (int *)&(m_pBmpInfo->bmiHeader.biBitCount), FALSE);
+		HVLoadJPEG(m_hvFile[idex].szfile, m_pImageBuffer, (int *)&(m_pBmpInfo->bmiHeader.biWidth), 				(int *)&(m_pBmpInfo->bmiHeader.biHeight), (int *)&(m_pBmpInfo->bmiHeader.biBitCount), FALSE);
 		
 		int nW = m_pBmpInfo->bmiHeader.biWidth;
 		int nH = m_pBmpInfo->bmiHeader.biHeight;

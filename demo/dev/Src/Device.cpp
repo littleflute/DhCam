@@ -1287,6 +1287,8 @@ void CDevice::ShowFrame()
 		} //end for
 		m_fBitmapValid = true;
 		
+		//::CopyMemory(m_pBitmap,m_pCurrentBuffer,1392*1040); //xdTest2:
+		
 		// if a single grab is active, free resources and signal the grab as finished
 		if ( m_fSingleGrabActive ){
 			m_fSingleGrabActive = false;  

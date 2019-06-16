@@ -1,6 +1,10 @@
 output: ..\..\..\..\..\demo\bin\HVAPI.dll
 		..\..\..\..\..\demo\bin\hvperf_cnD.exe
 
+
+g_strPrefix
+
+
  [HVAPI.dll]
 -----2009.3.27 Fri --HYL--
 1. M: HVDef.h      //  $Revision: 2.0.3.0$  

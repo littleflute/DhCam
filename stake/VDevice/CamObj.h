@@ -1,4 +1,6 @@
 //File: CamObj.h
+#if !defined(__CamObj_H__)
+#define __CamObj_H__
 
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
@@ -37,7 +39,8 @@
 #include "shlobj.h"
 #include "Shlwapi.h"
 #pragma comment(lib,"Shlwapi.lib ") 
-	
+
+#define EXPORT_(b)		HV ## b
 
 #ifdef STATUS_TIMEOUT
 #undef STATUS_TIMEOUT
@@ -82,3 +85,4 @@ _CrtDbgBreak(); } while (0)
  
 
 
+#endif //__CamObj_H__

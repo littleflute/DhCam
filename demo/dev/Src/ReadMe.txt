@@ -1,3 +1,14 @@
+
+--2019.6.15 sat--hyl--usa--
+5. m_pCurrentDevice->GrabFromFile( FileName);
+4. ::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1024*3); //xdTest2:
+
+3. int CALLBACK CDevice::SnapCallbackProc(HV_SNAP_INFO *pInfo)
+2. if(UNKNOWN_TYPE==type){ type = SV400FCTYPE} //xdTest1:
+1. debug: 	::HVGetDeviceTotal(&m_nDeviceNum);
+
+
+
 --------2006.11.10-----hyl-------
 建立本文档,当做本工程的日志文件.
 

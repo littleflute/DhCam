@@ -1,6 +1,29 @@
+ 
+..\..\demo\bin\VDevice.dll
+..\..\demo\bin\hvperf_cnD.exe
+
 ===================================
  [VDevice]
 ================================================= 
+--2019.6.15 sat--hyl-usa--
+2. ORD_SET_FMT7_MODE
+		  //m_Width = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Width;
+		  //m_Height = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Height;
+		  //m_Left = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Left;
+		  //m_Top = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Top;
+1. DisplayThreadProc
+
+--2019.6.15 sat--hyl-usa--
+4. SV2000FC(1392*1040)   local_FindMyFile
+3. 	if(0==Num){		Num = 1;	}   //xdTest1:
+2. //#include "..\common\inc\HVUtil.h"
+//#pragma comment(lib,"..\\common\\lib\\hvutil.lib")
+//HVLoadJPEG(m_hvFile[idex].szfile, m_pImageBuffer, (int *)&(m_pBmpInfo->bmiHeader.biWidth), 			(int *)&(m_pBmpInfo->bmiHeader.biHeight), (int *)&(m_pBmpInfo->bmiHeader.biBitCount), FALSE);
+	
+
+1. + /FORCE:MULTIPLE
+LINK : warning LNK4075: ignoring /INCREMENTAL due to /FORCE specification
+
 --2009.3.13 Fri --Jiapeng--
 1. A:char sz_SleepTime[100][20];
      Sleep(nSleepTotal);
