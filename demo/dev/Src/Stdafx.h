@@ -49,17 +49,7 @@ using namespace HVDevice;
 
 #include <assert.h>
 
-
-
-#define IS_CCD_CAMERA(type)		((type) == (SV1300FCTYPE) || (type) == (SV1300FMTYPE) || \
-								 (type) == (SV1310FCTYPE) || (type) == (SV1310FMTYPE) || \
-								 (type) == (SV1311FCTYPE) || (type) == (SV1311FMTYPE) || \
-								 (type) == (SV1400FCTYPE) || (type) == (SV1400FMTYPE) || \
-								 (type) == (SV1410FCTYPE) || (type) == (SV1410FMTYPE) || \
-								 (type) == (SV1420FCTYPE) || (type) == (SV1420FMTYPE) || \
-								 (type) == (SV2000FCTYPE) || (type) == (SV2000FMTYPE) || \
-								 (type) == (SV400FCTYPE ) || (type) == (SV400FMTYPE ))
-								 //|| IS_ITS1394(type)
+ 
 									 
 
 #define IS_SV2000(type)			((type) == (SV2000FCTYPE) || (type) == (SV2000FMTYPE) )

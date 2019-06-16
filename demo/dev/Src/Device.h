@@ -725,27 +725,7 @@ public:
 			m_pDevice->GetDeviceInfo(DESC_DEVICE_HARDWARE_VERSION, NULL, &size);
 			m_pDevice->GetDeviceInfo(DESC_DEVICE_HARDWARE_VERSION, &nVer, &size);
 			//itoa(nVer, info, 10);
-				
-			//
-            // CCD camera changed source.
-            //
-			if (IS_CCD_CAMERA(m_pDevice->m_pInfo->DeviceType()) || m_pDevice->m_pInfo->DeviceType() == DRVIF1394TYPE)
-			{
-				DWORD dwFPGAVer;
-				m_pDevice->GetDeviceInfo(DESC_DEVICE_FPGA_VERSION, &dwFPGAVer, &size);
-				int major = (nVer >> 16);
-				int minor1 = (nVer & 0xFF00) >> 8;
-				int minor2 = (nVer & 0xFF);
-				sprintf(info, "%d.%d%d;%d", major, minor1, minor2,dwFPGAVer);
-			}
-			else if(IS_CMOS_1394_CAM(m_pDevice->m_pInfo->DeviceType()))
-			{				
-				int major = (nVer & 0xFF)/100;
-				int minor1 = (nVer & 0xFF)%100/10; 
-				int minor2 = (nVer & 0xFF)%10;
-				
-				sprintf(info, "%d.%d%d", major, minor1, minor2);
-			}
+				 
 			return info;
 		}
 

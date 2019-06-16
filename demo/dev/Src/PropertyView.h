@@ -250,13 +250,10 @@ private:
 		void	ListAddOutPutIoControl_NetCam(CDevice *pDevice);
 		void	ListAdvTrigger(CDevice *pDevice);
 		//End PD1420
-
-		void ListAddVideoFormat_Readable(CDevice* pDevice);	//xupxVideo 0516
-		void ListAddADCControlNetCam(CDevice *pDevice);
+ 
 		void ListAddShutter_NetCam(CDevice *pDevice);
 
-
-        void ListAddPacketSize(CDevice* pDevice);
+ 
 		void ListAddTestImage(CDevice* pDevice);   
 	    void ListAddTriggerDelay_NetCam(CDevice* pDevice); 
 		void ListAddTriggerDelay(CDevice* pDevice); 
@@ -282,17 +279,14 @@ private:
 		void OnSnapModeChanged(CDevice *pDevice, int index);
 		void OnTriggerPolarityChanged(CDevice *pDevice, int index);
 		void OnStrobePolarityChanged(CDevice *pDevice, int index);
-		void OnADCLevelChanged(CDevice *pDevice, int index);
 		void OnBlackLevelEnableChanged(CDevice *pDevice, int index);
 		void OnBlackLevelChanged(CDevice *pDevice, int value);
 		void OnGainLevelChanged(CDevice *pDevice, int value);
 		void OnBlankHorChanged(CDevice *pDevice, int value);
 		void OnBlankVertChanged(CDevice *pDevice, int value);
-		void OnShutterUnitChanged(CDevice *pDevice, int index);
 		void OnFilterTimeUnitChanged(CDevice *pDevice, int index);
 		//--PD1420
 		void OnVideoModeChanged1420(CDevice *pDevice, int index);// xupx 模式选择		
-		void OnShutterUnitChanged_NetCam(CDevice *pDevice, int index); //xupx 0514
 		//--1410GC
 		void OnShutterAuto(CDevice *pDevice, int index);		//快门 自动模式
 		void OnGainAuto(CDevice *pDevice, int index);			//增益 自动模式

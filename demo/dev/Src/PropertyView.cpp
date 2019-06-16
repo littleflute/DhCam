@@ -13,20 +13,7 @@
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-
-
-//------------------------------------------------------------------------------
-// CPropertyView::CPropertyView(CDeviceManager& DeviceManager, CMainFrame& MainFrame) 
-//------------------------------------------------------------------------------
-/**
-* Constructs a new bus viewer window
-*
-* \param     DeviceManager  Reference to the camera manager 
-* \param     MainFrame Reference to the main frame
-*/
-//------------------------------------------------------------------------------
-
-
+ 
 CPropertyView::CPropertyView(CDeviceManager& DeviceManager, CMainFrame& MainFrame) : 
 m_DeviceManager(DeviceManager), 
 m_MainFrame(MainFrame)
@@ -78,44 +65,13 @@ LRESULT CPropertyView::OnSize(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*
 	return 0;
 }
 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Protected / private member functions
-//
-
-//------------------------------------------------------------------------------
-// void CPropertyView::ReportError(BcamException& e) 
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* Shows an error message
-*
-* \param     e Reference to a BcamException
-* \return    void
-*
-*/
-//------------------------------------------------------------------------------
+ 
 void CPropertyView::ReportError(HVBaseException& e) 
 {
 	m_MainFrame.ReportError(e);
 }
 
-
-
-//------------------------------------------------------------------------------
-// void CPropertyView::Update_PRP(CDevice* pDevice)
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* To be called if another device is to be selected (e.g. the user actiates an image 
-* child window associated with a camera device which isn't selected in the tree view
-*
-* \param     pDevice Pointer to the camera device
-* \return    void
-*
-*/
-//------------------------------------------------------------------------------
+ 
 void CPropertyView::Update_PRP(CDevice* pDevice)
 {
 	m_ListView.ResetContent();
@@ -131,246 +87,14 @@ void CPropertyView::Update_PRP(CDevice* pDevice)
 		pDevice->m_HVTYPE		= pDevice->m_pInfo->DeviceHVTYPE();	
 		pDevice->m_HardwareID	= pDevice->m_pInfo->HardwareVersionID();
 	}
-
-	m_IS_OldITS	= FALSE;
-	m_IS_OldGC	= FALSE;
-	m_IS_OldGM	= FALSE;
-
-	if(pDevice->m_HardwareID < 110)
-	{
-		if(IS_OLD_ITS(pDevice->m_HVTYPE))
-			m_IS_OldITS = TRUE;
-	}
-	if((pDevice->m_HardwareID < 200))
-	{
-		if(IS_OLD_GC(pDevice->m_HVTYPE))
-			m_IS_OldGC = TRUE;
-		if(IS_OLD_GM(pDevice->m_HVTYPE))
-			m_IS_OldGM = TRUE;
-	}
-
-
-	if(IS_READABLE_CAM(pDevice->m_pInfo->DeviceType()))
-	{
-		// Spec_Fun_Presence 要在此处调用，因为旧款相机会根据需要改写一些查询标志位。
-		// 旧款相机不支持 Spec_Fun_Presence
-
-		pDevice->m_flagWB	= Spec_Fun_Presence(pDevice, SCALAR_RED_GAIN);
-
-		if(m_IS_OldITS || m_IS_OldGC || m_IS_OldGM)
-		{
-			pDevice->m_flagAutoShutter	= 1;
-			pDevice->m_flagAutoStrobe	= 0;
-			pDevice->m_flagPassive		= 0;
-			pDevice->m_flagMultiTrigger = 0;
-			pDevice->m_flagDigitalGain	= 0;
-			pDevice->m_flagLUT			= 1;
-			pDevice->m_flagAutoGain		= 1;
-			pDevice->m_flagFilterTime	= 0;	// ???
-
-			if(m_IS_OldITS || m_IS_OldGC)
-			{
-				pDevice->m_flagSeparateGain = 1;
-			}	
-			if(m_IS_OldGM)
-			{
-				pDevice->m_flagSeparateGain = 0;
-			}
-			pDevice->m_flagTriggerDelay		= 0;
-			pDevice->m_flagAntiFlicker		= 0;
-			pDevice->m_flagACPhaseAdjust	= 0;
-			pDevice->m_flagTriggerDelayUnit	= 0;
-
-
-			if(m_IS_OldITS)
-			{
-				pDevice->resPIOPresence.Port0 = 1;
-				pDevice->resPIOPresence.Port1 = 1;
-				pDevice->resPIOPresence.Port2 = 0;
-			}
-			
-		}
-		else
-		{
-			pDevice->m_flagAutoShutter	 = Spec_Fun_Presence(pDevice, ITEM_SHUTTER_AUTO);
-			pDevice->m_flagAutoStrobe	 = Spec_Fun_Presence(pDevice, ITEM_STROBE_AUTO);	
-			pDevice->m_flagPassive		 = Spec_Fun_Presence(pDevice, ITEM_PASSIVE_TRANSMIT);
-			pDevice->m_flagMultiTrigger	 = Spec_Fun_Presence(pDevice, SCALAR_TRIGGER_TIME);
-			pDevice->m_flagDigitalGain	 = Spec_Fun_Presence(pDevice, ITEM_DIGITAL_GAIN);
-			pDevice->m_flagLUT			 = Spec_Fun_Presence(pDevice, ITEM_ADCLEVEL);
-			pDevice->m_flagAutoGain		 = Spec_Fun_Presence(pDevice, ITEM_GAIN_AUTO);
-			pDevice->m_flagFilterTime	 = Spec_Fun_Presence(pDevice, SCALAR_FILTER_TIME);	
-
-			pDevice->m_flagSeparateGain	 = Spec_Fun_Presence(pDevice, SCALAR_GREEN_GAIN);			
-
-			pDevice->m_flagTriggerDelay	 = Spec_Fun_Presence(pDevice, ITEM_TRIGGERDELAY_STATE);
-			pDevice->m_flagAntiFlicker	 = Spec_Fun_Presence(pDevice, ITEM_ANTI_FLICKER);
-			pDevice->m_flagACPhaseAdjust = Spec_Fun_Presence(pDevice, SCALAR_AC_PHASE_ADJUST); 
-			pDevice->m_flagTriggerDelayUnit = Spec_Fun_Presence(pDevice, ITEM_TRIGGERDELAY_UNIT); 
-			pDevice->m_flagGlobalBlk	 = pDevice->resAdvPresence.GlobalBlackLevel;		//黑电平允许、黑电平调节
-
-			if(!IS_OLD_GIGE(pDevice->m_HVTYPE))		// add by xupx 2009.09.17
-			{
-				pDevice->m_flagTrigger = Spec_Fun_Presence(pDevice, ITEM_INPUTIOSET);
-			}
-
-		}
-
-	}
-
-	/**************************/
-	
-	if(HV1302UCTYPE == CamType)
-	{
-		ListAddGain(pDevice);
-		return;
-	} 
-
-
-	if(IS_GIGE(CamType) || IS_GM_CAM(CamType))
-	{
-		ListAddInfoProperty_NetCam(pDevice);
-		ListAddSnapMode_NetCam(pDevice);
-		ListAddTriggerDelay_NetCam(pDevice);	//延迟曝光功能
-		ListAddAntiFilter(pDevice);
-		ListAddPassiveTransmit(pDevice);
-		ListAddVideoFormat_Readable(pDevice);
-
-		ListAddShutter_NetCam(pDevice);
-		
-		ListAddGain_NetCam(pDevice);
-		ListAddWB(pDevice);
-		ListAddADCControlNetCam(pDevice);
-
-		if(!IS_OLD_GIGE(pDevice->m_HVTYPE) )//IS_ITS_GC(pDevice->m_HVTYPE))
-		{
-			ListAddOutPutIoSet_NetCam(pDevice);	//输出IO功能设置
-			ListAddOutPutIoControl_NetCam(pDevice);
-			
-			ListAddInPutIoSet(pDevice);		//输入IO功能设置
-		}
-		ListAddSaveParam(pDevice);
-		
-		pDevice->m_bInit = TRUE;
-		return;
-	}
-		
-	
-	if(IS_PD_CAM(CamType))
-	{
-
-		ListAddInfoProperty_NetCam(pDevice);
-		ListAddSnapMode_NetCam(pDevice);
-		ListAddVideoFormat_Readable(pDevice);
-		
-		ListAddAntiFilter(pDevice);
-		ListAddShutter_NetCam(pDevice);
-		ListAddTriggerDelay_NetCam(pDevice);	//延迟曝光功能
-		ListAddGain_NetCam(pDevice);
-		ListAddWB(pDevice);
-		
-		ListAddADCControlNetCam(pDevice);
-		ListAddTestImage(pDevice); 
-		ListAddOutPutIoSet_NetCam(pDevice);	//输出IO功能设置
-		ListAddOutPutIoControl_NetCam(pDevice);
-		ListAddInPutIoSet(pDevice);		//输入IO功能设置
-		ListAddSaveParam(pDevice);
-
-		pDevice->m_bInit = TRUE;
-		
-		return;
-		
-	}
-
-	if(CamType == DRVIF1394TYPE)
-	{
-		ListAddInfoProperty_NetCam(pDevice);
-		ListAddVideoFormat_Readable(pDevice);
-
-		ListAddSnapMode_NetCam(pDevice);
-		ListAddShutter_NetCam(pDevice);
-		ListAddTriggerDelay_NetCam(pDevice);	//延迟曝光功能
-		ListAddAntiFilter(pDevice);
-		ListAddGain_NetCam(pDevice);
-		ListAddWB(pDevice);
-		ListAddADCControlNetCam(pDevice);
-		
-		ListAddTestImage(pDevice); 
-		ListAddOutPutIoSet_NetCam(pDevice);	//输出IO功能设置
-		ListAddOutPutIoControl_NetCam(pDevice);
-		ListAddInPutIoSet(pDevice);		//输入IO功能设置
-		ListAddFilterTime_Readable(pDevice);	
-		ListAddSaveParam(pDevice);
-		if (IS_HV_CAM(pDevice->m_HVTYPE) && pDevice->m_bInit != TRUE)
-		{
-			HV_VIDEO_MODE resolution = pDevice->GetVideoMode();
-			CRect nAOI;
-			HV_RES_GET_FMT7_MODE res;
-			pDevice->GetFMT7Mode(resolution, FMT7_MODE_FUNC_ID_AOI, &res);
-
-			nAOI.BottomRight() = CPoint(res.AOI.Left + res.AOI.Width, res.AOI.Height + res.AOI.Top);
-			nAOI.TopLeft() = CPoint( res.AOI.Left, res.AOI.Top); 
-			pDevice->SetAOI(nAOI);
-			pDevice->m_bInit = TRUE;
-		}
-		
-		return;
-	}
+  
 
 	ListAddInfoProperty(pDevice);
     ListAddVideoFormat(pDevice);
 	ListAddSnapMode(pDevice);
 	ListAddShutter(pDevice);
-	ListAddGain(pDevice);
-	ListAddADCControl(pDevice);
-
-	if (IS_SV1311(pDevice->m_pInfo->DeviceType())||
-		IS_SV1400(pDevice->m_pInfo->DeviceType())||
-		IS_SV1410(pDevice->m_pInfo->DeviceType())||
-		IS_SV1420(pDevice->m_pInfo->DeviceType())||
-		IS_SV2000(pDevice->m_pInfo->DeviceType())||
-		IS_SV400(pDevice->m_pInfo->DeviceType())) 
-	{
-		if(pDevice->m_nOutPutIO_0_POL==1)
-		{
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_0,2);
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_0_POL,pDevice->m_nOutPutIO_0_POL);
-		}
-		if(pDevice->m_nOutPutIO_1_POL==1)
-		{
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_1,2);
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_1_POL,pDevice->m_nOutPutIO_1_POL);
-		}
-		if(pDevice->m_nOutPutIO_2_POL==1)
-		{
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_2,2);
-			Spec_Fun_Interface_1(pDevice,OUTPUT_IO_2_POL,pDevice->m_nOutPutIO_2_POL);
-		}
-
-		 ListAddTestImage(pDevice);   
-         ListAddTriggerDelay(pDevice);	
-		 ListAdd8or12BitMode(pDevice); //		 ListAddVideoFormat_Readable(pDevice);	// 8/12位数据
-		 ListAddOutPutIoSet(pDevice);  
-		 ListAddOutPutIoControl(pDevice);
-		 ListAddInPutIoSet(pDevice);
-         ListAddTransfersDelay(pDevice);
-		 if (IS_SV1400(pDevice->m_pInfo->DeviceType())||
-			 IS_SV1410(pDevice->m_pInfo->DeviceType())||
-			 IS_SV1420(pDevice->m_pInfo->DeviceType())||
-			 IS_SV2000(pDevice->m_pInfo->DeviceType())||
-			 IS_SV400(pDevice->m_pInfo->DeviceType())) 
-		 {
-			 ListAddFilterTime(pDevice);	
-		 }
-		 
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_0,pDevice->m_nOutPutIO_0);
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_1,pDevice->m_nOutPutIO_1);
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_2,pDevice->m_nOutPutIO_2);
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_0_POL,pDevice->m_nOutPutIO_0_POL);
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_1_POL,pDevice->m_nOutPutIO_1_POL);
-		 Spec_Fun_Interface_1(pDevice,OUTPUT_IO_2_POL,pDevice->m_nOutPutIO_2_POL);
-	}
-
+	ListAddGain(pDevice); 
+ 
 	CString str;
 	str.LoadString(IDS_INFOPROPERTY);	
 	HPROPERTY prp=m_ListView.FindProperty(str);
@@ -428,23 +152,10 @@ LRESULT CPropertyView::OnItemChanged(int idCtrl, LPNMHDR pnmh, BOOL& /*bHandled*
 	//闪光灯新号极性
 	case ITEM_STROBEPOLARITY:
 		OnStrobePolarityChanged(pDevice, index);
-		break;
-	case ITEM_ADCLEVEL:
-//			if(IS_PD_CAM(type))
-//				OnLutNetCam(pDevice, index);
-//			else	//SV GC 
-			OnADCLevelChanged(pDevice, index);
-		break;
+		break; 
 	case ITEM_BLACKLEVELENABLE:
 		OnBlackLevelEnableChanged(pDevice, index);
-		break;
-		//速度单位	
-	case ITEM_SHUTTERUNIT:
-		if(IS_READABLE_CAM(type))
-			OnShutterUnitChanged_NetCam(pDevice, index);
-		else
-			OnShutterUnitChanged(pDevice, index);
-		break;
+		break; 
 	case ITEM_FILTER_TIME_UNIT:
 		OnFilterTimeUnitChanged(pDevice, index);
 		break;
@@ -870,80 +581,10 @@ void CPropertyView::ListAddInfoProperty(CDevice* pDevice)
 		m_ListView.SetItemEnabled(hName, false);
 	}
 }
-
-void CPropertyView::ListAddVideoFormat_Readable(CDevice* pDevice)
-{
-	CString str;
-	
-	//Add category item
-	str.LoadString(IDS_VIDEOFORMAT);
-	m_ListView.AddItem( PropCreateCategory(str) );
-
-	m_CurrentUnit			= pDevice->m_pShutter->m_Unit.Value();
-	m_CurrentShutterSpeed	= pDevice->m_pShutter->Value();
-	
-	if(IS_PD_CAM(pDevice->m_CamType) || pDevice->m_CamType == DRVIF1394TYPE)
-	{
-		if(!pDevice->m_bInit)
-		{
-			pDevice->m_CurrentModeIdx = pDevice->GetVideoMode();
-			
-			m_CurrentModeIdx = pDevice->m_CurrentModeIdx;
-			m_CurrentMode = (HV_VIDEO_MODE)m_CurrentModeIdx;
-
-			pDevice->UpdateImageSize(m_CurrentMode);	
-
-		}
-		
-		//Make video format description
-
-		LPCTSTR list[256] = { NULL }; 
-		int i = 0;
-		std::list<CString> strlist = pDevice->DeviceModeList();
-		std::list<CString>::iterator pString;
-		for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-		{
-			list[i++] = (*pString);
-		}
-		
-		str.LoadString(IDS_VIDEOMODE);
-		m_Idx2Mode.clear();
-		m_Idx2Mode = pDevice->DeviceModeMap();
-
-		for ( Idx2Mode_t::iterator it = m_Idx2Mode.begin(); it != m_Idx2Mode.end(); ++ it )
-		{
-			if (m_CurrentMode == it->second)
-			{
-				m_CurrentModeIdx = it->first;
-				break;
-			}
-		}
-		if ( m_CurrentModeIdx == -1  ) { m_CurrentModeIdx = 0; }
-		m_CurrentMode = m_Idx2Mode[m_CurrentModeIdx];
-		HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, pDevice->m_CurrentModeIdx) ); 
-		if (hName){
-			m_ListView.SetItemData(hName, ITEM_VIDEOMODE);
-		}
-	}
-	
-	if(pDevice->m_pInfo->DeviceType() == DRVIF1394TYPE)
-	{
-		ListAddPacketSize(pDevice);
-//		return;				// by xupx 2009.10.13 所有相机都会加上数据格式选项
-	}
-	ListAdd8or12BitMode(pDevice); 
-}
-
-
+ 
 
 void CPropertyView::ListAddVideoFormat(CDevice* pDevice)
-{
-	if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()))
-	{
-		ListAddPacketSize(pDevice);
-	}
-	else
-	{
+{ 
 		CString str;
 		
 		//Add category item
@@ -978,8 +619,7 @@ void CPropertyView::ListAddVideoFormat(CDevice* pDevice)
 		if (hName){
 			m_ListView.SetItemData(hName, ITEM_VIDEOMODE);
 		}
-		
-	}
+		 
 }
 
 void CPropertyView::ListAddShutter_NetCam(CDevice* pDevice)
@@ -1096,12 +736,7 @@ void CPropertyView::ListAddShutter(CDevice* pDevice)
 	std::list<CString> strlist;
 	strlist.push_back("us");
 	strlist.push_back("ms");
-
-	if (!IS_CMOS_1394_CAM((pDevice->m_pInfo->DeviceType()))
-		&&!(IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()))) {
-        strlist.push_back("s");
-    }
-	
+ 
 	int i = 0;
 	LPCTSTR list[256] = { NULL }; 
 	std::list<CString>::iterator pString = NULL;
@@ -1111,11 +746,7 @@ void CPropertyView::ListAddShutter(CDevice* pDevice)
 	}
 	list[i] = NULL;
 	m_CurrentUnit = pDevice->m_pShutter->m_Unit.Value();
-	if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()))
-	{
-		pDevice->SetShutterUnit(m_CurrentUnit);
-	}
-
+ 
 	str.LoadString(IDS_TIME_UNIT);
 	HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, m_CurrentUnit) );
 	if (hName){
@@ -1366,19 +997,7 @@ void CPropertyView::ListAddSnapMode(CDevice* pDevice)
 	strlist.push_back("Continuation");
 	strlist.push_back("Trigger");
   	
-    if (!(IS_HV1300(pDevice->m_pInfo->DeviceType()))
-		&&!(IS_HV2000(pDevice->m_pInfo->DeviceType()))
-		&&!(IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()))) 
-	{
-	    strlist.push_back("Trigger Edge");
-    }
-    	
-    if (!(IS_HV1300(pDevice->m_pInfo->DeviceType()))
-		&&!(IS_HV2000(pDevice->m_pInfo->DeviceType()))
-		&& !(IS_ITS1394(pDevice->m_pInfo->DeviceType())) )
-	{
-	    strlist.push_back("Trigger Level");
-    }
+     
     
 	int i = 0;
 	LPCTSTR list[256] = { NULL }; 
@@ -1390,14 +1009,7 @@ void CPropertyView::ListAddSnapMode(CDevice* pDevice)
 	list[i] = NULL;
 	m_CurrentSnapMode = pDevice->m_pSnapMode->Value();
 
-
-    if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType())) 
-	{
-        if (m_CurrentSnapMode == 3) {
-            m_CurrentSnapMode--;
-        }
-    }
-
+ 
 	HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, m_CurrentSnapMode) );
 	if (hName){
 		m_ListView.SetItemData(hName, ITEM_SNAPMODE);
@@ -1427,332 +1039,12 @@ void CPropertyView::ListAddSnapMode(CDevice* pDevice)
 		m_ListView.SetItemData(hName, ITEM_STROBEPOLARITY);
 		m_ListView.SetItemEnabled(hName, 1);
 	}
-/////////////////////////////////////////
-	if (IS_SV1311(pDevice->m_pInfo->DeviceType())||
-		IS_SV1420(pDevice->m_pInfo->DeviceType())||
-		IS_SV2000(pDevice->m_pInfo->DeviceType())||
-		IS_SV1400(pDevice->m_pInfo->DeviceType())||
-		IS_SV1410(pDevice->m_pInfo->DeviceType())||
-		IS_SV1310(pDevice->m_pInfo->DeviceType())||
-		IS_SV1300(pDevice->m_pInfo->DeviceType())||
-		IS_SV400(pDevice->m_pInfo->DeviceType()))
-	{
-        Spec_Fun_Interface_1(pDevice,STROBE_ON_OFF,pDevice->m_StrobeOnOff);
-		strlist.clear();
-		strlist.push_back("off");
-		strlist.push_back("on");
-		
-		for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-		{
-			list[i++] = (*pString);
-		}
-		list[i] = NULL;
-		str.LoadString(IDS_STROBE_SWITCH);
-		
-		hName = m_ListView.AddItem( PropCreateList(str, list, pDevice->m_StrobeOnOff) );
-		if (hName){
-			m_ListView.SetItemData(hName, ITEM_STROBE_ON_OFF);
-			m_ListView.SetItemEnabled(hName, 1);
-		}
-	
-	}
-	
-///////////////////////////////////////
-
-    if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType())){
-		
-		std::list<CString> strlist;
-		strlist.push_back("off");
-		strlist.push_back("on");
-				
-		int i = 0;
-		LPCTSTR list[256] = { NULL }; 
-		std::list<CString>::iterator pString = NULL;
-		for (i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-		{
-			list[i++] = (*pString);
-		}
-		list[i] = NULL;
-		
-		str.LoadString(IDS_FRAME_ROZEN);
-		HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, pDevice->m_FrameFrozen) );
-		if (hName){
-			m_ListView.SetItemData(hName, ITEM_FRAMEFROZEN);
-			m_ListView.SetItemEnabled(hName, pDevice->m_pShutter->IsSupported());
-		}
-    }
+  
 }
-
-
-void CPropertyView::ListAddADCControlNetCam(CDevice *pDevice)
-{
-    CString str;
-	HPROPERTY hName;
-    str.LoadString(IDS_ADCONTROL);
-
-	if(pDevice->m_flagDigitalGain == 1 && !IS_HV_CAM(pDevice->m_HVTYPE)) //支持数值增益功能 // by xupx 2009.10.10
-	{
-		m_ListView.AddItem( PropCreateCategory(str) );
-	//数字增益
-		if(!pDevice->m_bInit)
-		{
-			int nGain = Spec_Fun_ADV_Get(pDevice, ITEM_DIGITAL_GAIN);
-			pDevice->m_nDigitalGainItem = DigitalGain2Item[nGain];
-			///当有此功能时，查询此功能是否可用。
-			pDevice->m_bDigitalGainInq  = Spec_Fun_Get_AdvDescript(pDevice, ITEM_DIGITAL_GAIN,0);
-		}
-
-        std::list<CString> strlist;
-		strlist.clear();
-		if(pDevice->m_bDigitalGainInq == 1)
-		{
-			strlist.push_back("4 -- 11");
-			strlist.push_back("3 -- 10");
-			strlist.push_back("2 --  9");
-			strlist.push_back("1 --  8");
-			strlist.push_back("0 --  7");
-		}
-		else		//pDevice->m_ColorCode == COLOR_RAW12 || pDevice->m_ColorCode == COLOR_RAW12_PACKED)
-		{
-			strlist.push_back("0 -- 11");
-		}
-		
-        int i = 0;
-        LPCTSTR list[256] = { NULL }; 
-        std::list<CString>::iterator pString = NULL;
-        for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-        {
-            list[i++] = (*pString);
-        }
-		list[i] = NULL;
-		
-		
-		str.LoadString(IDS_DIGITAL_GAIN);
-		if(pDevice->m_bDigitalGainInq == 1 )
-		{
-			hName = m_ListView.AddItem( PropCreateList(str, list, pDevice->m_nDigitalGainItem) );
-		}
-		else
-		{
-			hName = m_ListView.AddItem( PropCreateList(str, list, 0) );
-		}
-			if (hName){
-				m_ListView.SetItemData(hName, ITEM_DIGITAL_GAIN);
-				/// modified by xupx 2009.04.15
-				m_ListView.SetItemEnabled(hName, pDevice->m_bDigitalGainInq);
-			}
-	}
-	if(pDevice->m_flagLUT == 1)
-	{
-		m_ListView.AddItem( PropCreateCategory(str) );
-		//* LUT 文件方式
-		str.LoadString(IDS_LUTPATH);
-		hName = m_ListView.AddItem( PropCreateFileName(str, pDevice->m_LutPath, 0));
-		if (hName){
-			m_ListView.SetItemData(hName, ITEM_ADCLEVEL);
-			m_ListView.SetItemEnabled(hName, TRUE);
-		}
-	}
-
-//亮度调节		
-	if(IS_PD_CAM(pDevice->m_pInfo->DeviceType()))
-	{
-		m_ListView.AddItem( PropCreateCategory(str) );
-
-		if(!pDevice->m_bInit)
-		{
-			if(!pDevice->m_bInit)
-			{
-				pDevice->m_BrightnessRange.maxV = Spec_Fun_Get_Descript(pDevice, SCALAR_BRIGHTNESS, 1);
-				pDevice->m_BrightnessRange.minV = Spec_Fun_Get_Descript(pDevice, SCALAR_BRIGHTNESS, 0);
-			}
-
-			pDevice->m_Brightness = Spec_Fun_Get(pDevice, SCALAR_BRIGHTNESS);
-		}
-		
-		TRACKBARINFO info;
-		info.RangeMax = pDevice->m_BrightnessRange.maxV;
-		info.RangeMin = pDevice->m_BrightnessRange.minV;
-		info.LineSize = 1; 
-				
-		str.LoadString(IDS_BRIGHTNESS_VAL);
-		hName = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_Brightness, info ));	
-		if (hName){
-			m_ListView.SetItemData(hName, SCALAR_BRIGHTNESS);
-			m_ListView.SetItemEnabled(hName, 1);
-		}    
-	}
-
-	if(pDevice->m_flagDigitalGain == 1 && IS_HV_CAM(pDevice->m_HVTYPE))
-	{
-		m_ListView.AddItem( PropCreateCategory(str) );
-		//数字增益
-		if(!pDevice->m_bInit)
-		{
-			int nGain = Spec_Fun_ADV_Get(pDevice, ITEM_DIGITAL_GAIN);
-			pDevice->m_nDigitalGainItem = DigitalGain2Item[nGain];
-			///当有此功能时，查询此功能是否可用。
-			pDevice->m_bDigitalGainInq  = Spec_Fun_Get_AdvDescript(pDevice, ITEM_DIGITAL_GAIN,0);
-		}
-
-        std::list<CString> strlist;
-        strlist.clear();
-        strlist.push_back("ADC Level 0");
-        strlist.push_back("ADC Level 1");
-        strlist.push_back("ADC Level 2");
-        strlist.push_back("ADC Level 3");
-        
-        int i = 0;
-        LPCTSTR list[256] = { NULL }; 
-        std::list<CString>::iterator pString = NULL;
-        for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-        {
-            list[i++] = (*pString);
-        }
-        list[i] = NULL;
-        str.LoadString(IDS_ADCLEVEL);
-        HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, pDevice->m_nDigitalGainItem));
-        if (hName){
-            m_ListView.SetItemData(hName, ITEM_DIGITAL_GAIN);
-            m_ListView.SetItemEnabled(hName, pDevice->m_bDigitalGainInq);
-        }
-		
-		// 添加AD控制中的黑电平功能  add by xupx 2009.10.10
-		if (pDevice->m_flagGlobalBlk)			// add by xupx 2009.10.16
-		{
-			strlist.clear();
-			strlist.push_back("Disable");
-			strlist.push_back("Enable");
-			for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-			{
-				list[i++] = (*pString);
-			}
-			list[i] = NULL;
-			m_CurrentBlackLevelEnable = Spec_Fun_ADV_Get(pDevice, ITEM_BLACKLEVELENABLE);//pDevice->m_pBlackLevelEnable->Value();
-			str.LoadString(IDS_BLACKLEVELENABLE);
-			hName = m_ListView.AddItem( PropCreateList(str, list, m_CurrentBlackLevelEnable) );
-			if (hName){
-				m_ListView.SetItemData(hName, ITEM_BLACKLEVELENABLE);
-				m_ListView.SetItemEnabled(hName, pDevice->m_pBlackLevelEnable->IsSupported());
-			}
-			
-			TRACKBARINFO info;
-			info.RangeMin = Spec_Fun_Get_AdvDescript(pDevice, SCALAR_BLACKLEVEL, 0) - 255;//pDevice->m_pBlackLevel->Min();
-			info.RangeMax = Spec_Fun_Get_AdvDescript(pDevice, SCALAR_BLACKLEVEL, 1) - 256;//pDevice->m_pBlackLevel->Max();
-			info.LineSize = 1; //added by HYL 2007.02.07
-			m_CurrentBlackLevel = Spec_Fun_ADV_Get(pDevice, SCALAR_BLACKLEVEL) - 255; //pDevice->m_pBlackLevel->Value();
-			long temp = m_CurrentBlackLevel;
-			str.LoadString(IDS_BLACKLEVEL);
-			hName = m_ListView.AddItem( PropCreateTrack(str, temp, info ));	
-			if (hName){
-				m_ListView.SetItemData(hName, SCALAR_BLACKLEVEL);
-				m_ListView.SetItemEnabled(hName, m_CurrentBlackLevelEnable);
-			}
-		}
-	}
-// end
-}
-
-
+ 
 void CPropertyView::ListAddADCControl(CDevice* pDevice)
 {
-    if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType())) {
-				
-        CString str;
-        str.LoadString(IDS_ADCONTROL);
-        m_ListView.AddItem( PropCreateCategory(str) );
-		
-		//-----------写历史记录------
-		DWORD Readed = 0;
-		HANDLE hFile = ::CreateFile(pDevice->m_LutPath, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-		ReadFile(hFile, pDevice->m_dwLut, 16*1024, &Readed, NULL);
-		CloseHandle(hFile);
-		if (Readed == 16*1024) {
-			pDevice->LoadLut(pDevice->m_dwLut, 16*1024,0);
-		}
-		
-        //----------------------------
-		
-		//* LUT 文件方式
-        str.LoadString(IDS_LUTPATH);
-        HPROPERTY hName = m_ListView.AddItem( PropCreateFileName(str, pDevice->m_LutPath, 0));
-        if (hName){
-            m_ListView.SetItemData(hName, ITEM_ADCLEVEL);
-            m_ListView.SetItemEnabled(hName, IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()));
-        }
-        //PropCreateFileName
-		//*/
-		
-		TRACKBARINFO info;
-		info.RangeMax = 255;
-		info.RangeMin = 0;
-		info.LineSize = 1; 
-		
-		str.LoadString(IDS_BRIGHTNESS_VAL);
-		hName = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_Brightness, info ));	
-		if (hName){
-			m_ListView.SetItemData(hName, SCALAR_BRIGHTNESS);
-			m_ListView.SetItemEnabled(hName, IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()));
-		}
-    } 
-	else 
-	{
-        CString str;
-        
-        str.LoadString(IDS_ADCONTROL);
-        m_ListView.AddItem( PropCreateCategory(str) );
-
-        std::list<CString> strlist;
-        strlist.clear();
-        strlist.push_back("ADC Level 0");
-        strlist.push_back("ADC Level 1");
-        strlist.push_back("ADC Level 2");
-        strlist.push_back("ADC Level 3");
-        
-        int i = 0;
-        LPCTSTR list[256] = { NULL }; 
-        std::list<CString>::iterator pString = NULL;
-        for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-        {
-            list[i++] = (*pString);
-        }
-        list[i] = NULL;
-        m_CurrentADLevel = pDevice->m_pADCLevel->Value();
-        str.LoadString(IDS_ADCLEVEL);
-        HPROPERTY hName = m_ListView.AddItem( PropCreateList(str, list, m_CurrentADLevel) );
-        if (hName){
-            m_ListView.SetItemData(hName, ITEM_ADCLEVEL);
-            m_ListView.SetItemEnabled(hName, pDevice->m_pADCLevel->IsSupported());
-        }
-
-	    strlist.clear();
-	    strlist.push_back("Disable");
-	    strlist.push_back("Enable");
-	    for ( i = 0, pString = strlist.begin(); pString != strlist.end(); ++ pString )
-	    {
-		    list[i++] = (*pString);
-	    }
-	    list[i] = NULL;
-	    m_CurrentBlackLevelEnable = pDevice->m_pBlackLevelEnable->Value();
-	    str.LoadString(IDS_BLACKLEVELENABLE);
-	    hName = m_ListView.AddItem( PropCreateList(str, list, m_CurrentBlackLevelEnable) );
-	    if (hName){
-		    m_ListView.SetItemData(hName, ITEM_BLACKLEVELENABLE);
-		    m_ListView.SetItemEnabled(hName, pDevice->m_pBlackLevelEnable->IsSupported());
-	    }
-
-	    TRACKBARINFO info;
-	    info.RangeMin = pDevice->m_pBlackLevel->Min();
-	    info.RangeMax = pDevice->m_pBlackLevel->Max();
-		info.LineSize = 1; //added by HYL 2007.02.07
-	    m_CurrentBlackLevel = pDevice->m_pBlackLevel->Value();
-	    str.LoadString(IDS_BLACKLEVEL);
-	    hName = m_ListView.AddItem( PropCreateTrack(str, m_CurrentBlackLevel, info ));	
-	    if (hName){
-		    m_ListView.SetItemData(hName, SCALAR_BLACKLEVEL);
-		    m_ListView.SetItemEnabled(hName, m_CurrentBlackLevelEnable);
-	    }
-    }
+   
 }
 
 
@@ -2125,33 +1417,7 @@ void CPropertyView::ListAddGain(CDevice* pDevice)
 		m_ListView.SetItemEnabled(hName, pDevice->m_pGain->IsSupported());
 		
 	}
-
-	if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType())) 
-	{
-		if(!IS_NOT_SV_COLOR(pDevice->m_pInfo->DeviceType()))
-		{
-			info.RangeMax = 63;		//xupx 0513
-			info.RangeMin = 0;
-			info.LineSize = 1; //added by HYL 2007.02.07
-		
-			str.LoadString(IDS_WHITEBALANCE_V);
-			HPROPERTY hNameV = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_RedGain, info ));	
-			if (hNameV){
-				m_ListView.SetItemData(hNameV, SCALAR_RED_GAIN);
-				m_ListView.SetItemEnabled(hNameV, IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()));
-			}				
-
-			str.LoadString(IDS_WHITEBALANCE_U);
-			hName = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_BlueGain, info ));	
-			if (hName){
-				m_ListView.SetItemData(hName, SCALAR_BLUE_GAIN);
-		 
-				m_ListView.SetItemEnabled(hName, IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()));
-			}
-				
-		}
-	}
-
+ 
 }
 
 
@@ -2187,69 +1453,8 @@ void CPropertyView::ListAddBlank(CDevice* pDevice)
 	}
 }
 
+ 
 
-void CPropertyView::ListAddPacketSize(CDevice* pDevice)
-{
-    CString str;    
-    TRACKBARINFO info;
-	/****参数可读相机 2008.12.08 by xupx******/
-	if(IS_READABLE_CAM(pDevice->m_pInfo->DeviceType()))	 // 2009.10.16
-	{
-		info.LineSize			 = 4;
-		info.RangeMax			 = Spec_Fun_Get_FMT7_DESCRIPTOR(pDevice, SCALAR_PACKET, 1);
-		info.RangeMin			 = Spec_Fun_Get_FMT7_DESCRIPTOR(pDevice, SCALAR_PACKET, 0);
-		pDevice->m_PacketSize	 = Spec_Fun_Get(pDevice, SCALAR_PACKET);
-
-		str.LoadString(IDS_PACKETSIZE);
-		HPROPERTY hName = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_PacketSize, info ));	
-		if (hName){
-			m_ListView.SetItemData(hName, SCALAR_PACKET);
-			m_ListView.SetItemEnabled(hName, TRUE);
-			hName->SetCustomData(4);
-		}
-			
-		return;
-	}
-	/***************** End *****************/
-    str.LoadString(IDS_VIDEOFORMAT);//(IDS_PACKET);
-    m_ListView.AddItem( PropCreateCategory(str) );
-
-    info.RangeMax = 4096;
-    info.RangeMin = 1600;
-	info.LineSize = 4;
-	if (IS_SV1310(pDevice->m_pInfo->DeviceType())) 
-	{
-		info.RangeMin = 2500;
-	}
-	if (IS_SV1311(pDevice->m_pInfo->DeviceType())||
-		IS_SV1400(pDevice->m_pInfo->DeviceType())||
-		IS_SV1410(pDevice->m_pInfo->DeviceType())||
-		IS_SV1420(pDevice->m_pInfo->DeviceType())) 
-	{	
-		info.RangeMin = 356;		
-	}
-	if (IS_SV400(pDevice->m_pInfo->DeviceType())) 
-	{	
-		info.RangeMin = 112;		
-	}
-	if (IS_SV2000(pDevice->m_pInfo->DeviceType())) 
-	{
-		info.RangeMin = 492;
-	}
-	//add by xupx 2008.12.03 当选择退出时删除历史记录，此属性与界面不同步	
-	pDevice->SetPacketSize(pDevice->m_PacketSize);	
-	// end by xupx
-	
-	//包长调节
-    str.LoadString(IDS_PACKETSIZE);
-    HPROPERTY hName = m_ListView.AddItem( PropCreateTrack(str, pDevice->m_PacketSize, info ));	
-    if (hName){
-        m_ListView.SetItemData(hName, SCALAR_PACKET);
-		bool b = IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType());
-        m_ListView.SetItemEnabled(hName, b);
-        hName->SetCustomData(4);
-    }
-}
 void CPropertyView::ListAddTestImage(CDevice* pDevice)
 {
 	if (IS_HV_CAM(pDevice->m_HVTYPE) && pDevice->resAdvPresence.TestImage == 0)
@@ -3502,15 +2707,6 @@ void CPropertyView::OnSnapModeChanged(CDevice *pDevice, int index)
 		m_CurrentSnapMode = index;
 		pDevice->m_CurrentSnapMode = index;
 		
-		if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType()))
-		{
-			if (m_CurrentSnapMode == 2) {
-				m_CurrentSnapMode++;
-			}
-			
-			pDevice->m_pSnapMode->Set(m_CurrentSnapMode); 
-			return;
-		}
 	}
 
 	try
@@ -3649,49 +2845,7 @@ void CPropertyView::OnStrobePolarityChanged(CDevice *pDevice, int index)
 	}
 	CATCH_REPORT();
 }
-
-
-void CPropertyView::OnADCLevelChanged(CDevice *pDevice, int index)
-{
-	HVTYPE type = pDevice->m_pInfo->DeviceType();
-	try
-	{	
-        if (IS_CCD_CAMERA(type) || IS_READABLE_CAM(type)) 
-		{
-			///* LUT 文件方式
-            CString str;
-            str.LoadString(IDS_LUTPATH);
-            HPROPERTY hName = m_ListView.FindProperty(str);
-            char buf[1024];
-            hName->GetDisplayValue(buf, -1);
-			
-			pDevice->m_LutPath.Format("%s",buf);
-		
-			
-       //     DWORD* p = new DWORD[4*1024];
-            DWORD Readed = 0;
-            HANDLE hFile = ::CreateFile(buf, GENERIC_READ,
-				FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
-			BOOL b;
-			b = ReadFile(hFile, pDevice->m_dwLut, 16*1024, &Readed, NULL);
-
-            CloseHandle(hFile);
-            if (Readed == 16*1024) {
-                pDevice->LoadLut(pDevice->m_dwLut, 16*1024,0);
-            }
-
-         //   delete p;
-			
-        } else {
-            if ( m_CurrentADLevel != index )
-            {
-                m_CurrentADLevel = index;
-                pDevice->m_pADCLevel->Set(m_CurrentADLevel);
-            }
-        }
-	}
-	CATCH_REPORT();
-}
+ 
 
 void CPropertyView::OnBlackLevelEnableChanged(CDevice *pDevice, int index)
 {
@@ -3762,114 +2916,7 @@ void CPropertyView::OnTriggerDelayUnitChange(CDevice* pDevice, int value)
 	
 }
 
-void CPropertyView::OnShutterUnitChanged_NetCam(CDevice *pDevice, int index)
-{
-	try
-	{	
-		if ( pDevice->m_ShutterUnit != index )
-		{
-			pDevice->m_ShutterUnit = index;
-			pDevice->m_pShutter->m_Unit.Set((TUnit)index);
-            pDevice->SetShutterUnit(index);		// xupx test 0514
-			
-			CString str;
-			str.LoadString(IDS_SHUTTERRAW);
-			HPROPERTY hRaw = m_ListView.FindProperty(str);
-			
-			if (hRaw){
-				str.Format("%d", pDevice->m_pShutter->Raw());
-				CComVariant v(str);
-				m_ListView.SetItemValue(hRaw, &v);
-			}
-			
-			str.LoadString(IDS_SHUTTERSPEED);
-			HPROPERTY hName = m_ListView.FindProperty(str);
-			//读取 shutter的取值范围 by xupx 2008.09.10
-			pDevice->m_ShutterRange.minV = Spec_Fun_Get_Descript(pDevice, SCALAR_SHUTTERSPEED, 0);
-			pDevice->m_ShutterRange.maxV = Spec_Fun_Get_Descript(pDevice, SCALAR_SHUTTERSPEED, 1);
-			pDevice->m_ShutterSpeed = Spec_Fun_Get(pDevice, SCALAR_SHUTTERSPEED);
-			
-			if (hName){
-
-				m_ListView.SetItemRangeValue(hName, pDevice->m_ShutterRange.minV, pDevice->m_ShutterRange.maxV);
-				OnShutterSpeedChanged(pDevice,pDevice->m_ShutterSpeed);
-				
-				str.Format("%d", pDevice->m_pShutter->Value());
-				CComVariant v(str);
-				m_ListView.SetItemValue(hName, &v);
-			}
-		}
-		/*************查询一下 帧间隔*************/ 
-		UpdateMultiTriggerTime(pDevice);		
-		if (IS_HV_CAM(pDevice->m_HVTYPE))
-		{
-			bool b=FALSE;
-			if (pDevice->IsContinuousGrabActive()) {
-				b = TRUE;
-			}
-			if (b) {
-				pDevice->GrabCancel();
-			}
-			UpdatePacketSize(pDevice);
-			if (b){
-				pDevice->GrabContinuous();
-			}
-		}
-
-		
-	}
-	CATCH_REPORT();	
-}
-
-void CPropertyView::OnShutterUnitChanged(CDevice *pDevice, int index)
-{
-	try
-	{	
-		if ( m_CurrentUnit != index )
-		{
-			m_CurrentUnit = index;
-			pDevice->m_pShutter->m_Unit.Set((TUnit)index);
-
-            if (IS_CCD_CAMERA(pDevice->m_pInfo->DeviceType())) {
-                pDevice->SetShutterUnit(index);
-            } else {
-                pDevice->m_pShutter->Refresh();
-            }
-                
-			
-			CString str;
-			str.LoadString(IDS_SHUTTERRAW);
-			HPROPERTY hRaw = m_ListView.FindProperty(str);
-			if (hRaw){
-				str.Format("%d", pDevice->m_pShutter->Raw());
-				CComVariant v(str);
-				m_ListView.SetItemValue(hRaw, &v);
-			}
- 
-			str.LoadString(IDS_SHUTTERSPEED);
-			HPROPERTY hName = m_ListView.FindProperty(str);
-			if (hName){
-				switch(index)
-				{
-				case 0:
-					m_ListView.SetItemRangeValue(hName, 20,1000);
-					break;
-				case 1:
-					m_ListView.SetItemRangeValue(hName, 0,3000);
-					break;
-				}
-				OnShutterSpeedChanged(pDevice,60);
-				
-				str.Format("%d", pDevice->m_pShutter->Value());
-				CComVariant v(str);
-				m_ListView.SetItemValue(hName, &v);
-			}
-		}
-		
-	}
-	CATCH_REPORT();
-}
-
+  
 
 
 void CPropertyView::OnFilterTimeUnitChanged(CDevice *pDevice, int index)

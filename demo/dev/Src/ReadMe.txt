@@ -1,5 +1,5 @@
 vsv2000fc
-
+1. del all camer(.cpp .h);  update prp
 
 
 --2019.6.15 sat--hyl--usa--

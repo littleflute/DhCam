@@ -1421,12 +1421,7 @@ void CDevice::Refresh()
 	m_pBlackLevelEnable->Refresh();
 	m_pBlackLevel->Refresh();
 	
-	
-    if (!(IS_CCD_CAMERA(m_pInfo->DeviceType()))) {
-		
-		m_pADCLevel->Refresh();
-//		m_pBlank->Refresh();
-    }
+	 
 	m_fBitmapValid = ! m_fContinuousGrabActive && m_pBitmap !=  NULL && m_SensorSize == m_pBitmap->GetSensorSize();
 
 	//inform a child frame that the configuration has changed
@@ -1819,69 +1814,7 @@ void CDevice::SaveConfiguration(const CPropertyBagPtr ptrBag)
 	ptrBag->WriteLong("ImageCy", m_ImageSize.cy);
 	ptrBag->WriteLong("OriginX", m_Origin.x);
 	ptrBag->WriteLong("OriginY", m_Origin.y);
-	
-	// save snap mode settings
-	if ( m_pSnapMode->IsSupported() )
-		m_pSnapMode->Save(ptrBag->CreateBag("SnapMode"));
-
-	// save trigger polarity settings
-	if ( m_pTriggerPolarity->IsSupported() )
-		m_pTriggerPolarity->Save(ptrBag->CreateBag("TriggerPolarity"));
-
-	// save strobe polarity settings
-	if ( m_pStrobePolarity->IsSupported() )
-		m_pStrobePolarity->Save(ptrBag->CreateBag("StrobePolarity"));
-
-	/// save adc level settings
-	if ( m_pADCLevel->IsSupported() )
-		m_pADCLevel->Save(ptrBag->CreateBag("ADCLevel"));
-
-	if ( m_pBlackLevelEnable->IsSupported() )
-		m_pBlackLevelEnable->Save(ptrBag->CreateBag("BlackLevelEnable"));
-	
-	// save scalar properties
-	if ( m_pShutter->IsSupported() )
-		m_pShutter->Save(ptrBag->CreateBag("Shutter"));
-
-	if ( m_pGain->IsSupported() )
-		m_pGain->Save(ptrBag->CreateBag("Gain"));
-
-	if ( m_pBlackLevel->IsSupported() )
-		m_pBlackLevel->Save(ptrBag->CreateBag("BlackLevel"));
-
-	if ( m_pBlank->IsSupported() )
-		m_pBlank->Save(ptrBag->CreateBag("Blank"));
-
-	
-    if (IS_CCD_CAMERA(m_pInfo->DeviceType())) {
-		ptrBag->CreateBag("FrameFrozen")->WriteLong("Value", m_FrameFrozen);
-		ptrBag->CreateBag("StrobeOnOff")->WriteLong("Value", m_StrobeOnOff);
-		ptrBag->CreateBag("TestImage")->WriteLong("Value",m_nTestImage);
-		ptrBag->CreateBag("TriggerDelayOnOff")->WriteLong("Value",m_bTriggerDelayOnOff);
-        ptrBag->CreateBag("TriggerDelayValue")->WriteLong("Value",m_nTriggerDelayValue);
-        ptrBag->CreateBag("TransDelayValue")->WriteLong("Value",m_nTransfersDelayValue);
-
-		ptrBag->CreateBag("FilterTimeUnit")->WriteLong("Value",m_nFilterTimeUnit);
-		ptrBag->CreateBag("FilterTime")->WriteLong("Value",m_nFilterTime);
-
-		ptrBag->CreateBag("Raw8or12")->WriteLong("Value",m_bRaw8or12);
-		ptrBag->CreateBag("LeBe")->WriteLong("Value",m_bLeBe);
-		ptrBag->CreateBag("TriggerSource")->WriteLong("Value",m_nTriggerSource);
-		ptrBag->CreateBag("LutPath")->WriteString("String",m_LutPath);
-
-        ptrBag->CreateBag("OutPutIO_0")->WriteLong("Value",m_nOutPutIO_0);
-		ptrBag->CreateBag("OutPutIO_1")->WriteLong("Value",m_nOutPutIO_1);
-		ptrBag->CreateBag("OutPutIO_2")->WriteLong("Value",m_nOutPutIO_2);
-		ptrBag->CreateBag("OutPutIO_0_POL")->WriteLong("Value",m_nOutPutIO_0_POL);
-		ptrBag->CreateBag("OutPutIO_1_POL")->WriteLong("Value",m_nOutPutIO_1_POL);
-		ptrBag->CreateBag("OutPutIO_2_POL")->WriteLong("Value",m_nOutPutIO_2_POL);
-			
-        ptrBag->CreateBag("PacketSize")->WriteLong("Value", m_PacketSize);
-        ptrBag->CreateBag("Brightness")->WriteLong("Value", m_Brightness);
-        ptrBag->CreateBag("BlueGain")->WriteLong("Value", m_BlueGain);
-        ptrBag->CreateBag("RedGain")->WriteLong("Value", m_RedGain); 
-
-    }
+	  
 	
 	CPropertyBagPtr ptrBcamViewerBag = ptrBag->CreateBag("HVPerf");
 	ptrBcamViewerBag->WriteLong("DisplayMode", m_DisplayMode);
@@ -1950,102 +1883,8 @@ void CDevice::RestoreConfiguration(const CPropertyBagPtr ptrBag)
 		// restore snap mode settings
 		if ( m_pSnapMode->IsSupported() )
 			m_pSnapMode->Restore(ptrBag->GetBag("SnapMode"));
-
-		// restore trigger polarity settings
-		if ( m_pTriggerPolarity->IsSupported() )
-			m_pTriggerPolarity->Restore(ptrBag->GetBag("TriggerPolarity"));
-
-		// restore strobe polarity settings
-		if ( m_pStrobePolarity->IsSupported() )
-			m_pStrobePolarity->Restore(ptrBag->GetBag("StrobePolarity"));
-		
-		// restore ADC level settings
-		if ( m_pADCLevel->IsSupported() )
-			m_pADCLevel->Restore(ptrBag->GetBag("ADCLevel"));
-
-		if ( m_pBlackLevelEnable->IsSupported() )
-			m_pBlackLevelEnable->Restore(ptrBag->GetBag("BlackLevelEnable"));
-		
-		// restore scalar properties
-		// save scalar properties
-		if ( m_pShutter->IsSupported() )
-			m_pShutter->Restore(ptrBag->GetBag("Shutter"));
-
-		if ( m_pGain->IsSupported() )
-			m_pGain->Restore(ptrBag->GetBag("Gain"));
-
-		if ( m_pBlackLevel->IsSupported() )
-			m_pBlackLevel->Restore(ptrBag->GetBag("BlackLevel"));
-
-		if ( m_pBlank->IsSupported())
-			m_pBlank->Restore(ptrBag->GetBag("Blank"));
-
-        if (IS_CCD_CAMERA(m_pInfo->DeviceType())) {
-			m_FrameFrozen = ptrBag->GetBag("FrameFrozen")->ReadLong("Value");   
-			
-			Set_Frame_Frozen(m_FrameFrozen);
-
-            m_StrobeOnOff = ptrBag->GetBag("StrobeOnOff")->ReadLong("Value");
-//---------------------------
-			m_nTestImage         = ptrBag->GetBag("TestImage")->ReadLong("Value");
-			m_bTriggerDelayOnOff = ptrBag->GetBag("TriggerDelayOnOff")->ReadLong("Value");
-			m_nTriggerDelayValue = ptrBag->GetBag("TriggerDelayValue")->ReadLong("Value");
-	        m_nTransfersDelayValue = ptrBag->GetBag("TransDelayValue")->ReadLong("Value");
-
-	        m_nFilterTimeUnit = ptrBag->GetBag("FilterTimeUnit")->ReadLong("Value");
-	        m_nFilterTime = ptrBag->GetBag("FilterTime")->ReadLong("Value");
-			m_bRaw8or12          = ptrBag->GetBag("Raw8or12")->ReadLong("Value");
-			m_bLeBe          = ptrBag->GetBag("LeBe")->ReadLong("Value");
-			m_nTriggerSource     = ptrBag->GetBag("TriggerSource")->ReadLong("Value");
-			m_nOutPutIO_0        = ptrBag->GetBag("OutPutIO_0")->ReadLong("Value");
-			m_nOutPutIO_1        = ptrBag->GetBag("OutPutIO_1")->ReadLong("Value");
-			m_nOutPutIO_2        = ptrBag->GetBag("OutPutIO_2")->ReadLong("Value");
-            m_nOutPutIO_0_POL    = ptrBag->GetBag("OutPutIO_0_POL")->ReadLong("Value");
-			m_nOutPutIO_1_POL    = ptrBag->GetBag("OutPutIO_1_POL")->ReadLong("Value");
-			m_nOutPutIO_2_POL    = ptrBag->GetBag("OutPutIO_2_POL")->ReadLong("Value");
-			try{
-				m_LutPath        = ptrBag->GetBag("LutPath")->ReadString("String");
-			}
-			catch ( HVBaseException& /*e*/)
-			{
-			//	m_MainFrame.ReportError(e);
-			}
-
-//-------------------------
-            int temp = (125*m_ImageSize.cx*m_ImageSize.cy)/
-                (120*(m_ImageSize.cy + 88));
-            temp = (temp + 3) & 0xfffffffc;
-
-            m_PacketSize = ptrBag->GetBag("PacketSize")->ReadLong("Value");
-            
-			if(	!IS_SV1311(m_pInfo->DeviceType())&&
-				!IS_SV1410(m_pInfo->DeviceType())&&
-				!IS_SV400(m_pInfo->DeviceType()) )
-			{
-				if (m_PacketSize < temp || m_PacketSize > 4096) {
-					m_PacketSize = 4096;
-				}
-			}
-            SetPacketSize(m_PacketSize);
-
-            m_Brightness = ptrBag->GetBag("Brightness")->ReadLong("Value");
-            if (m_Brightness < 0 || m_Brightness > 1023) {
-                m_Brightness = 0;
-            }
-            Set_Brightness();
-
-            m_BlueGain = ptrBag->GetBag("BlueGain")->ReadLong("Value");
-            m_RedGain = ptrBag->GetBag("RedGain")->ReadLong("Value");
-            if (m_BlueGain < 0 || m_BlueGain > 64) {		//xupx 0513
-                m_BlueGain = 28;
-            }
-            if (m_RedGain < 0 || m_RedGain > 64) {			//xupx 0513
-                m_RedGain = 14;
-            }
-			Set_WB_Red(m_RedGain);
-			Set_WB_Blue(m_BlueGain);
-        }
-
+ 
+ 
 		try
 		{
 			CPropertyBagPtr ptrBcamViewerBag = ptrBag->GetBag("HVPerf");

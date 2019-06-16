@@ -17,17 +17,8 @@
 #include "ChildFrm.h"
 
   
-#include "Camera\SV2000FC.H"
- 
-#include "Camera\GIGE.H"
-#include "Camera\ENET.H"
+#include "Camera\SV2000FC.H" 
 
-/*
-#include "Camera\HV1310UC.h"
-#include "Camera\HV2010UC.h"
-#include "Camera\HV3110UC.h"
-#include "Camera\HV1310UM.h"
-*/
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -319,15 +310,7 @@ BOOL CDeviceManager::AddDevice(int nNumber, HWND hWndNotify)
 	switch(type){
   	case SV2000FCTYPE: //32
         pDevice = new CSV2000FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
- 
-	case DRVIFGIGETYPE: 
-        pDevice = new CGIGE(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case DRVIFENETTYPE: 
-        pDevice = new CENET(nNumber, nIndex, hWndNotify, m_MainFrame);
         break; 
- 
 	default:
 		throw HVBaseException(STATUS_PARAMETER_INVALID, "CDeviceManager::AddDevice()");
 	}
