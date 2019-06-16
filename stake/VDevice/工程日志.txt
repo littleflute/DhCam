@@ -3,7 +3,7 @@
 ..\..\demo\bin\hvperf_cnD.exe
 
 ===================================
- [VDevice]
+ [VDevice] v: 1.0.0.4
 ================================================= 
 --2019.6.15 sat--hyl-usa--
 4. OpenRawFile("image.raw",m_pData);

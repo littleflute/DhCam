@@ -389,61 +389,13 @@ DWORD CCamera::DisplayThreadProc( )
     DWORD index = 0;
 	
 	m_pData = new BYTE[BufferSize];
-	BYTE*pTem=new BYTE[m_Width*m_Height*3];
+	BYTE*pNewData=new BYTE[m_Width*m_Height*3];
 
-	static int nC=0;
     ResetEvent(m_hSoftTrigger);
 
-    int idex = 0;
-	if (m_nPicCount>0)
-	{
-		FillMemory(m_pImageBuffer, nMaxWidth * nMaxHeight  * 3, 0xff);
-		HVLoadJPEG(m_hvFile[idex].szfile, m_pImageBuffer, (int *)&(m_pBmpInfo->bmiHeader.biWidth), 				(int *)&(m_pBmpInfo->bmiHeader.biHeight), (int *)&(m_pBmpInfo->bmiHeader.biBitCount), FALSE);
-		
-		int nW = m_pBmpInfo->bmiHeader.biWidth;
-		int nH = m_pBmpInfo->bmiHeader.biHeight;
-		
-		BYTE*p = m_pImageBuffer;
-		p+= nW*3*m_Top+m_Left*3;
-		
-		for (int k=0;k<m_Height;k++)
-		{
-			::CopyMemory(pTem+k*m_Width*3,p,m_Width*3);
-			p+=nW*3;			
-		}
-		local_UnBayerTest(m_Width,m_Height,pTem);
-	}
-	else
-	{				
-		if (m_pData) 
-		{
-			BYTE *pData=m_pData;
-			for (int j=0;j<H1;j++)
-			{
-				for (int i=0;i<W1;i++)
-				{
-					pData[j*W1+i]=(BYTE)(i+nC & 0xFF);
-					
-				}			
-			}
-		}
-		nC++;
-		OpenRawFile("image.raw",m_pData);
-		
-		BYTE*p=m_pData;
-		p+=W1*m_Top+m_Left;
-		
-		for (int k=0;k<m_Height;k++)
-		{
-			::CopyMemory(pTem+k*m_Width,p,m_Width);
-			p+=W1;
-		}
-		
-	}
 	
 	while (m_bStopDisplay) 
-	{
-	
+	{	
 		if (g_bDeviceRemove)
 		{ 
 			g_bDeviceRemove=FALSE;
@@ -456,10 +408,10 @@ DWORD CCamera::DisplayThreadProc( )
 		}		
 	
 		Sleep(1);
-
 		{
 			BufferSize =  m_Width*m_Height;
-			memcpy(m_ppSnapBuffer[index], pTem, BufferSize);
+			xdMakeData(pNewData);
+			memcpy(m_ppSnapBuffer[index], pNewData, BufferSize);
 			snapInfo.nIndex=index;
 			index++;
 			if (index >= m_BufferNum) {
@@ -470,12 +422,11 @@ DWORD CCamera::DisplayThreadProc( )
 			
 			m_T1=m_T2=::GetTickCount();
 		}
-
 		
 	}
     
     delete[]m_pData;
-	delete[]pTem;
+	delete[]pNewData;
 	SetEvent(m_hDisplayOver);
     _RPT0(_CRT_WARN, "¡¾Display Thread Over¡¿");
     return 0;

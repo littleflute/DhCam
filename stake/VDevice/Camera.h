@@ -16,7 +16,10 @@ typedef struct tagHVFile {
 #define nMaxWidth       4272   //载入图片
 #define nMaxHeight      2848 
 #define nMaxPicCount    60
+#define W1					    1392         //最大分辨率
+#define H1						1040
 
+#include "..\common\inc\HVUtil.h"
 class CCamera  
 {
 public:
@@ -84,6 +87,59 @@ private:
 	HVSTATUS local_StartSnap(void *pInBuffer);
 	HVSTATUS local_StopSnap();
 	HVSTATUS local_CloseSnap();
+
+	void CCamera::xdMakeData(BYTE *pData ){		
+		static int nC=0;		
+		static int idex = 0;
+		if (m_nPicCount>0)
+		{
+			FillMemory(m_pImageBuffer, nMaxWidth * nMaxHeight  * 3, 0xff);
+			HVLoadJPEG(m_hvFile[idex].szfile, m_pImageBuffer, (int *)&(m_pBmpInfo->bmiHeader.biWidth), 				(int *)&(m_pBmpInfo->bmiHeader.biHeight), (int *)&(m_pBmpInfo->bmiHeader.biBitCount), FALSE);
+			
+			int nW = m_pBmpInfo->bmiHeader.biWidth;
+			int nH = m_pBmpInfo->bmiHeader.biHeight;
+			
+			BYTE*p = m_pImageBuffer;
+			p+= nW*3*m_Top+m_Left*3;
+			
+			for (int k=0;k<m_Height;k++)
+			{
+				::CopyMemory(pData+k*m_Width*3,p,m_Width*3);
+				p+=nW*3;			
+			}
+			local_UnBayerTest(m_Width,m_Height,pData);
+			idex++; 
+			if(idex>m_nPicCount) idex=0;
+		}
+		else
+		{				
+			if (m_pData) 
+			{
+				BYTE *pData=m_pData;
+				for (int j=0;j<H1;j++)
+				{
+					for (int i=0;i<W1;i++)
+					{
+						pData[j*W1+i]=(BYTE)(i+nC & 0xFF);
+						
+					}			
+				}
+			}
+			nC++;
+			OpenRawFile("image.raw",m_pData);
+			
+			BYTE*p=m_pData;
+			p+=W1*m_Top+m_Left;
+			
+			for (int k=0;k<m_Height;k++)
+			{
+				::CopyMemory(pData+k*m_Width,p,m_Width);
+				p+=W1;
+			}
+			
+		}
+		
+	}
 };
 
 #endif // !defined(AFX_CAMERA_H__1F5B549A_1DE2_4317_B2E3_88608B1F8C35__INCLUDED_)
