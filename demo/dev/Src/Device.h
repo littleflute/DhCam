@@ -55,8 +55,7 @@ public:
 	void SetMDIChild(CChildFrame* pChild);
 	
 	/// Grab single frame
-	void GrabSingle();
-	/// "Grab" image from file
+	void GrabSingle(); 
 	void GrabFromFile(CString FileName);
 	/// Activate continuous grabbing
 	void GrabContinuous();

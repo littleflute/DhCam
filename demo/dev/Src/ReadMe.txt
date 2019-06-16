@@ -1,7 +1,7 @@
 
 --2019.6.15 sat--hyl--usa--
 5. m_pCurrentDevice->GrabFromFile( FileName);
-4. ::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1024*3); //xdTest2:
+4. ::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1024); //xdTest2:
 
 3. int CALLBACK CDevice::SnapCallbackProc(HV_SNAP_INFO *pInfo)
 2. if(UNKNOWN_TYPE==type){ type = SV400FCTYPE} //xdTest1:

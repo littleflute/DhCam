@@ -540,21 +540,7 @@ void CDevice::GrabSingle()
 
 }
 
-
-
-//------------------------------------------------------------------------------
-// void CDevice::GrabFromFile(CString FileName)
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* Grab image from file
-*
-* \param     FileName
-* \return    void
-*
-* 
-*/
-//------------------------------------------------------------------------------
+ 
 
 void CDevice::GrabFromFile(CString FileName)
 {
@@ -1287,7 +1273,7 @@ void CDevice::ShowFrame()
 		} //end for
 		m_fBitmapValid = true;
 		
-		//::CopyMemory(m_pBitmap,m_pCurrentBuffer,1392*1040); //xdTest2:
+		::CopyMemory(*m_pBitmap,*m_pCurrentBuffer,1392*1040); //xdTest2:
 		
 		// if a single grab is active, free resources and signal the grab as finished
 		if ( m_fSingleGrabActive ){
@@ -1637,31 +1623,8 @@ void CDevice::ParametrizeDevice(HV_VIDEO_MODE mode, HV_COLOR_CODE code, CPoint p
 
 }
 
-
-
-//------------------------------------------------------------------------------
-// int CDevice::SnapCallback(HV_SNAP_INFO *pInfo)
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* Set device output window area 
-*
-* \param     
-*            
-* \return    
-*
-* <type Return description here>
-* 
-* \see       <delete line if not used>
-* \todo      
-*/
-//////////////////////////////////////////////////////////////////////////
-//------------------------------------------------------------------------------
-
-// HVCommand调用HVControl功能
-HVSTATUS
-__stdcall
-HVCommand_HVAPIControl(
+ 
+HVSTATUS __stdcall HVCommand_HVAPIControl(
 					   HHV hhv,
 					   HV_CONTROL_CODE code,
 					   void *pInBuf,

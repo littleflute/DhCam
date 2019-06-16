@@ -620,18 +620,7 @@ void CDeviceManager::GrabCancel()
 		m_pCurrentDevice->GrabCancel();
 }
 
-
-
-
-//------------------------------------------------------------------------------
-// void CDeviceManager::GrabFromFile(CString FileName)
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* Load an image from file and show it in the MDI child window associated with the current device
-*
-*/
-//------------------------------------------------------------------------------
+ 
 void CDeviceManager::GrabFromFile(CString FileName)
 {
 	assert ( m_pCurrentDevice != NULL );
@@ -642,19 +631,7 @@ void CDeviceManager::GrabFromFile(CString FileName)
 	m_pCurrentDevice->GrabFromFile( FileName);
 }
 
-
-
-
-//------------------------------------------------------------------------------
-// void CDeviceManager::ShowPixelValue()
-// Author: 
-//------------------------------------------------------------------------------
-/**
-* Show the pixel value under the cursor in the main frame's status bar. 
-* The z-ordering of the windows is considered.
-*
-*/
-//------------------------------------------------------------------------------
+ 
 void CDeviceManager::ShowPixelValue()
 {
 	
