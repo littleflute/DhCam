@@ -104,111 +104,7 @@ SOURCE=.\Camera\GIGE.CPP
 # End Source File
 # Begin Source File
 
-SOURCE=.\Camera\HV1300FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\HV1300FM.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\HV2000FC.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\HV3100FC.cpp
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS1394.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS1394.H
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS1410FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS1420FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS1420FC.H
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS2000FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\ITS2000FC.H
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1300FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1300FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1310FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1310FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1311FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1311FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1400FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1400FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1410FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1410FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1420FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV1420FM.CPP
-# End Source File
-# Begin Source File
-
 SOURCE=.\Camera\SV2000FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV2000FM.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV400FC.CPP
-# End Source File
-# Begin Source File
-
-SOURCE=.\Camera\SV400FM.CPP
 # End Source File
 # End Group
 # Begin Source File
@@ -571,6 +467,19 @@ SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
 # End Project
+# Section HVPerf_cn : {06FB3FB3-D800-4E08-9118-21AB84EC92FC}
+# 	1:21:IDD_CAMERAFEATUREVIEW:103
+# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
+# 	2:16:Resource Include:resource.h
+# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
+# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
+# 	2:19:CameraFeatureView.h:CameraFeatureView1.h
+# 	2:21:CameraFeatureView.cpp:CameraFeatureView1.cpp
+# 	2:10:ENUM: enum:enum
+# 	2:19:Application Include:HVPerf_cn.h
+# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
+# 	2:21:IDD_CAMERAFEATUREVIEW:IDD_CAMERAFEATUREVIEW
+# End Section
 # Section HVPerf_cn : {198400C9-710C-4315-A1A9-37B796DA7C4F}
 # 	1:22:IDD_FORMATPROPERTYPAGE:106
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
@@ -585,19 +494,19 @@ SOURCE=.\ReadMe.txt
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
 # 	2:22:IDD_FORMATPROPERTYPAGE:IDD_FORMATPROPERTYPAGE
 # End Section
-# Section HVPerf_cn : {77E90497-92FE-4661-A8EB-42969975A22D}
-# 	1:24:IDD_ADVANCEDPROPERTYPAGE:105
+# Section HVPerf_cn : {1EC11FFD-ED8E-4D8C-B13D-C5F23DA7673A}
+# 	1:23:IDD_TRIGGERPROPERTYPAGE:107
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
 # 	2:16:Resource Include:resource.h
 # 	2:24:CLASS: CInfoPropertyPage:CInfoPropertyPage
-# 	2:15:PropertyDlg.cpp:PropertyDlg1.cpp
+# 	2:15:PropertyDlg.cpp:PropertyDlg3.cpp
 # 	2:10:ENUM: enum:enum
+# 	2:23:IDD_TRIGGERPROPERTYPAGE:IDD_TRIGGERPROPERTYPAGE
 # 	2:28:CLASS: CAdvancedPropertyPage:CAdvancedPropertyPage
-# 	2:13:PropertyDlg.h:PropertyDlg1.h
+# 	2:13:PropertyDlg.h:PropertyDlg3.h
 # 	2:19:CLASS: CPropertyDlg:CPropertyDlg
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
-# 	2:24:IDD_ADVANCEDPROPERTYPAGE:IDD_ADVANCEDPROPERTYPAGE
 # End Section
 # Section HVPerf_cn : {AE8FE4A7-2C74-425B-AF2E-F1F8501A0B1F}
 # 	1:20:IDD_INFOPROPERTYPAGE:104
@@ -613,19 +522,19 @@ SOURCE=.\ReadMe.txt
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
 # End Section
-# Section HVPerf_cn : {1EC11FFD-ED8E-4D8C-B13D-C5F23DA7673A}
-# 	1:23:IDD_TRIGGERPROPERTYPAGE:107
+# Section HVPerf_cn : {77E90497-92FE-4661-A8EB-42969975A22D}
+# 	1:24:IDD_ADVANCEDPROPERTYPAGE:105
 # 	2:27:CLASS: CTriggerPropertyPage:CTriggerPropertyPage
 # 	2:16:Resource Include:resource.h
 # 	2:24:CLASS: CInfoPropertyPage:CInfoPropertyPage
-# 	2:15:PropertyDlg.cpp:PropertyDlg3.cpp
+# 	2:15:PropertyDlg.cpp:PropertyDlg1.cpp
 # 	2:10:ENUM: enum:enum
-# 	2:23:IDD_TRIGGERPROPERTYPAGE:IDD_TRIGGERPROPERTYPAGE
 # 	2:28:CLASS: CAdvancedPropertyPage:CAdvancedPropertyPage
-# 	2:13:PropertyDlg.h:PropertyDlg3.h
+# 	2:13:PropertyDlg.h:PropertyDlg1.h
 # 	2:19:CLASS: CPropertyDlg:CPropertyDlg
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:26:CLASS: CFormatPropertyPage:CFormatPropertyPage
+# 	2:24:IDD_ADVANCEDPROPERTYPAGE:IDD_ADVANCEDPROPERTYPAGE
 # End Section
 # Section HVPerf_cn : {146BC63A-2D37-4875-B511-0223144CEB77}
 # 	1:12:IDD_ERRORBOX:101
@@ -649,17 +558,4 @@ SOURCE=.\ReadMe.txt
 # 	2:10:ENUM: enum:enum
 # 	2:19:Application Include:HVPerf_cn.h
 # 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
-# End Section
-# Section HVPerf_cn : {06FB3FB3-D800-4E08-9118-21AB84EC92FC}
-# 	1:21:IDD_CAMERAFEATUREVIEW:103
-# 	2:24:CLASS: CWhiteBalanceView:CWhiteBalanceView
-# 	2:16:Resource Include:resource.h
-# 	2:25:CLASS: CScalarFeatureView:CScalarFeatureView
-# 	2:25:CLASS: CBytePerPacketView:CBytePerPacketView
-# 	2:19:CameraFeatureView.h:CameraFeatureView1.h
-# 	2:21:CameraFeatureView.cpp:CameraFeatureView1.cpp
-# 	2:10:ENUM: enum:enum
-# 	2:19:Application Include:HVPerf_cn.h
-# 	2:29:CLASS: CCameraFeatureViewBase:CCameraFeatureViewBase
-# 	2:21:IDD_CAMERAFEATUREVIEW:IDD_CAMERAFEATUREVIEW
 # End Section

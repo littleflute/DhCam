@@ -16,32 +16,9 @@
 #include "mainfrm.h"
 #include "ChildFrm.h"
 
-#include "Camera\HV1300FC.h"
-#include "Camera\HV2000FC.h"
-#include "Camera\HV3100FC.h"
-#include "Camera\HV1300FM.h"
-#include "Camera\SV1300FM.H"
-#include "Camera\SV1300FC.H"
-#include "Camera\SV1310FC.H"
-#include "Camera\SV1310FM.H"
-#include "Camera\SV1311FC.H"
-#include "Camera\SV1311FM.H"
-#include "Camera\SV400FC.H"
-#include "Camera\SV400FM.H"
-#include "Camera\SV1410FC.H"
-#include "Camera\SV1410FM.H"
-#include "Camera\SV1420FC.H"
+  
 #include "Camera\SV2000FC.H"
-#include "Camera\SV1420FM.H"
-#include "Camera\SV2000FM.H"
-#include "Camera\SV1400FC.H"
-#include "Camera\SV1400FM.H"
-
-#include "Camera\ITS1410FC.H"
-#include "Camera\ITS1420FC.H"
-#include "Camera\ITS2000FC.H"
-#include "Camera\ITS1394.H"
-
+ 
 #include "Camera\GIGE.H"
 #include "Camera\ENET.H"
 
@@ -340,89 +317,17 @@ BOOL CDeviceManager::AddDevice(int nNumber, HWND hWndNotify)
 	ATLTRACE("HVPerf: AddDevice type  %d", type );
 	if(UNKNOWN_TYPE==type){ type = SV2000FCTYPE;} //xdTest1:
 	switch(type){
-
-	case HV1300FCTYPE: //11
-		pDevice = new CHV1300FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-		break;
-	case HV2000FCTYPE: //12
-		pDevice = new CHV2000FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-		break;
-	case HV3100FCTYPE: //13
-		pDevice = new CHV3100FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-		break;
-	case HV1300FMTYPE: //14
-		pDevice = new CHV1300FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-		break;
-    case SV1300FMTYPE: //19
-        pDevice = new CSV1300FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-    case SV1300FCTYPE: //20
-        pDevice = new CSV1300FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1310FCTYPE: //21
-        pDevice = new CSV1310FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1310FMTYPE: //22
-        pDevice = new CSV1310FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1311FCTYPE: //23
-        pDevice = new CSV1311FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1311FMTYPE: //24
-        pDevice = new CSV1311FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV400FCTYPE: //25
-        pDevice = new CSV400FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV400FMTYPE: //26
-        pDevice = new CSV400FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1410FCTYPE: //28
-        pDevice = new CSV1410FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1410FMTYPE: //29
-        pDevice = new CSV1410FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-      break;
-	case SV1420FCTYPE: //30
-        pDevice = new CSV1420FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1420FMTYPE: //31
-        pDevice = new CSV1420FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV2000FCTYPE: //32
+  	case SV2000FCTYPE: //32
         pDevice = new CSV2000FC(nNumber, nIndex, hWndNotify, m_MainFrame);
         break;
-	case SV2000FMTYPE: //33
-        pDevice = new CSV2000FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1400FCTYPE: //34
-        pDevice = new CSV1400FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case SV1400FMTYPE: //35
-        pDevice = new CSV1400FM(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
+ 
 	case DRVIFGIGETYPE: 
         pDevice = new CGIGE(nNumber, nIndex, hWndNotify, m_MainFrame);
         break;
 	case DRVIFENETTYPE: 
         pDevice = new CENET(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-
-	case ITS1410FCTYPE: 
-        pDevice = new CITS1410FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case ITS1420FCTYPE: 
-        pDevice = new CITS1420FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;
-	case ITS2000FCTYPE: 
-        pDevice = new CITS2000FC(nNumber, nIndex, hWndNotify, m_MainFrame);
-        break;		
-
-	case DRVIF1394TYPE:
-		pDevice = new CITS1394(nNumber, nIndex, hWndNotify, m_MainFrame);
-		break;
-
+        break; 
+ 
 	default:
 		throw HVBaseException(STATUS_PARAMETER_INVALID, "CDeviceManager::AddDevice()");
 	}
