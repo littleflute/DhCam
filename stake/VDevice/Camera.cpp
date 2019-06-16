@@ -428,7 +428,7 @@ DWORD CCamera::DisplayThreadProc( )
 			}
 		}
 		nC++;
-		//OpenRawFile("image.raw",m_pData);
+		OpenRawFile("image.raw",m_pData);
 		
 		BYTE*p=m_pData;
 		p+=W1*m_Top+m_Left;
@@ -506,6 +506,10 @@ HVSTATUS CCamera::local_SnapShot(void *pInBuffer)
 	DWORD BufferSize =  W1 * H1;
 	
 	m_pData = new BYTE[BufferSize];
+	static char xdTestData = 0;
+    xdTestData += 16;
+	if(xdTestData>255){xdTestData = 0;} 
+	
 	if (m_pData) 
 	{
 		BYTE *pData=m_pData;
@@ -513,13 +517,13 @@ HVSTATUS CCamera::local_SnapShot(void *pInBuffer)
 		{
 			for (int i=0;i<W1;i++)
 			{
-				pData[j*W1+i]=(BYTE)(i & 0xFF);				
+				pData[j*W1+i]=(BYTE)(i & xdTestData);				
 			}			
 		}		
 	}
 
 
-//	OpenRawFile("image.raw",m_pData);
+	OpenRawFile("image.raw",m_pData);
 
 	BYTE*pTem=new BYTE[m_Width*m_Height];
 

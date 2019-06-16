@@ -6,6 +6,8 @@
  [VDevice]
 ================================================= 
 --2019.6.15 sat--hyl-usa--
+4. OpenRawFile("image.raw",m_pData);
+3. char xdTestData = 0;
 2. ORD_SET_FMT7_MODE
 		  //m_Width = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Width;
 		  //m_Height = (USHORT)pArgSetAOI->Fmt7Mode.AOI.Height;
