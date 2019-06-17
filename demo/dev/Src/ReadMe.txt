@@ -1,4 +1,5 @@
 vsv2000fc
+2. //	 	xdMakeDat2Show(*m_pCurrentBuffer,*m_pBitmap,1392,1040); //xdtest3:
 1. del all camer(.cpp .h);  update prp
 
 

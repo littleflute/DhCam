@@ -168,6 +168,20 @@ public:
 	virtual void OnStopGrabbing(CConvertImageInfo *pImageInfo, CConvertImageData *pImageData);
 	///
 	virtual void OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageData *pImageData);
+private:
+	void CDlgSetParameter::xdMakeDat2Show(BYTE *p1, BYTE *p2, int w, int h)// : p1 => p2
+		{
+			BYTE *p1H = p1;
+			BYTE *p2H = p2;
+			for(int i=0; i<h; i++){  
+				for(int j = 0, j2=0;j<w;j++){ 
+					p2H[i*w*3+j2]	= p1H[i*w+j];
+					p2H[i*w*3+j2+1]	= p1H[i*w+j];
+					p2H[i*w*3+j2+2]	= p1H[i*w+j];
+					j2+=3;
+				}
+			}
+		}
 };
 
 //{{AFX_INSERT_LOCATION}}
