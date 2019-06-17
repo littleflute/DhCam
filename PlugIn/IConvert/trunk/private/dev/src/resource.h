@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
-// Used by raw2rgb_eng.rc
+// Used by raw2rgb_chs.rc
 //
 #define IDS_PLUG_NAME                   1
 #define IDS_PLUG_INFO                   2

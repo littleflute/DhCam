@@ -188,7 +188,7 @@ void CDlgSetParameter::UpdatePreView(void *pDst, void *pSrc, int nWid, int nHei)
 	}
 	
 	// Color render
-	ConvertBayer2Rgb(pDst, pSrc, nWid, nHei, &m_pParam);
+//	ConvertBayer2Rgb(pDst, pSrc, nWid, nHei, &m_pParam);
 
 	// Save temp data
 	if (m_nDispSize < (UINT)(nWid * nHei* (m_pParam.m_info.ImageBitDepth/8))) 
@@ -221,7 +221,7 @@ void CDlgSetParameter::WhiteBalance(void *pDst, void *pSrc, int nWid, int nHei)
 	m_pParam.m_RatioBlue = 1.0;
 	m_pParam.UpdateLutGama();
 
-	ConvertBayer2Rgb(pDst, pSrc, nWid, nHei, &m_pParam);
+//	ConvertBayer2Rgb(pDst, pSrc, nWid, nHei, &m_pParam);
 
 	CRect                      rect;
 	m_ImageView.GetSelectRect(&rect, nWid, nHei);
@@ -590,7 +590,7 @@ void CDlgSetParameter::OnShowFrame(CImageInfo info, CImageData data)
 	else
 	{
 	
-		ConvertBayer2Rgb(pDst, data.pRawBuffer, info.ImageWidth, info.ImageHeight, &m_pParam);	
+	//	ConvertBayer2Rgb(pDst, data.pRawBuffer, info.ImageWidth, info.ImageHeight, &m_pParam);	
 	}
 
 	//if ( info.ImageBitDepth == 8 )

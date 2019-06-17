@@ -33,7 +33,7 @@
 
 BOOL CColorRender::PlxGetWBalanceRatio(BYTE *pSrce,int nWid,int nHei,double* dRatioR,double* dRatioG,double* dRatioB) 
 {
-	GetWhiteBalanceRatio(pSrce, nWid, nHei, dRatioR, dRatioG, dRatioB);
+//	GetWhiteBalanceRatio(pSrce, nWid, nHei, dRatioR, dRatioG, dRatioB);
 	return TRUE;
 }
 
@@ -48,7 +48,7 @@ BOOL CColorRender::PlxGetWBalanceRatio(BYTE *pSrce,int nWid,int nHei,double* dRa
 
 void CColorRender::PlxSetGammaLut(BYTE pLutGamma[256],double dGammaRatio)
 {
-	SetGammaLut(pLutGamma, dGammaRatio);
+//	SetGammaLut(pLutGamma, dGammaRatio); //xdtest1
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -67,7 +67,7 @@ BOOL CColorRender::PlxConvertBayer2Rgb(BYTE *pDest,BYTE *pSrce, int nWid,int nHe
 {
 	if(pSrce == NULL || pDest==NULL) return FALSE;
 
-	ConvertBayer2Rgb(pDest, pSrce, nWid, nHei, cvtype, pLutR, pLutG, pLutB, bIsFlip, Layout);
+//xdtest1	ConvertBayer2Rgb(pDest, pSrce, nWid, nHei, cvtype, pLutR, pLutG, pLutB, bIsFlip, Layout);
 
 	return TRUE;
 }

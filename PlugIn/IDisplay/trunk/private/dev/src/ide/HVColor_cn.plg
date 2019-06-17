@@ -1,0 +1,48 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HVColor_cn - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5C.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "_WINDLL" /FR"Debug/" /Fp"Debug/HVColor_cn.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\xd\Dhcam\PlugIn\IDisplay\trunk\private\dev\src\ColorRender.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5C.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp" with contents
+[
+/nologo /subsystem:windows /dll /incremental:no /pdb:"Debug/IDisplay.pdb" /machine:I386 /def:"..\HVColor.def" /out:"..\..\..\..\..\..\..\demo\bin\PlugIns\IDisplay.plx" /implib:"Debug/IDisplay.lib" /pdbtype:sept 
+.\Debug\ColorRender.obj
+.\Debug\ColorRender_Ex.obj
+.\Debug\CorrectMatrix.obj
+.\Debug\DlgSetParameter.obj
+.\Debug\HVColor.obj
+.\Debug\ImageRectTracker.obj
+.\Debug\ImageView.obj
+.\Debug\Parameter.obj
+.\Debug\Placement.obj
+.\Debug\PropertyBag.obj
+.\Debug\Raw2Rgb_Plug.obj
+.\Debug\SetParamImageView.obj
+.\Debug\StdAfx.obj
+.\Debug\raw2rgb_chs.res
+..\..\lib\HVDAILT.LIB
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP5D.tmp"
+<h3>Output Window</h3>
+Compiling...
+ColorRender.cpp
+Linking...
+LINK : warning LNK4075: ignoring /EDITANDCONTINUE due to /INCREMENTAL:NO specification
+   Creating library Debug/IDisplay.lib and object Debug/IDisplay.exp
+
+
+
+<h3>Results</h3>
+IDisplay.plx - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

@@ -722,9 +722,7 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 		{
 			BYTE* pTemp = new BYTE[pImageInfo->ciiDest.iV11Width * pImageInfo->ciiDest.iV11Height * 2];
 
-			Raw12PackedToRaw16((BYTE *)pImageData->pCidSrce, pTemp, 
-				pImageInfo->ciiDest.iV11Width,
-				pImageInfo->ciiDest.iV11Height);
+//xdtest1			Raw12PackedToRaw16((BYTE *)pImageData->pCidSrce, pTemp, pImageInfo->ciiDest.iV11Width,	pImageInfo->ciiDest.iV11Height);
 			
 			RawDatato8((BYTE *)pTemp, (BYTE *)pImageData->pCidSrce, 
 				pImageInfo->ciiDest.iV11Width,
@@ -738,9 +736,7 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 		{ 
 			BYTE* pTemp = new BYTE[pImageInfo->ciiDest.iV11Width * pImageInfo->ciiDest.iV11Height * 2];
 			
-			Raw10PackedToRaw16((BYTE *)pImageData->pCidSrce, pTemp, 
-				pImageInfo->ciiDest.iV11Width,
-				pImageInfo->ciiDest.iV11Height);
+//xdtest1			Raw10PackedToRaw16((BYTE *)pImageData->pCidSrce, pTemp,	pImageInfo->ciiDest.iV11Width,		pImageInfo->ciiDest.iV11Height);
 			
 			RawDatato8((BYTE *)pTemp, (BYTE *)pImageData->pCidSrce, 
 				pImageInfo->ciiDest.iV11Width,
@@ -762,8 +758,7 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 	//---------begin------------add by lm 20090706
 	if (pImageInfo->ciiSrce.iV11ColorCode == COLOR_JPEG)	
 	{
-		HANDLE hDib = ReadJPEGFrombuf((BYTE *)pImageData->pCidSrce,
-			pImageInfo->ciiSrce.iV11SizeImage);//Chinese:调用ImageLoad.dll,解压JPEG数据
+		HANDLE hDib = NULL;//xdtest2: ReadJPEGFrombuf((BYTE *)pImageData->pCidSrce,	pImageInfo->ciiSrce.iV11SizeImage);//Chinese:调用ImageLoad.dll,解压JPEG数据
 		
 		if (hDib != NULL) 
 		{
@@ -778,7 +773,7 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 			
 			::GlobalUnlock((HGLOBAL) hDib);
 			
-			FreeDIBHandle(hDib);
+////xdtest2:			FreeDIBHandle(hDib);
 		}
 	}	
 	//--------end--------------
@@ -794,24 +789,21 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 			}
 
 			// Color render
-			ConvertBayer2Rgb(pImageData->pCidDest, pImageData->pCidSrce, pImageInfo->ciiDest.iV11Width, pImageInfo->ciiDest.iV11Height);
+//xdtest1			ConvertBayer2Rgb(pImageData->pCidDest, pImageData->pCidSrce, pImageInfo->ciiDest.iV11Width, pImageInfo->ciiDest.iV11Height);
 		}
 
 		//--begin--brightness, contrast, sharpen
 		if (m_bEnableBrightness)
 		{
-			HVBrightness((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,
-				m_EditBrightness,(BYTE *)pImageData->pCidDest);
+//xdtest1			HVBrightness((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,				m_EditBrightness,(BYTE *)pImageData->pCidDest);
 		}
 		if(m_bEnableContrast)
 		{
-			HVContrast((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,
-				m_EditContrast,(BYTE *)pImageData->pCidDest);
+//xdtest1			HVContrast((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,	m_EditContrast,(BYTE *)pImageData->pCidDest);
 		}
 		if (m_bEnableSharpen)
 		{
-			HVSharpen24B((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11Width,
-				pImageInfo->ciiDest.iV11Height,m_EditSharpen,(BYTE *)pImageData->pCidDest);
+//xdtest1			HVSharpen24B((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11Width,	pImageInfo->ciiDest.iV11Height,m_EditSharpen,(BYTE *)pImageData->pCidDest);
 		}
 		//--end--add by lm 20090708
 
@@ -840,27 +832,21 @@ void CDlgSetParameter::OnShowFrame(CConvertImageInfo *pImageInfo, CConvertImageD
 				m_bSavePara = FALSE;
 			}
 
-			ConvertBayer2Rgb(pImageData->pCidDest, 
-							 pImageData->pCidSrce, 
-							 pImageInfo->ciiDest.iV11Width, 
-							 pImageInfo->ciiDest.iV11Height);
+//xdtest1			ConvertBayer2Rgb(pImageData->pCidDest, 	 pImageData->pCidSrce,  pImageInfo->ciiDest.iV11Width, pImageInfo->ciiDest.iV11Height);
 
 		}
 		//--begin--brightness, contrast, sharpen
 		if (m_bEnableBrightness)
 		{
-			HVBrightness((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,
-				m_pParam.m_Brightness,(BYTE *)pImageData->pCidDest);
+//xdtest1			HVBrightness((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,	m_pParam.m_Brightness,(BYTE *)pImageData->pCidDest);
 		}
 		if (m_bEnableContrast)
 		{
-			HVContrast((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,
-				m_pParam.m_Contrast,(BYTE *)pImageData->pCidDest);
+	//xdtest1		HVContrast((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11SizeImage,	m_pParam.m_Contrast,(BYTE *)pImageData->pCidDest);
 		}
 		if (m_bEnableSharpen)
 		{
-			HVSharpen24B((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11Width,
-				pImageInfo->ciiDest.iV11Height,m_pParam.m_Sharpen,(BYTE *)pImageData->pCidDest);
+	//xdtest1		HVSharpen24B((BYTE *)pImageData->pCidDest,pImageInfo->ciiDest.iV11Width,		pImageInfo->ciiDest.iV11Height,m_pParam.m_Sharpen,(BYTE *)pImageData->pCidDest);
 		}
 		//--end--add by lm 20090708
 	}

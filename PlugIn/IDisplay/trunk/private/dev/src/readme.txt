@@ -1,3 +1,12 @@
+ 
+..\..\..\..\..\..\..\demo\bin\hvperf_cnD.exe
+..\..\..\..\..\..\..\demo\bin\PlugIns\IDisplay.plx
+ 
+//	GetWhiteBalanceRatio(pSrce, nWid, nHei, dRatioR, dRatioG, dRatioB);
+
+//	SetGammaLut(pLutGamma, dGammaRatio);
+//	ConvertBayer2Rgb(pDst, pSrc, nWid, nHei, &m_pParam);
+
 //
 // Project: 色彩校正插件改进
 // Author : XuYibo (xyb), ZhangXiaoSong(Dimission) 2006-08-31

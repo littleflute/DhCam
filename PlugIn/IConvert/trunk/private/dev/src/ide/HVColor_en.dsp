@@ -81,7 +81,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 /nologo /subsystem:windows /dll /incremental:no /debug /machine:I386 /out:"..\..\bin\PlugIns\_IConvert.plx" /pdbtype:sept
+# ADD LINK32 /nologo /subsystem:windows /dll /incremental:no /debug /machine:I386 /out:"..\..\..\..\..\..\..\demo\bin\PlugIns\_IConvert.plx" /pdbtype:sept
 
 !ENDIF 
 

@@ -81,7 +81,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /dll /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 /nologo /subsystem:windows /dll /incremental:no /machine:I386 /out:"Debug\IDisplay.plx" /pdbtype:sept
+# ADD LINK32 /nologo /subsystem:windows /dll /incremental:no /machine:I386 /out:"..\..\..\..\..\..\..\demo\bin\PlugIns\IDisplay.plx" /pdbtype:sept
 # SUBTRACT LINK32 /debug
 
 !ENDIF 
@@ -298,10 +298,6 @@ SOURCE=..\readme.txt
 # Begin Source File
 
 SOURCE=..\..\lib\HVDAILT.LIB
-# End Source File
-# Begin Source File
-
-SOURCE=..\..\lib\Raw2Rgb.lib
 # End Source File
 # End Target
 # End Project

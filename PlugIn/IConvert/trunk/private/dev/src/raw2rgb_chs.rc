@@ -195,8 +195,8 @@ IDC_MOVE4WAY            CURSOR  DISCARDABLE     "res\\move4way.cur"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,2,6
- PRODUCTVERSION 1,0,2,6
+ FILEVERSION 1,0,3,0
+ PRODUCTVERSION 1,0,3,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -214,14 +214,14 @@ BEGIN
             VALUE "Comments", "\0"
             VALUE "CompanyName", "China Daheng Group, Inc. Beijing Image Vision Technology Branch\0"
             VALUE "FileDescription", "IConvert\0"
-            VALUE "FileVersion", "1, 0, 2, 6\0"
+            VALUE "FileVersion", "1, 0, 3, 0\0"
             VALUE "InternalName", "IConvert\0"
-            VALUE "LegalCopyright", "Copyright (C) 2009 Daheng Imavision\0"
+            VALUE "LegalCopyright", "Copyright (C) 2019 bl\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "IConvert.plx\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "IConvert PlugIn\0"
-            VALUE "ProductVersion", "1, 0, 2, 6\0"
+            VALUE "ProductVersion", "1, 0, 3, 0\0"
             VALUE "SpecialBuild", "\0"
         END
     END
@@ -241,8 +241,8 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-    IDS_PLUG_NAME           "图像显示1.0.2.6"
-    IDS_PLUG_INFO           "图像显示插件\r\n描述: 用于将原始Bayer数据转换为RGB表示的彩色数据。\r\n可以解析16位、12位、10位数据格式。\r\n版权: Copyright (C) 2009 Daheng Imavision All rights reserved"
+    IDS_PLUG_NAME           "图像显示v1.0.3.0"
+    IDS_PLUG_INFO           "插件\r\n描述: Bayer数据转换为RGB彩色数据。\r\n可以解析16位、12位、10位数据格式。\r\n版权: 2019 bl"
     IDS_DLG_NAME            "图像显示 Beta"
 END
 
