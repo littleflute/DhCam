@@ -1,0 +1,19 @@
+; _IConvert.def : Declares the module parameters for the DLL.
+
+LIBRARY      "_IConvert"
+DESCRIPTION  'HVColor Windows Dynamic Link Library'
+
+EXPORTS
+    ; Explicit exports can go here
+	PluginCreateObject
+	PluginDestoryObject
+	PluginGetName
+	PluginGetInfo
+	PluginGetSpecVersion
+	PluginInitialize
+	PluginUninitialize
+	PluginOnUserCommand
+	PluginOnManagerNotify
+	PluginOnStartGrabbing
+	PluginOnStopGrabbing
+	PluginOnShowFrame
