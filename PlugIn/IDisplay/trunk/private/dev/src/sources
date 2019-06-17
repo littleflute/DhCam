@@ -1,0 +1,18 @@
+TARGET_NAME=raw2rgb.plx
+TARGET_DESCRIPTION=DaHeng Image Vision raw2rgb
+TARGET_RUNTIME=MFCSTATIC
+LINK_FLAGS=hvdailt.lib
+SOURCES=ColorRender_Ex.cpp	\
+        CorrectMatrix.cpp	\
+        HVColor.cpp	\
+        ImageRectTracker.cpp	\
+        ImageView.cpp	\
+        NoiseUtility.cpp	\
+        Parameter.cpp	\
+        Placement.cpp	\
+        PropertyBag.cpp	\
+        Raw2Rgb.cpp	\
+        Raw2Rgb_Plug.cpp	\
+        SetParamImageView.cpp	\
+        ColorRender.cpp	\
+        DlgSetParameter.cpp

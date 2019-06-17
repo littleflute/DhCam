@@ -1,0 +1,256 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\HVColor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_SETPARAMETER DIALOGEX 300, 200, 406, 245
+STYLE DS_MODALFRAME | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "彩色重现"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_PREVIEW_WINDOW,"Static",SS_BLACKRECT | SS_NOTIFY | 
+                    SS_REALSIZEIMAGE,0,0,297,230,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_STATUS_RECT,0,233,202,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        IDC_STATUS_POINT,202,233,201,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED | NOT WS_BORDER,WS_EX_STATICEDGE
+    GROUPBOX        "质量",IDC_STATIC,237,0,33,29,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    GROUPBOX        "Bayer 类型",IDC_BAYER_TYPE,302,15,101,36
+    CONTROL         "较低",IDC_QUALITY_LOW,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_GROUP,241,7,29,11
+    CONTROL         "中等",IDC_QUALITY_MIDDLE,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_DISABLED,240,13,29,11
+    CONTROL         "较高",IDC_QUALITY_HIGH,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_DISABLED,238,18,30,11
+    CONTROL         "GB",IDC_BAYER_GB,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    307,26,25,11
+    CONTROL         "GR",IDC_BAYER_GR,"Button",BS_AUTORADIOBUTTON,365,27,24,
+                    11
+    CONTROL         "BG",IDC_BAYER_BG,"Button",BS_AUTORADIOBUTTON,307,38,26,
+                    11
+    CONTROL         "RG",IDC_BAYER_RG,"Button",BS_AUTORADIOBUTTON,365,38,26,
+                    11
+    CONTROL         "Slider1",IDC_SLIDER_R,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_GROUP | WS_TABSTOP,308,76,66,6
+    EDITTEXT        IDC_RATIO_R,376,68,22,12,NOT WS_BORDER,WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_SLIDER_B,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,308,94,66,6
+    EDITTEXT        IDC_RATIO_B,376,86,22,12,NOT WS_BORDER,WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "确定",IDOK,302,216,48,14,BS_FLAT
+    PUSHBUTTON      "取消",IDCANCEL,359,216,44,14,BS_FLAT
+    PUSHBUTTON      "白平衡",IDBALANCE,334,103,30,11,BS_FLAT
+    LTEXT           "10",IDC_STATIC_R_MIN,309,66,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "500",IDC_STATIC_R_MAX,359,66,12,8,0,WS_EX_TRANSPARENT
+    LTEXT           "R",IDC_STATIC_R,336,66,10,8,0,WS_EX_TRANSPARENT
+    LTEXT           "10",IDC_STATIC_B_MIN,309,85,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "500",IDC_STATIC_B_MAX,359,86,12,8,0,WS_EX_TRANSPARENT
+    LTEXT           "B",IDC_STATIC_B,336,83,10,8,0,WS_EX_TRANSPARENT
+    CONTROL         "彩色",IDC_COLOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    303,2,32,10
+    CONTROL         "Slider1",IDC_SLIDER_GAMA,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,307,145,66,6
+    EDITTEXT        IDC_RATIO_GAMA,375,137,22,12,NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+    LTEXT           "10",IDC_STATIC_GAMA_MIN,308,135,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "500",IDC_STATIC_GAMA_MAX,358,135,12,8,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Gamma",IDC_STATIC_GAMMA,"Static",SS_LEFTNOWORDWRAP | 
+                    WS_GROUP,328,135,22,8,WS_EX_TRANSPARENT
+    PUSHBUTTON      "重置",IDC_DEFAULT_WHB,369,103,28,11,BS_FLAT
+    CONTROL         "日光",IDC_LIGHT_DAYLIGHT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,308,183,30,12
+    CONTROL         "荧光",IDC_LIGHT_FLUENCE,"Button",BS_AUTORADIOBUTTON,366,
+                    183,31,12
+    CONTROL         "白炽",IDC_LIGHT_INCANDESCENCE,"Button",
+                    BS_AUTORADIOBUTTON,308,195,30,12
+    GROUPBOX        "光照",IDC_GROUP_LIGHT,302,173,101,39
+    CONTROL         "补偿",IDC_CHECK_CORRECT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,366,195,27,12
+    PUSHBUTTON      "重置",IDC_DEFAULT_GAMMA,369,153,28,11,BS_FLAT
+    GROUPBOX        "白平衡",IDC_GROUP_WHB,302,54,101,68,NOT WS_VISIBLE
+    GROUPBOX        "Gamma",IDC_GROUP_GAMMA,302,123,101,47,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_SETPARAMETER, DIALOG
+    BEGIN
+        RIGHTMARGIN, 404
+        VERTGUIDE, 403
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_TRACK4WAY           CURSOR  DISCARDABLE     "res\\Arrow4Way.cur"
+IDC_TRACKWE             CURSOR  DISCARDABLE     "res\\ArrowEW.cur"
+IDC_TRACKNESW           CURSOR  DISCARDABLE     "res\\ArrowNE.cur"
+IDC_TRACKNS             CURSOR  DISCARDABLE     "res\\ArrowNS.cur"
+IDC_TRACKNWSE           CURSOR  DISCARDABLE     "res\\ArrowNW.cur"
+IDC_MOVE4WAY            CURSOR  DISCARDABLE     "res\\move4way.cur"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,6,2,1
+ PRODUCTVERSION 1,6,2,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "China Daheng Group, Inc. Beijing Image Vision Technology Branch\0"
+            VALUE "FileDescription", "IDisplay\0"
+            VALUE "FileVersion", "1, 6, 2, 1\0"
+            VALUE "InternalName", "IDisplay\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007 Daheng Imavision\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IDisplay.plx\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "IDisplay PlugIn\0"
+            VALUE "ProductVersion", "1, 6, 2, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PLUG_NAME           "图像显示"
+    IDS_PLUG_INFO           "图像显示插件\r\n\r\n描述: 用于将采集的原始Bayer数据转换为RGB表示的彩色数据。\r\n版本: 1.6.2.1\r\n版权: Copyright (C) 2008 Daheng Imavision All rights reserved"
+    IDS_DLG_NAME            "图像显示"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COLOR_MENU           "图像显示"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\HVColor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
